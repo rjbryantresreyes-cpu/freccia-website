@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freccia Construction — File Locations</title>
+<style>
+:root{--navy:oklch(17% 0.04 252);--navy-mid:oklch(22% 0.05 252);--gold:oklch(72% 0.12 75);--gold-light:oklch(82% 0.10 75);--paper:#F8F6F2;--paper2:#EEE9E1;--border:#DDD5C8;--ink:#1C1C1C;--muted:#6B6460;--green:oklch(52% 0.15 142);--green-bg:oklch(95% 0.04 142);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;padding:0 0 5rem}
+.head{background:var(--navy);color:#fff;padding:2.5rem 1.5rem}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:2rem;font-weight:300;letter-spacing:-.02em;margin-top:.4rem;color:#fff}
+h1 strong{font-weight:700}
+.sub{color:oklch(65% 0.04 252);margin-top:.5rem;font-size:.88rem}
+.sec{margin-top:2rem}
+.sec h2{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;border-bottom:1px solid var(--border);padding-bottom:.35rem;display:flex;align-items:center;gap:.5rem}
+.sec h2 .cnt{background:var(--border);color:var(--muted);font-size:.65rem;padding:.1rem .4rem;border-radius:2rem}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:.35rem;overflow:hidden;font-size:.83rem}
+thead th{background:var(--navy);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;text-align:left}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--paper2)}
+td{padding:.55rem 1rem;vertical-align:middle}
+td.name{font-weight:600;color:var(--ink);white-space:nowrap}
+td.path{font-family:'Courier New',Consolas,monospace;font-size:.78rem;color:var(--muted);word-break:break-all}
+td.path span{background:var(--paper2);padding:.1rem .3rem;border-radius:.2rem;font-size:.75rem}
+td.status{white-space:nowrap}
+.badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.15rem .5rem;border-radius:.2rem}
+.badge-done{background:var(--green-bg);color:var(--green)}
+.badge-todo{background:oklch(95% 0.05 75);color:oklch(55% 0.10 75)}
+.copy-btn{background:none;border:1px solid var(--border);color:var(--muted);font-size:.7rem;padding:.15rem .5rem;border-radius:.2rem;cursor:pointer;font-family:inherit;transition:border-color .15s,color .15s}
+.copy-btn:hover{border-color:var(--gold);color:var(--ink)}
+.copy-btn.copied{border-color:var(--green);color:var(--green)}
+.root-box{background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:.35rem;padding:.9rem 1.2rem;margin-top:1.5rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.root-box p{font-size:.8rem;color:var(--muted)}<br>.root-box code{font-family:'Courier New',Consolas,monospace;font-size:.82rem;color:var(--ink);font-weight:600}
+.note{background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:.35rem;padding:1rem 1.2rem;margin-top:1.5rem;font-size:.84rem;color:var(--muted);line-height:1.8}
+.note strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="head"><div class="wrap">
+  <p class="eyebrow">Freccia Construction · Internal Reference</p>
+  <h1>File <strong>locations.</strong></h1>
+  <p class="sub">Every page on the new site with its full file path. Click Copy to grab any path for Explorer or sharing.</p>
+</div></div>
+
+<div class="wrap">
+
+  <div class="root-box">
+    <div>
+      <p>Root folder (all files live here)</p>
+      <code>C:\BBC\freccia-website\</code>
+    </div>
+    <button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\')">Copy</button>
+  </div>
+
+  <div class="sec">
+    <h2>Core Pages <span class="cnt">8</span></h2>
+    <table>
+      <thead><tr><th>Page</th><th>Full Path</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Homepage</td><td class="path"><span>C:\BBC\freccia-website\index.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\index.html')">Copy</button></td></tr>
+        <tr><td class="name">BUILD — Commercial</td><td class="path"><span>C:\BBC\freccia-website\build.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\build.html')">Copy</button></td></tr>
+        <tr><td class="name">Projects Hub</td><td class="path"><span>C:\BBC\freccia-website\projects.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\projects.html')">Copy</button></td></tr>
+        <tr><td class="name">Residential Projects</td><td class="path"><span>C:\BBC\freccia-website\residential.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\residential.html')">Copy</button></td></tr>
+        <tr><td class="name">Financing</td><td class="path"><span>C:\BBC\freccia-website\financing.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\financing.html')">Copy</button></td></tr>
+        <tr><td class="name">About Us</td><td class="path"><span>C:\BBC\freccia-website\about.html</span></td><td class="status"><span class="badge badge-todo">To Build</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\about.html')">Copy</button></td></tr>
+        <tr><td class="name">Partners</td><td class="path"><span>C:\BBC\freccia-website\partners.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\partners.html')">Copy</button></td></tr>
+        <tr><td class="name">Contact / Start a Project</td><td class="path"><span>C:\BBC\freccia-website\contact.html</span></td><td class="status"><span class="badge badge-todo">To Review</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\contact.html')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Resources <span class="cnt">1</span></h2>
+    <table>
+      <thead><tr><th>Page</th><th>Full Path</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Resources Hub (FAQ + Case Studies)</td><td class="path"><span>C:\BBC\freccia-website\resources\index.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\resources\\index.html')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Commercial Project Pages <span class="cnt">3</span></h2>
+    <table>
+      <thead><tr><th>Page</th><th>Full Path</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Rebelz Gym</td><td class="path"><span>C:\BBC\freccia-website\projects\rebelz-gym.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\projects\\rebelz-gym.html')">Copy</button></td></tr>
+        <tr><td class="name">Building Kidz Daycare</td><td class="path"><span>C:\BBC\freccia-website\projects\building-kidz-daycare.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\projects\\building-kidz-daycare.html')">Copy</button></td></tr>
+        <tr><td class="name">James Avery Plaza</td><td class="path"><span>C:\BBC\freccia-website\projects\james-avery-plaza.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\projects\\james-avery-plaza.html')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Team Pages — Leadership <span class="cnt">4</span></h2>
+    <table>
+      <thead><tr><th>Name</th><th>Full Path</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Waldemar Severi</td><td class="path"><span>C:\BBC\freccia-website\team\waldemar-severi.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\waldemar-severi.html')">Copy</button></td></tr>
+        <tr><td class="name">Rebekah Severi</td><td class="path"><span>C:\BBC\freccia-website\team\rebekah-severi.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\rebekah-severi.html')">Copy</button></td></tr>
+        <tr><td class="name">Josh Clements</td><td class="path"><span>C:\BBC\freccia-website\team\josh-clements.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\josh-clements.html')">Copy</button></td></tr>
+        <tr><td class="name">Daniel Quezada</td><td class="path"><span>C:\BBC\freccia-website\team\daniel-quezada.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\daniel-quezada.html')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Team Pages — Full Team <span class="cnt">6</span></h2>
+    <table>
+      <thead><tr><th>Name</th><th>Full Path</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Jacqueline Clements</td><td class="path"><span>C:\BBC\freccia-website\team\jacqueline-clements.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\jacqueline-clements.html')">Copy</button></td></tr>
+        <tr><td class="name">Rebecca Rivera</td><td class="path"><span>C:\BBC\freccia-website\team\rebecca-rivera.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\rebecca-rivera.html')">Copy</button></td></tr>
+        <tr><td class="name">Maryiedth Malott</td><td class="path"><span>C:\BBC\freccia-website\team\maryiedth-malott.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\maryiedth-malott.html')">Copy</button></td></tr>
+        <tr><td class="name">Ronald Kyambadde</td><td class="path"><span>C:\BBC\freccia-website\team\ronald-kyambadde.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\ronald-kyambadde.html')">Copy</button></td></tr>
+        <tr><td class="name">Edson Rodriguez</td><td class="path"><span>C:\BBC\freccia-website\team\edson-rodriguez.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\edson-rodriguez.html')">Copy</button></td></tr>
+        <tr><td class="name">Victor Ramirez</td><td class="path"><span>C:\BBC\freccia-website\team\victor-ramirez.html</span></td><td class="status"><span class="badge badge-done">Done</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\team\\victor-ramirez.html')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Internal Reference Files <span class="cnt">3</span></h2>
+    <table>
+      <thead><tr><th>File</th><th>Full Path</th><th>Purpose</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">Preview Index</td><td class="path"><span>C:\BBC\freccia-website\_PREVIEW.html</span></td><td class="status"><span class="badge badge-done">This file's pair</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\_PREVIEW.html')">Copy</button></td></tr>
+        <tr><td class="name">File Locations (this sheet)</td><td class="path"><span>C:\BBC\freccia-website\_FILE_LOCATIONS.html</span></td><td class="status"><span class="badge badge-done">Reference</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\_FILE_LOCATIONS.html')">Copy</button></td></tr>
+        <tr><td class="name">Design Tokens CSS</td><td class="path"><span>C:\BBC\freccia-website\assets\css\tokens.css</span></td><td class="status"><span class="badge badge-done">Design system</span></td><td><button class="copy-btn" onclick="cp(this,'C:\\BBC\\freccia-website\\assets\\css\\tokens.css')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <h2>Google Drive Mirror <span class="cnt">1</span></h2>
+    <table>
+      <thead><tr><th>Location</th><th>Path</th><th></th></tr></thead>
+      <tbody>
+        <tr><td class="name">BBC Drive (G:)</td><td class="path"><span>G:\Shared drives\BBC Drive\02_ACTIVE_CLIENTS\FRECCIA-CONSTRUCTION\</span></td><td><button class="copy-btn" onclick="cp(this,'G:\\Shared drives\\BBC Drive\\02_ACTIVE_CLIENTS\\FRECCIA-CONSTRUCTION\\')">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Still to build:</strong> about.html · contact.html (review) · location SEO pages (Austin TX, Round Rock TX, Cedar Park TX)<br>
+    <strong>Photos needed from Rebekah:</strong> All project photos + 10 team headshots — H: Drive subfolders currently empty.<br>
+    <strong>Deployment:</strong> Ryan pushes from <code style="font-size:.82rem;background:var(--paper2);padding:.1rem .3rem;border-radius:.2rem">C:\BBC\freccia-website</code> to GitHub → Netlify auto-deploys. Rebekah approves before any push.
+  </div>
+
+</div>
+<script>
+function cp(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

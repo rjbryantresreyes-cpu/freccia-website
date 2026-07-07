@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Contractor & Custom Home Builder Austin TX | Freccia Construction</title>
+  <meta name="description" content="Freccia Construction — commercial general contractor and custom home builder serving Austin Metro since 2016. Tenant improvements, custom homes, Round Rock TX.">
+  <meta name="keywords" content="commercial general contractor Austin TX, custom home builder Austin TX, tenant improvement contractor Austin TX, office build-out Austin TX, design-build contractor Round Rock TX, commercial construction Austin Metro, custom homes Cedar Park Georgetown Leander TX">
+  <link rel="canonical" href="https://frecciaconstruction.com/">
+  <meta property="og:title" content="Freccia Construction | Commercial Contractor & Custom Home Builder Austin TX">
+  <meta property="og:description" content="Commercial construction and custom homes across Austin Metro since 2016. Design-forward, craftsmanship-led, delivered right.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Freccia Construction",
+    "url": "https://frecciaconstruction.com",
+    "telephone": "+15126595550",
+    "email": "sales@frecciagroup.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1700 Bryant Dr. #101",
+      "addressLocality": "Round Rock",
+      "addressRegion": "TX",
+      "postalCode": "78664",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Austin, TX", "Round Rock, TX", "Cedar Park, TX", "Georgetown, TX", "Leander, TX"],
+    "foundingDate": "2016",
+    "description": "Commercial general contractor and custom home builder serving Austin Metro since 2016."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: clip; scroll-behavior: smooth; }
+    body { overflow-x: clip; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-ink); background: var(--color-paper); line-height: 1.6; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: 0 2px 20px oklch(0% 0 0 / 0.3); }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--color-gold); }
+    .nav-build { color: var(--color-gold) !important; opacity: 1 !important; font-weight: 600 !important; }
+    .nav-cta { background: var(--color-gold); color: var(--color-navy) !important; opacity: 1 !important; padding: var(--space-2) var(--space-5) !important; font-weight: 600 !important; transition: background 0.2s !important; white-space: nowrap; }
+    .nav-cta:hover { background: var(--color-gold-light) !important; }
+    .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: var(--space-2); }
+    .nav-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-ink-on-dark); margin: 4px 0; transition: 0.3s; }
+
+    /* HERO */
+    .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; animation: heroZoom 12s ease-out forwards; }
+    @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, oklch(10% 0.04 252 / 0.9) 0%, oklch(10% 0.04 252 / 0.35) 55%, transparent 100%); }
+    .hero-content { position: relative; z-index: 1; padding: 0 var(--space-10) var(--space-16) var(--space-10); max-width: 820px; }
+    .eyebrow { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--color-gold); }
+    .eyebrow span { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 500; }
+    .hero h1 { font-family: var(--font-display); font-size: var(--text-display); font-weight: 800; line-height: 1.05; color: var(--color-ink-on-dark); margin-bottom: var(--space-2); }
+    .hero h1 em { font-style: italic; color: var(--color-gold); display: block; }
+    .hero-sub { font-size: var(--text-lg); color: oklch(88% 0.01 80); max-width: 540px; margin-bottom: var(--space-8); line-height: 1.7; }
+    .hero-ctas { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .btn-gold { display: inline-flex; align-items: center; background: var(--color-gold); color: var(--color-navy); padding: var(--space-4) var(--space-8); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-gold:hover { background: var(--color-gold-light); transform: translateY(-1px); }
+    .btn-ghost { display: inline-flex; align-items: center; border: 1px solid oklch(90% 0 0 / 0.4); color: var(--color-ink-on-dark); padding: var(--space-4) var(--space-8); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    .btn-ghost:hover { border-color: var(--color-gold); color: var(--color-gold); }
+    .scroll-hint { position: absolute; bottom: var(--space-8); right: var(--space-8); display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+    .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: oklch(70% 0 0 / 0.7); }
+    .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, oklch(70% 0 0 / 0.6), transparent); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--color-navy-deep); padding: var(--space-6) var(--space-8); display: flex; align-items: center; justify-content: center; gap: clamp(var(--space-6), 4vw, var(--space-12)); flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: var(--space-3); }
+    .trust-num { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; color: var(--color-gold); line-height: 1; }
+    .trust-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted); line-height: 1.35; }
+    .trust-div { width: 1px; height: 32px; background: oklch(100% 0 0 / 0.1); }
+
+    /* SECTIONS */
+    .section { padding: var(--space-20) var(--space-8); }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .sec-eyebrow { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+    .sec-eyebrow::before { content: ''; display: block; width: 22px; height: 1px; background: var(--color-gold); }
+    .sec-eyebrow span { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 500; }
+    .sec-title { font-family: var(--font-display); font-size: var(--text-h1); font-weight: 800; line-height: 1.1; margin-bottom: var(--space-4); }
+    .sec-title em { font-style: italic; color: var(--color-gold); }
+    .sec-title-light { color: var(--color-ink-on-dark); }
+    .sec-lead { font-size: var(--text-lg); line-height: 1.7; color: var(--color-ink-2); max-width: 580px; }
+    .sec-lead-light { color: oklch(76% 0.01 80); }
+    .sec-header { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); margin-bottom: var(--space-10); flex-wrap: wrap; }
+
+    /* COMMERCIAL PROJECTS GRID */
+    .comm-section { padding: var(--space-20) var(--space-8); background: var(--color-paper); }
+    .comm-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: var(--space-5); }
+    .proj-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; background: var(--color-navy); }
+    .proj-card.hero-card { grid-column: 1 / 3; aspect-ratio: 16/9; }
+    .proj-card.std-card { aspect-ratio: 4/5; }
+    .proj-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
+    .proj-card:hover .proj-card-img { transform: scale(1.04); }
+    .proj-card-grad { position: absolute; inset: 0; background: linear-gradient(to top, oklch(10% 0.04 252 / 0.94) 0%, oklch(10% 0.04 252 / 0.3) 55%, transparent 100%); }
+    .proj-card-body { position: relative; z-index: 1; padding: var(--space-6); }
+    .proj-type { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 500; margin-bottom: var(--space-2); }
+    .proj-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 700; color: var(--color-white); line-height: 1.2; margin-bottom: var(--space-1); }
+    .proj-loc { font-size: var(--text-sm); color: var(--color-ink-muted); margin-bottom: var(--space-4); }
+    .proj-link { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); transition: gap 0.2s; }
+    .proj-link:hover { gap: var(--space-3); }
+    .proj-link::after { content: '→'; }
+
+    /* COMMERCIAL BAND */
+    .comm-band { background: var(--color-navy); padding: var(--space-10) var(--space-8); }
+    .comm-band-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); flex-wrap: wrap; }
+    .comm-band h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: 700; color: var(--color-white); line-height: 1.2; max-width: 500px; }
+    .comm-band h2 em { font-style: italic; color: var(--color-gold); }
+
+    /* SERVICES */
+    .services-section { padding: var(--space-20) var(--space-8); background: oklch(96% 0.005 80); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--color-border); margin-top: var(--space-10); }
+    .svc { background: var(--color-paper); padding: var(--space-8); border-top: 2px solid transparent; transition: border-color 0.2s; }
+    .svc:hover { border-color: var(--color-gold); }
+    .svc-bar { width: 28px; height: 2px; background: var(--color-gold); margin-bottom: var(--space-4); }
+    .svc h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-3); }
+    .svc p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; }
+
+    /* RESIDENTIAL HIGHLIGHTS */
+    .res-section { padding: var(--space-20) var(--space-8); background: var(--color-navy-deep); }
+    .res-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-10); }
+    .res-card { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+    .res-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .res-card:hover .res-card-img { transform: scale(1.04); }
+    .res-card-grad { position: absolute; inset: 0; background: linear-gradient(to top, oklch(8% 0.04 252 / 0.9) 0%, transparent 55%); }
+    .res-card-body { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-5); }
+    .res-name { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--color-white); margin-bottom: var(--space-1); }
+    .res-detail { font-size: var(--text-xs); color: var(--color-gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .res-footer { margin-top: var(--space-8); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); }
+    .res-footer p { color: oklch(60% 0.01 80); font-size: var(--text-sm); }
+
+    /* PROCESS */
+    .process-section { padding: var(--space-20) var(--space-8); background: var(--color-paper); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); margin-top: var(--space-12); }
+    .proc-step { border-top: 1px solid var(--color-gold); padding-top: var(--space-6); }
+    .proc-num { font-family: var(--font-display); font-size: 2.75rem; font-weight: 800; line-height: 1; margin-bottom: var(--space-4); color: transparent; -webkit-text-stroke: 1px var(--color-gold); opacity: 0.5; }
+    .proc-step h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-3); }
+    .proc-step p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; }
+
+    /* ABOUT STRIP */
+    .about-section { background: var(--color-navy-mid); padding: var(--space-20) var(--space-8); }
+    .about-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
+    .about-img { overflow: hidden; aspect-ratio: 4/3; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text blockquote { font-family: var(--font-display); font-size: clamp(1.125rem, 2vw, 1.5rem); font-style: italic; color: var(--color-ink-on-dark); line-height: 1.55; margin-bottom: var(--space-5); padding-left: var(--space-5); border-left: 2px solid var(--color-gold); }
+    .about-text cite { font-size: var(--text-sm); color: var(--color-gold); font-style: normal; letter-spacing: 0.05em; }
+    .about-text .about-btns { margin-top: var(--space-8); display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .btn-ghost-light { display: inline-flex; align-items: center; border: 1px solid oklch(80% 0 0 / 0.35); color: var(--color-ink-on-dark); padding: var(--space-4) var(--space-8); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    .btn-ghost-light:hover { border-color: var(--color-gold); color: var(--color-gold); }
+
+    /* CERTS */
+    .certs-bar { background: var(--color-navy-deep); padding: var(--space-8) var(--space-8); }
+    .certs-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: var(--space-10); flex-wrap: wrap; }
+    .certs-label { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: oklch(50% 0 0); white-space: nowrap; }
+    .certs-list { display: flex; gap: var(--space-8); flex-wrap: wrap; align-items: center; }
+    .cert { font-size: var(--text-xs); font-weight: 600; color: oklch(55% 0 0); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* FINAL CTA */
+    .cta-section { background: var(--color-gold); padding: var(--space-20) var(--space-8); text-align: center; }
+    .cta-section h2 { font-family: var(--font-display); font-size: var(--text-h1); font-weight: 800; color: var(--color-navy); line-height: 1.1; margin-bottom: var(--space-4); }
+    .cta-section h2 em { font-style: italic; }
+    .cta-section p { font-size: var(--text-lg); color: var(--color-navy); opacity: 0.75; max-width: 460px; margin: 0 auto var(--space-8); line-height: 1.65; }
+    .btn-navy { display: inline-flex; align-items: center; background: var(--color-navy); color: var(--color-white); padding: var(--space-4) var(--space-10); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-navy:hover { background: var(--color-navy-deep); }
+
+    /* FOOTER */
+    .footer { background: var(--color-navy-deep); color: var(--color-ink-muted); padding: var(--space-16) var(--space-8) var(--space-8); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-10); padding-bottom: var(--space-10); border-bottom: 1px solid oklch(100% 0 0 / 0.07); margin-bottom: var(--space-8); }
+    .footer-brand img { height: 30px; margin-bottom: var(--space-4); }
+    .footer-brand p { font-size: var(--text-sm); line-height: 1.7; max-width: 270px; }
+    .footer-addr { font-size: var(--text-sm); line-height: 1.8; margin-top: var(--space-4); font-style: normal; }
+    .footer-addr a { color: var(--color-gold); }
+    .footer-col h4 { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 600; margin-bottom: var(--space-4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+    .footer-col ul a { font-size: var(--text-sm); color: var(--color-ink-muted); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--color-ink-on-dark); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+    .footer-bottom p { font-size: var(--text-xs); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .comm-grid { grid-template-columns: 1fr 1fr; }
+      .proj-card.hero-card { grid-column: 1 / 3; aspect-ratio: 16/9; }
+      .res-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: var(--space-4); }
+      .nav-links { display: none; position: fixed; inset: 0; background: var(--color-navy-deep); flex-direction: column; align-items: center; justify-content: center; gap: var(--space-8); z-index: 200; }
+      .nav-links.open { display: flex; }
+      .nav-links li:last-child .nav-cta { padding: var(--space-3) var(--space-8) !important; }
+      .nav-cta { display: none; }
+      .nav-menu-btn { display: block; z-index: 300; }
+      .hero-content { padding: 0 var(--space-5) var(--space-12) var(--space-5); }
+      .section, .comm-section, .services-section, .res-section, .process-section, .about-section { padding: var(--space-12) var(--space-5); }
+      .comm-grid { grid-template-columns: 1fr; }
+      .proj-card.hero-card { grid-column: 1; aspect-ratio: 4/3; }
+      .proj-card.std-card { aspect-ratio: 4/3; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .scroll-hint { display: none; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .res-grid { grid-template-columns: 1fr; }
+      .trust-div { display: none; }
+      .comm-band-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Freccia Construction — home">
+    <img src="assets/images/logo-horizontal.png" alt="Freccia Construction">
+  </a>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="build.html" class="nav-build">Build</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="financing.html">Financing</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="resources/index.html">Resources</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
+  </ul>
+  <a href="contact.html" class="btn-gold nav-cta-desk" aria-label="Start a project" style="font-size:var(--text-xs);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;padding:var(--space-2) var(--space-5);">Start a Project</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-label="Freccia Construction — Austin Metro commercial contractor and custom home builder">
+  <img class="hero-img" src="assets/images/Priority (2).JPG"
+       alt="Custom home built by Freccia Construction in Austin Metro TX — exterior aerial view"
+       loading="eager" fetchpriority="high">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span>Central Texas · Since 2016</span></div>
+    <h1>Built with intention.<em>Finished to last.</em></h1>
+    <p class="hero-sub">Commercial construction and custom homes across Austin Metro. Design-forward, craftsmanship-led, delivered right.</p>
+    <div class="hero-ctas">
+      <a href="build.html" class="btn-gold">Our Commercial Work</a>
+      <a href="projects.html" class="btn-ghost">View All Projects</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar" role="region" aria-label="Company highlights">
+  <div class="trust-item"><span class="trust-num">2016</span><span class="trust-label">Founded in<br>Austin Metro</span></div>
+  <div class="trust-div" aria-hidden="true"></div>
+  <div class="trust-item"><span class="trust-num">$200K+</span><span class="trust-label">Minimum<br>Project Size</span></div>
+  <div class="trust-div" aria-hidden="true"></div>
+  <div class="trust-item"><span class="trust-num">2</span><span class="trust-label">Entities: Residential<br>+ Commercial LLC</span></div>
+  <div class="trust-div" aria-hidden="true"></div>
+  <div class="trust-item"><span class="trust-num">1</span><span class="trust-label">Point of Contact<br>on Every Project</span></div>
+</div>
+
+<!-- ═══ COMMERCIAL PROJECTS ═══ -->
+<section class="comm-section" id="commercial" aria-labelledby="comm-h2">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow reveal"><span>Commercial Construction · Austin Metro</span></div>
+        <h2 class="sec-title reveal" id="comm-h2">Spaces that work.<br><em>Built to impress.</em></h2>
+        <p class="sec-lead reveal">From fitness facilities to retail plazas, Freccia builds commercial spaces across Austin, Round Rock, and Central Texas — designed with purpose, built to last. Tenant improvements, new commercial construction, design-build delivery.</p>
+      </div>
+      <a href="build.html" class="btn-gold reveal" style="white-space:nowrap;align-self:flex-end">See All Commercial Work</a>
+    </div>
+
+    <div class="comm-grid reveal">
+      <article class="proj-card hero-card">
+        <img class="proj-card-img" src="assets/images/commercial/2F6B4814.JPG"
+             alt="Rebelz Gym — commercial fitness facility construction by Freccia Construction, Austin TX" loading="lazy">
+        <div class="proj-card-grad" aria-hidden="true"></div>
+        <div class="proj-card-body">
+          <p class="proj-type">Fitness Facility · Commercial New Build</p>
+          <h3 class="proj-name">Rebelz Gym</h3>
+          <p class="proj-loc">Austin Metro, TX</p>
+          <a href="projects/rebelz-gym.html" class="proj-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="proj-card std-card">
+        <img class="proj-card-img" src="assets/images/commercial/2F6B4819.JPG"
+             alt="Building Kidz Daycare — daycare construction by Freccia Construction, Palmera Ridge Round Rock TX" loading="lazy">
+        <div class="proj-card-grad" aria-hidden="true"></div>
+        <div class="proj-card-body">
+          <p class="proj-type">Childcare Facility · New Build</p>
+          <h3 class="proj-name">Building Kidz Daycare</h3>
+          <p class="proj-loc">Palmera Ridge · Round Rock, TX</p>
+          <a href="projects/building-kidz-daycare.html" class="proj-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="proj-card std-card">
+        <img class="proj-card-img" src="assets/images/commercial/2F6B4824.JPG"
+             alt="James Avery Plaza — retail tenant improvement by Freccia Construction, Austin TX" loading="lazy">
+        <div class="proj-card-grad" aria-hidden="true"></div>
+        <div class="proj-card-body">
+          <p class="proj-type">Retail Plaza · Tenant Improvement</p>
+          <h3 class="proj-name">James Avery Plaza</h3>
+          <p class="proj-loc">Austin Metro, TX</p>
+          <a href="projects/james-avery-plaza.html" class="proj-link">View Project</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMM BAND ═══ -->
+<div class="comm-band">
+  <div class="comm-band-inner">
+    <h2>Austin's commercial builder for <em>the projects that matter.</em></h2>
+    <a href="build.html" class="btn-gold">Explore Commercial Work</a>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services-section" aria-labelledby="svc-h2">
+  <div class="container">
+    <div class="sec-eyebrow reveal"><span>Commercial Services · Central Texas</span></div>
+    <h2 class="sec-title reveal" id="svc-h2">Every commercial scope.<br><em>One trusted team.</em></h2>
+    <div class="services-grid reveal">
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>Tenant Improvements</h3><p>We transform existing commercial spaces for new tenants across Austin Metro. Office conversions, retail refreshes, medical suite build-outs — on schedule, on budget, designed to impress.</p></div>
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>New Commercial Builds</h3><p>Ground-up commercial construction in Round Rock, Austin, Cedar Park, and beyond. Fitness facilities, childcare centers, retail plazas — built to code, built to last.</p></div>
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>Design-Build Delivery</h3><p>One team from concept to certificate of occupancy. Our design-build approach eliminates coordination gaps, reduces risk, and keeps your project on time and on budget.</p></div>
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>Office Build-Outs</h3><p>Custom office construction tailored to how your team works. Open floor plans to executive suites — Freccia builds workspaces that work for your business, Austin-wide.</p></div>
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>Commercial Remodels</h3><p>Refresh and reposition your commercial property in Central Texas. We manage the full scope while you keep your business running — minimal downtime, maximum impact.</p></div>
+      <div class="svc"><div class="svc-bar" aria-hidden="true"></div><h3>Property Owner Services</h3><p>We work with commercial property owners and landlords on capital improvements, suite build-outs, and portfolio-wide upgrades across Austin Metro and Central Texas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESIDENTIAL HIGHLIGHTS ═══ -->
+<section class="res-section" id="residential" aria-labelledby="res-h2">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow reveal"><span>Residential · Featured Projects</span></div>
+        <h2 class="sec-title sec-title-light reveal" id="res-h2">Homes we've built.<br><em>Stories we've earned.</em></h2>
+        <p class="sec-lead sec-lead-light reveal">Custom new builds and luxury remodels across Austin Metro. Every project starts with listening — and ends with a home that reflects exactly who you are.</p>
+      </div>
+      <a href="residential.html" class="btn-ghost reveal" style="align-self:flex-end;border-color:var(--color-gold);color:var(--color-gold)">All Residential Projects</a>
+    </div>
+
+    <div class="res-grid reveal">
+      <article class="res-card">
+        <img class="res-card-img" src="assets/images/Priority (2).JPG"
+             alt="Castle Ridge whole house remodel — custom home renovation by Freccia Construction, Lost Creek Austin TX" loading="lazy">
+        <div class="res-card-grad" aria-hidden="true"></div>
+        <div class="res-card-body">
+          <p class="res-name">Castle Ridge</p>
+          <p class="res-detail">Whole House Remodel · Lost Creek</p>
+        </div>
+      </article>
+      <article class="res-card">
+        <img class="res-card-img" src="assets/images/Priority.jpeg"
+             alt="Mandeville custom new build — luxury home by Freccia Construction, Austin Metro TX" loading="lazy">
+        <div class="res-card-grad" aria-hidden="true"></div>
+        <div class="res-card-body">
+          <p class="res-name">Mandeville</p>
+          <p class="res-detail">Custom New Build · Austin Metro</p>
+        </div>
+      </article>
+      <article class="res-card">
+        <img class="res-card-img" src="assets/images/Priority (1).JPG"
+             alt="Lerwick luxury bathroom remodel by Freccia Construction, Austin TX" loading="lazy">
+        <div class="res-card-grad" aria-hidden="true"></div>
+        <div class="res-card-body">
+          <p class="res-name">Lerwick</p>
+          <p class="res-detail">Luxury Remodel · Austin</p>
+        </div>
+      </article>
+      <article class="res-card">
+        <img class="res-card-img" src="assets/images/Priority (3).JPG"
+             alt="Remington ADU addition — accessory dwelling unit by Freccia Construction, Crestview Austin TX" loading="lazy">
+        <div class="res-card-grad" aria-hidden="true"></div>
+        <div class="res-card-body">
+          <p class="res-name">Remington</p>
+          <p class="res-detail">ADU Addition · Crestview, Austin</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="res-footer">
+      <p>30+ completed residential projects across Austin Metro since 2016.</p>
+      <a href="residential.html" class="btn-ghost" style="border-color:var(--color-gold);color:var(--color-gold)">Browse All Residential Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="process-section" aria-labelledby="proc-h2">
+  <div class="container">
+    <div class="sec-eyebrow reveal"><span>Our Process</span></div>
+    <h2 class="sec-title reveal" id="proc-h2">From first call<br><em>to final walkthrough.</em></h2>
+    <div class="process-grid reveal">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We start with a conversation — no pitch, no pressure. Just clarity on your vision, timeline, and budget, and whether we're the right fit for your project in Austin Metro.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h3>Scope & Design</h3>
+        <p>We build a complete scope with your design team or ours. Every detail is documented before a nail is driven — no surprises mid-build, no budget ambiguity.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h3>Build Phase</h3>
+        <p>One point of contact. Weekly updates. A dedicated superintendent on-site every day. You stay fully informed without managing the details yourself.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h3>Final Walkthrough</h3>
+        <p>We don't call a project done until you're satisfied. Our punch list process and final walkthrough ensure every detail meets the standard we promised from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT STRIP ═══ -->
+<section class="about-section" aria-labelledby="about-h2">
+  <div class="about-inner">
+    <div class="about-img reveal">
+      <img src="assets/images/Priority (2).JPG"
+           alt="Freccia Construction team — family-led builder in Round Rock TX serving Austin Metro" loading="lazy">
+    </div>
+    <div class="about-text reveal">
+      <div class="sec-eyebrow"><span>About Freccia Construction</span></div>
+      <h2 class="sec-title sec-title-light" id="about-h2" style="font-size:clamp(1.75rem,3.5vw,2.5rem);margin-bottom:var(--space-6)">A family-led builder.<br><em>Built on craft.</em></h2>
+      <blockquote>"We exist to do more for our community — to build spaces that elevate lives and bring people together, with intention, craftsmanship, and unwavering care."</blockquote>
+      <cite>— Rebekah Severi, Owner & Managing Partner, Freccia Construction</cite>
+      <div class="about-btns">
+        <a href="about.html" class="btn-gold">Meet the Team</a>
+        <a href="contact.html" class="btn-ghost-light">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTS ═══ -->
+<div class="certs-bar" role="complementary" aria-label="Industry memberships">
+  <div class="certs-inner">
+    <span class="certs-label">Member of</span>
+    <div class="certs-list">
+      <span class="cert">HBA Greater Austin</span>
+      <span class="cert">NARI</span>
+      <span class="cert">BBB Accredited</span>
+      <span class="cert">NAHB</span>
+      <span class="cert">Austin Infill Coalition</span>
+      <span class="cert">AGC</span>
+      <span class="cert">HUB Certified</span>
+      <span class="cert">TIBD</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="cta-section" aria-labelledby="cta-h2">
+  <h2 id="cta-h2">Ready to build<em> something real?</em></h2>
+  <p>Tell us about your project. We'll tell you if we're the right fit — and if we are, we'll make it happen right.</p>
+  <a href="contact.html" class="btn-navy">Start a Project</a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-horizontal.png" alt="Freccia Construction — commercial contractor and custom home builder Austin TX">
+        <p>Commercial general contractor and custom home builder serving Austin Metro since 2016. Family-led, craftsmanship-driven. Based in Round Rock, TX.</p>
+        <address class="footer-addr">
+          1700 Bryant Dr. #101 · Round Rock, TX 78664<br>
+          <a href="tel:5126595550">512.659.5550</a> ·
+          <a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Commercial</h4>
+        <ul>
+          <li><a href="build.html">Commercial Construction</a></li>
+          <li><a href="projects/rebelz-gym.html">Rebelz Gym</a></li>
+          <li><a href="projects/building-kidz-daycare.html">Building Kidz Daycare</a></li>
+          <li><a href="projects/james-avery-plaza.html">James Avery Plaza</a></li>
+          <li><a href="financing.html">Financing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Residential</h4>
+        <ul>
+          <li><a href="residential.html">All Projects</a></li>
+          <li><a href="residential.html#kitchen">Kitchen Renovations</a></li>
+          <li><a href="residential.html#bathroom">Bathroom Renovations</a></li>
+          <li><a href="residential.html#outdoor">Outdoor Living</a></li>
+          <li><a href="residential.html#additions">Home Additions</a></li>
+          <li><a href="residential.html#new-builds">Custom New Builds</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#team">Meet the Team</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="resources/index.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Freccia Construction · Round Rock, TX · Serving Austin Metro · All rights reserved.</p>
+      <p><a href="tel:5126595550" style="color:var(--color-gold)">512.659.5550</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+
+  // Mobile menu
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

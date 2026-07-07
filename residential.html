@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Home Builder & Residential Contractor Austin TX | Freccia Construction</title>
+  <meta name="description" content="Freccia Construction — custom home remodels, kitchen renovations, bathroom upgrades, outdoor living, and home additions across Austin, Round Rock, Cedar Park TX. Projects $200K+.">
+  <meta name="keywords" content="custom home builder Austin TX, kitchen renovation Austin TX, bathroom remodel Austin TX, outdoor living contractor Austin TX, home addition Austin TX, custom home remodel Round Rock TX">
+  <link rel="canonical" href="https://frecciaconstruction.com/residential">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Freccia Construction","url":"https://frecciaconstruction.com","telephone":"+15126595550","email":"sales@frecciagroup.com","address":{"@type":"PostalAddress","streetAddress":"1700 Bryant Dr. #101","addressLocality":"Round Rock","addressRegion":"TX","postalCode":"78664","addressCountry":"US"},"areaServed":["Austin, TX","Round Rock, TX","Cedar Park, TX","Georgetown, TX","Leander, TX"],"serviceType":["Kitchen Renovations","Bathroom Renovations","Home Additions","Outdoor Living","Custom Homes"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{overflow-x:clip;scroll-behavior:smooth}
+    body{overflow-x:clip;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-ink);background:var(--color-paper);line-height:1.6}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy);transition:box-shadow .3s}
+    .nav.scrolled{box-shadow:0 2px 20px oklch(0% 0 0/.3)}
+    .nav-logo img{height:36px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:var(--space-8);list-style:none}
+    .nav-links a{font-size:var(--text-sm);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-ink-on-dark);opacity:.8;transition:opacity .2s,color .2s}
+    .nav-links a:hover{opacity:1;color:var(--color-gold)}
+    .nav-build{color:var(--color-gold)!important;opacity:1!important;font-weight:600!important}
+    .nav-cta-btn{background:var(--color-gold);color:var(--color-navy)!important;opacity:1!important;padding:var(--space-2) var(--space-5)!important;font-weight:600!important;white-space:nowrap}
+    .nav-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:var(--space-2)}
+    .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--color-ink-on-dark);margin:4px 0}
+    .page-hero{padding-top:100px;background:var(--color-navy);padding-bottom:var(--space-16)}
+    .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 var(--space-8)}
+    .eyebrow{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)}
+    .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--color-gold)}
+    .eyebrow span{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
+    .page-hero h1{font-family:var(--font-display);font-size:var(--text-display-s);font-weight:800;line-height:1.1;color:var(--color-ink-on-dark);margin-bottom:var(--space-4)}
+    .page-hero h1 em{font-style:italic;color:var(--color-gold)}
+    .page-hero-sub{font-size:var(--text-lg);color:oklch(78% .01 80);max-width:560px;line-height:1.7}
+    .section{padding:var(--space-20) var(--space-8)}
+    .container{max-width:1200px;margin:0 auto}
+    .sec-eyebrow{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)}
+    .sec-eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--color-gold)}
+    .sec-eyebrow span{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
+    .sec-title{font-family:var(--font-display);font-size:var(--text-h1);font-weight:800;line-height:1.1;margin-bottom:var(--space-4)}
+    .sec-title em{font-style:italic;color:var(--color-gold)}
+    /* FEATURED ITEMS */
+    .feat-item{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:var(--color-navy)}
+    .feat-item+.feat-item{border-top:1px solid oklch(100% 0 0/.08)}
+    .feat-item:nth-child(even) .feat-photo{order:2}
+    .feat-photo{overflow:hidden;aspect-ratio:4/3}
+    .feat-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .feat-item:hover .feat-photo img{transform:scale(1.04)}
+    .feat-body{padding:var(--space-12) var(--space-12);display:flex;flex-direction:column;justify-content:center}
+    .feat-type{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-3)}
+    .feat-body h3{font-family:var(--font-display);font-size:var(--text-h2);font-weight:700;color:var(--color-ink-on-dark);line-height:1.2;margin-bottom:var(--space-4)}
+    .feat-body p{font-size:var(--text-sm);color:oklch(72% .01 80);line-height:1.75;margin-bottom:var(--space-5)}
+    .feat-tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-5)}
+    .feat-tag{font-size:var(--text-xs);padding:var(--space-1) var(--space-3);border:1px solid oklch(100% 0 0/.2);color:oklch(80% .01 80);letter-spacing:.06em}
+    .feat-link{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-gold);cursor:pointer;background:none;border:none;font-family:var(--font-body);transition:gap .2s;padding:0}
+    .feat-link:hover{gap:var(--space-3)}
+    .feat-link::after{content:'→'}
+    /* FILTER */
+    .filter-section{padding:var(--space-16) var(--space-8);background:oklch(96% .005 80)}
+    .filter-bar{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-10)}
+    .filter-btn{padding:var(--space-3) var(--space-5);border:1px solid var(--color-border);background:var(--color-white);font-size:var(--text-sm);font-weight:500;cursor:pointer;color:var(--color-ink-2);transition:all .2s;font-family:var(--font-body)}
+    .filter-btn:hover{border-color:var(--color-gold);color:var(--color-gold)}
+    .filter-btn.active{background:var(--color-navy);border-color:var(--color-navy);color:var(--color-white)}
+    .filter-count{font-size:.6rem;background:var(--color-gold);color:var(--color-navy);font-weight:700;padding:1px 5px;margin-left:6px;vertical-align:middle}
+    /* PROJECT GRID */
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
+    .proj-card{background:var(--color-white);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+    .proj-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px oklch(14% .02 250/.14)}
+    .proj-card.hidden{display:none}
+    .proj-card-img{overflow:hidden;aspect-ratio:4/3}
+    .proj-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .proj-card:hover .proj-card-img img{transform:scale(1.06)}
+    .proj-card-body{padding:var(--space-6);flex:1;display:flex;flex-direction:column}
+    .proj-cat{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-2)}
+    .proj-card-body h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;line-height:1.25;margin-bottom:var(--space-2)}
+    .proj-card-body p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.65;flex:1}
+    .proj-loc{font-size:var(--text-xs);color:var(--color-ink-3);margin-top:var(--space-3)}
+    /* CTA */
+    .cta-section{background:var(--color-gold);padding:var(--space-16) var(--space-8);text-align:center}
+    .cta-section h2{font-family:var(--font-display);font-size:var(--text-h1);font-weight:800;color:var(--color-navy);line-height:1.1;margin-bottom:var(--space-4)}
+    .cta-section h2 em{font-style:italic}
+    .cta-section p{font-size:var(--text-lg);color:var(--color-navy);opacity:.75;max-width:440px;margin:0 auto var(--space-8);line-height:1.65}
+    .btn-navy{display:inline-flex;align-items:center;background:var(--color-navy);color:var(--color-white);padding:var(--space-4) var(--space-10);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+    .btn-navy:hover{background:var(--color-navy-deep)}
+    .footer{background:var(--color-navy-deep);color:var(--color-ink-muted);padding:var(--space-16) var(--space-8) var(--space-8)}
+    .footer-inner{max-width:1200px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-10);padding-bottom:var(--space-10);border-bottom:1px solid oklch(100% 0 0/.07);margin-bottom:var(--space-8)}
+    .footer-brand img{height:30px;margin-bottom:var(--space-4)}
+    .footer-brand p{font-size:var(--text-sm);line-height:1.7;max-width:270px}
+    .footer-addr{font-size:var(--text-sm);line-height:1.8;margin-top:var(--space-4);font-style:normal}
+    .footer-addr a{color:var(--color-gold)}
+    .footer-col h4{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:600;margin-bottom:var(--space-4)}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2)}
+    .footer-col ul a{font-size:var(--text-sm);color:var(--color-ink-muted);transition:color .2s}
+    .footer-col ul a:hover{color:var(--color-ink-on-dark)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
+    .footer-bottom p{font-size:var(--text-xs)}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:1024px){.proj-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.nav{padding:var(--space-4)}.nav-links{display:none;position:fixed;inset:0;background:var(--color-navy-deep);flex-direction:column;align-items:center;justify-content:center;gap:var(--space-8);z-index:200}.nav-links.open{display:flex}.nav-menu-btn{display:block;z-index:300}.page-hero-inner{padding:0 var(--space-5)}.section{padding:var(--space-12) var(--space-5)}.filter-section{padding:var(--space-12) var(--space-5)}.feat-item{grid-template-columns:1fr!important}.feat-item .feat-photo{order:0!important}.feat-body{padding:var(--space-8) var(--space-5)}.proj-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo"><img src="assets/images/logo-horizontal.png" alt="Freccia Construction"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="build.html" class="nav-build">Build</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="financing.html">Financing</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="resources/index.html">Resources</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Start a Project</a></li>
+  </ul>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow"><span>Residential Construction · Austin Metro · Texas</span></div>
+    <h1>Custom homes.<br><em>Finished to last.</em></h1>
+    <p class="page-hero-sub">Kitchen renovations, bathroom remodels, outdoor living, and home additions across Austin, Round Rock, Cedar Park, and Georgetown TX. Every project starts at $200K.</p>
+  </div>
+</header>
+
+<!-- FEATURED 4 HIGHLIGHTS -->
+<section style="background:var(--color-navy)" aria-labelledby="feat-h2">
+  <div class="container" style="padding:var(--space-16) var(--space-8) var(--space-8)">
+    <div class="sec-eyebrow reveal"><span>Featured Projects</span></div>
+    <h2 class="sec-title reveal" id="feat-h2" style="color:var(--color-ink-on-dark)">Our four<br><em>best residential builds.</em></h2>
+  </div>
+  <div class="feat-item reveal">
+    <div class="feat-photo"><img src="assets/images/residential/DSC02701.JPG" alt="Castle Ridge kitchen renovation Austin TX" loading="lazy"></div>
+    <div class="feat-body">
+      <p class="feat-type">Kitchen Renovation · Austin, TX</p>
+      <h3>Castle Ridge</h3>
+      <p>A full kitchen gut and rebuild — custom cabinetry, quartz countertops, commercial-grade appliances, and a new island layout that opened up the entire first floor. One of our most photographed kitchens in the Austin Metro area.</p>
+      <div class="feat-tags"><span class="feat-tag">Custom Cabinetry</span><span class="feat-tag">Quartz Countertops</span><span class="feat-tag">Austin, TX</span></div>
+      <button class="feat-link" onclick="filterProjects('kitchen')">See All Kitchen Projects</button>
+    </div>
+  </div>
+  <div class="feat-item reveal">
+    <div class="feat-photo"><img src="assets/images/residential/DSC02720.JPG" alt="Mandeville home addition Cedar Park TX" loading="lazy"></div>
+    <div class="feat-body">
+      <p class="feat-type">Home Addition · Cedar Park, TX</p>
+      <h3>Mandeville</h3>
+      <p>An 800 sq ft primary suite addition with vaulted ceiling, spa bath, walk-in closet, and a private covered patio — seamlessly tied to the existing footprint. Zero visible seams between old and new construction.</p>
+      <div class="feat-tags"><span class="feat-tag">Primary Suite</span><span class="feat-tag">Outdoor Living</span><span class="feat-tag">Cedar Park, TX</span></div>
+      <button class="feat-link" onclick="filterProjects('additions')">See All Home Additions</button>
+    </div>
+  </div>
+  <div class="feat-item reveal">
+    <div class="feat-photo"><img src="assets/images/residential/DSC02740.JPG" alt="Lerwick outdoor living pool Round Rock TX" loading="lazy"></div>
+    <div class="feat-body">
+      <p class="feat-type">Outdoor Living &amp; Pool · Round Rock, TX</p>
+      <h3>Lerwick</h3>
+      <p>Pool, spa, covered patio, outdoor kitchen, and landscape integration — designed as a complete system. Every element connects visually and functionally. Built for the Texas climate with materials rated for the summers here.</p>
+      <div class="feat-tags"><span class="feat-tag">Pool &amp; Spa</span><span class="feat-tag">Outdoor Kitchen</span><span class="feat-tag">Round Rock, TX</span></div>
+      <button class="feat-link" onclick="filterProjects('outdoor')">See All Outdoor Living</button>
+    </div>
+  </div>
+  <div class="feat-item reveal" style="margin-bottom:0">
+    <div class="feat-photo"><img src="assets/images/residential/DSC02760.JPG" alt="Remington luxury bathroom remodel Georgetown TX" loading="lazy"></div>
+    <div class="feat-body">
+      <p class="feat-type">Luxury Bathroom Remodel · Georgetown, TX</p>
+      <h3>Remington</h3>
+      <p>Spa-level master bath with heated tile floors, freestanding soaking tub, steam shower with frameless glass, double vanity with custom mirrors, and radiant-heated towel bars. Every finish selected for longevity.</p>
+      <div class="feat-tags"><span class="feat-tag">Steam Shower</span><span class="feat-tag">Heated Floors</span><span class="feat-tag">Georgetown, TX</span></div>
+      <button class="feat-link" onclick="filterProjects('bathroom')">See All Bathroom Projects</button>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER SECTION -->
+<section class="filter-section" id="all-projects" aria-labelledby="filter-h2">
+  <div class="container">
+    <div class="sec-eyebrow reveal"><span>All Residential Projects · Austin Metro</span></div>
+    <h2 class="sec-title reveal" id="filter-h2">Browse by <em>category.</em></h2>
+    <div class="filter-bar reveal" role="group" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">All Projects <span class="filter-count">16</span></button>
+      <button class="filter-btn" id="btn-kitchen" data-filter="kitchen" onclick="filterProjects('kitchen')">Kitchen Renovations <span class="filter-count">4</span></button>
+      <button class="filter-btn" id="btn-bathroom" data-filter="bathroom" onclick="filterProjects('bathroom')">Bathroom Renovations <span class="filter-count">4</span></button>
+      <button class="filter-btn" id="btn-outdoor" data-filter="outdoor" onclick="filterProjects('outdoor')">Outdoor Living <span class="filter-count">4</span></button>
+      <button class="filter-btn" id="btn-additions" data-filter="additions" onclick="filterProjects('additions')">Home Additions <span class="filter-count">4</span></button>
+    </div>
+    <div class="proj-grid" id="projGrid">
+      <article class="proj-card" data-cat="kitchen"><div class="proj-card-img"><img src="assets/images/residential/DSC02701.JPG" alt="Castle Ridge kitchen" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Kitchen Renovation</p><h3>Castle Ridge</h3><p>Custom cabinetry, quartz countertops, commercial-grade appliances, new island layout that opened the first floor.</p><p class="proj-loc">Austin, TX</p></div></article>
+      <article class="proj-card" data-cat="kitchen"><div class="proj-card-img"><img src="assets/images/residential/DSC02706.JPG" alt="Brushy Creek kitchen" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Kitchen Renovation</p><h3>Brushy Creek</h3><p>Natural stone countertops, white shaker cabinets, extended breakfast bar, and two new windows for natural light.</p><p class="proj-loc">Round Rock, TX</p></div></article>
+      <article class="proj-card" data-cat="kitchen"><div class="proj-card-img"><img src="assets/images/residential/DSC02711.JPG" alt="Buttercup Creek kitchen" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Kitchen Renovation</p><h3>Buttercup Creek</h3><p>Open-concept conversion with structural wall removal, new support beam, and custom waterfall-edge island.</p><p class="proj-loc">Cedar Park, TX</p></div></article>
+      <article class="proj-card" data-cat="kitchen"><div class="proj-card-img"><img src="assets/images/residential/DSC02716.JPG" alt="Sun City kitchen" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Kitchen Renovation</p><h3>Sun City</h3><p>Age-in-place design — pull-out cabinetry, soft-close drawers, raised dishwasher, contrast tile for visual clarity.</p><p class="proj-loc">Georgetown, TX</p></div></article>
+      <article class="proj-card" data-cat="bathroom"><div class="proj-card-img"><img src="assets/images/residential/DSC02760.JPG" alt="Remington bathroom" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Bathroom Renovation</p><h3>Remington</h3><p>Heated floors, freestanding soaking tub, steam shower, double vanity with custom mirrors, towel bars.</p><p class="proj-loc">Georgetown, TX</p></div></article>
+      <article class="proj-card" data-cat="bathroom"><div class="proj-card-img"><img src="assets/images/residential/DSC02765.JPG" alt="Avery Ranch bathroom" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Bathroom Renovation</p><h3>Avery Ranch</h3><p>Frameless walk-in shower with bench seating, floating double vanity, large-format porcelain floor-to-ceiling tile.</p><p class="proj-loc">Austin, TX</p></div></article>
+      <article class="proj-card" data-cat="bathroom"><div class="proj-card-img"><img src="assets/images/residential/DSC02770.JPG" alt="Crystal Falls bathroom" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Bathroom Renovation</p><h3>Crystal Falls</h3><p>Converted unused jetted tub into a walk-in wet room. Recaptured 40 sq ft for a proper dressing area.</p><p class="proj-loc">Leander, TX</p></div></article>
+      <article class="proj-card" data-cat="bathroom"><div class="proj-card-img"><img src="assets/images/residential/DSC02775.JPG" alt="Round Rock Estates bathrooms" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Bathroom Renovation</p><h3>Round Rock Estates</h3><p>Three hall bathrooms renovated simultaneously during a whole-home refresh. Coordinated tile and fixtures across all three.</p><p class="proj-loc">Round Rock, TX</p></div></article>
+      <article class="proj-card" data-cat="outdoor"><div class="proj-card-img"><img src="assets/images/residential/DSC02740.JPG" alt="Lerwick outdoor" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Outdoor Living &amp; Pool</p><h3>Lerwick</h3><p>Pool, spa, covered patio, outdoor kitchen, and landscape integration — designed as a complete connected system.</p><p class="proj-loc">Round Rock, TX</p></div></article>
+      <article class="proj-card" data-cat="outdoor"><div class="proj-card-img"><img src="assets/images/residential/DSC02745.JPG" alt="Malone outdoor patio" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Outdoor Living</p><h3>Malone</h3><p>1,200 sq ft covered outdoor living space with ceiling fans, outdoor TV wall, built-in grill, stained concrete patio.</p><p class="proj-loc">Pflugerville, TX</p></div></article>
+      <article class="proj-card" data-cat="outdoor"><div class="proj-card-img"><img src="assets/images/residential/DSC02750.JPG" alt="Steiner Ranch pool" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Pool &amp; Outdoor Kitchen</p><h3>Steiner Ranch</h3><p>Hillside negative-edge pool, hot tub, travertine decking, and full outdoor kitchen with Hill Country views.</p><p class="proj-loc">Austin, TX</p></div></article>
+      <article class="proj-card" data-cat="outdoor"><div class="proj-card-img"><img src="assets/images/residential/DSC02755.JPG" alt="Carriage Hills pergola" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Outdoor Living</p><h3>Carriage Hills</h3><p>Cedar pergola with retractable shade, string lighting, fire pit seating, and artificial turf side yard.</p><p class="proj-loc">Cedar Park, TX</p></div></article>
+      <article class="proj-card" data-cat="additions"><div class="proj-card-img"><img src="assets/images/residential/DSC02720.JPG" alt="Mandeville addition" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Home Addition</p><h3>Mandeville</h3><p>800 sq ft primary suite addition — vaulted ceiling, spa bath, walk-in closet, private covered patio.</p><p class="proj-loc">Cedar Park, TX</p></div></article>
+      <article class="proj-card" data-cat="additions"><div class="proj-card-img"><img src="assets/images/residential/DSC02725.JPG" alt="Travis Heights second story" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Second Story Addition</p><h3>Travis Heights</h3><p>Full second story added to a single-story mid-century home — three bedrooms, two baths, original first floor preserved.</p><p class="proj-loc">Austin, TX</p></div></article>
+      <article class="proj-card" data-cat="additions"><div class="proj-card-img"><img src="assets/images/residential/DSC02730.JPG" alt="Fern Bluff garage conversion" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Garage Conversion</p><h3>Fern Bluff</h3><p>Three-car garage converted to ground-floor primary suite with accessible bath, new roofline, and garage replacement.</p><p class="proj-loc">Round Rock, TX</p></div></article>
+      <article class="proj-card" data-cat="additions"><div class="proj-card-img"><img src="assets/images/residential/DSC02735.JPG" alt="Cimarron Hills sunroom" loading="lazy"></div><div class="proj-card-body"><p class="proj-cat">Sunroom Addition</p><h3>Cimarron Hills</h3><p>400 sq ft climate-controlled sunroom with floor-to-ceiling windows, in-floor radiant heat, and gas fireplace.</p><p class="proj-loc">Georgetown, TX</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" aria-labelledby="cta-h2">
+  <h2 id="cta-h2">Your home, <em>your standard.</em></h2>
+  <p>Tell us about your residential project. We'll tell you what's possible and what it actually takes.</p>
+  <a href="contact.html" class="btn-navy">Start a Residential Project</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/images/logo-horizontal.png" alt="Freccia Construction"><p>Custom home builder and residential contractor serving Austin Metro since 2016. Round Rock, TX.</p><address class="footer-addr">1700 Bryant Dr. #101 · Round Rock, TX 78664<br><a href="tel:5126595550">512.659.5550</a> · <a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></address></div>
+      <div class="footer-col"><h4>Commercial</h4><ul><li><a href="build.html">Commercial Construction</a></li><li><a href="projects/rebelz-gym.html">Rebelz Gym</a></li><li><a href="projects/building-kidz-daycare.html">Building Kidz Daycare</a></li><li><a href="financing.html">Financing</a></li></ul></div>
+      <div class="footer-col"><h4>Residential</h4><ul><li><a href="residential.html">All Projects</a></li><li><a href="residential.html#kitchen">Kitchen Renovations</a></li><li><a href="residential.html#bathroom">Bathroom Renovations</a></li><li><a href="residential.html#outdoor">Outdoor Living</a></li><li><a href="residential.html#additions">Home Additions</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources/index.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Freccia Construction · Round Rock, TX</p><p><a href="tel:5126595550" style="color:var(--color-gold)">512.659.5550</a></p></div>
+  </div>
+</footer>
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+  const btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+  btn.addEventListener('click',()=>{const o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function filterProjects(cat){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===cat||(!b.dataset.filter&&cat==='all')));
+    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===cat));
+    document.querySelectorAll('.proj-card').forEach(c=>c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat));
+    const sec=document.getElementById('all-projects');
+    if(cat!=='all')setTimeout(()=>sec.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  }
+  window.addEventListener('DOMContentLoaded',()=>{
+    const h=location.hash.replace('#','');
+    if(['kitchen','bathroom','outdoor','additions'].includes(h))filterProjects(h);
+  });
+</script>
+</body>
+</html>

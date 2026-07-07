@@ -1,0 +1,82 @@
+/* Hallmark · macrostructure: Marquee Hero · tone: bold-established-premium · anchor hue: gold
+ * theme: custom (vibe: "established Texas builder, navy gold premium craft")
+ * paper: oklch(14% 0.03 250) · accent: oklch(72% 0.12 75) · display: Playfair Display · body: DM Sans
+ * axes: dark / italic-serif / warm-gold
+ */
+
+:root {
+  /* ── Brand colours ─────────────────────────────────── */
+  --color-navy:        oklch(17% 0.04 252);   /* #1a2340 */
+  --color-navy-deep:   oklch(12% 0.03 252);
+  --color-navy-mid:    oklch(22% 0.05 252);
+  --color-gold:        oklch(72% 0.12 75);    /* #c9a84c */
+  --color-gold-light:  oklch(82% 0.10 75);
+  --color-gold-dark:   oklch(58% 0.11 75);
+
+  /* ── Paper / surface ────────────────────────────────── */
+  --color-paper:       oklch(97% 0.004 80);   /* #f7f6f2 warm off-white */
+  --color-paper-2:     oklch(94% 0.006 80);
+  --color-white:       oklch(100% 0 0);
+
+  /* ── Text ───────────────────────────────────────────── */
+  --color-ink:         oklch(14% 0.02 250);
+  --color-ink-2:       oklch(35% 0.03 250);
+  --color-ink-3:       oklch(55% 0.02 250);
+  --color-ink-on-dark: oklch(97% 0.004 80);
+  --color-ink-muted:   oklch(75% 0.02 250);
+
+  /* ── Semantic ───────────────────────────────────────── */
+  --color-accent:      var(--color-gold);
+  --color-surface:     var(--color-paper);
+  --color-border:      oklch(88% 0.008 80);
+  --color-focus:       var(--color-gold);
+  --color-overlay:     oklch(12% 0.04 252 / 0.72);
+  --color-overlay-deep:oklch(10% 0.04 252 / 0.85);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* ── Type scale ─────────────────────────────────────── */
+  --text-display:   clamp(3rem, 7vw, 5.5rem);
+  --text-display-s: clamp(2rem, 4.5vw, 3.5rem);
+  --text-h1:        clamp(2rem, 4vw, 3rem);
+  --text-h2:        clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-h3:        clamp(1.125rem, 1.8vw, 1.5rem);
+  --text-lg:        1.125rem;
+  --text-base:      1rem;
+  --text-sm:        0.875rem;
+  --text-xs:        0.75rem;
+
+  /* ── Spacing (4pt scale) ────────────────────────────── */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* ── Layout ─────────────────────────────────────────── */
+  --max-w:     1280px;
+  --max-w-text: 720px;
+  --gutter:    clamp(1rem, 4vw, 2rem);
+  --radius-sm: 2px;
+  --radius:    4px;
+  --radius-lg: 8px;
+
+  /* ── Motion ─────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    150ms;
+  --dur-base:    280ms;
+  --dur-slow:    480ms;
+  --dur-enter:   600ms;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freccia Construction — Site Preview Index</title>
+<style>
+:root{--navy:oklch(17% 0.04 252);--navy-mid:oklch(22% 0.05 252);--gold:oklch(72% 0.12 75);--gold-light:oklch(82% 0.10 75);--paper:#F8F6F2;--paper2:#EEE9E1;--border:#DDD5C8;--ink:#1C1C1C;--muted:#6B6460;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;padding:0 0 5rem}
+.head{background:var(--navy);color:#fff;padding:2.5rem 1.5rem}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:2rem;font-weight:300;letter-spacing:-.02em;margin-top:.4rem;color:#fff}
+h1 strong{font-weight:700}
+.sub{color:oklch(65% 0.04 252);margin-top:.6rem;font-size:.9rem}
+.stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.2rem}
+.stat{font-size:.78rem;color:var(--gold-light);font-weight:600;letter-spacing:.05em}
+.stat span{opacity:.5;font-weight:400;margin-right:.3rem}
+.sec{margin-top:2.2rem}
+.sec h2{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.sec h2 .cnt{background:var(--border);color:var(--muted);font-size:.65rem;padding:.1rem .4rem;border-radius:2rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:#fff;border:1px solid var(--border);border-radius:.35rem;padding:.65rem 1rem;font-size:.88rem;font-weight:600;color:var(--ink);text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .1s}
+.row:hover{border-color:var(--gold);box-shadow:0 2px 8px oklch(17% 0.04 252 / 0.08);transform:translateY(-1px)}
+.row--hero{background:var(--navy);color:#fff;border-color:var(--navy);font-size:.95rem}
+.row--hero:hover{border-color:var(--gold);background:var(--navy-mid)}
+.row--gold{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700}
+.row--gold:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.tag{font-size:.68rem;font-weight:500;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.row--hero .tag{color:oklch(60% 0.04 252)}
+.row--gold .tag{color:var(--navy);opacity:.7}
+.badge{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:.2rem;flex-shrink:0}
+.badge-live{background:oklch(60% 0.15 142 / 0.15);color:oklch(45% 0.15 142)}
+.badge-draft{background:oklch(75% 0.10 75 / 0.2);color:oklch(55% 0.10 75)}
+.badge-pending{background:oklch(65% 0.08 30 / 0.15);color:oklch(50% 0.08 30)}
+.note{background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:.35rem;padding:1rem 1.2rem;margin-top:1.5rem;font-size:.85rem;color:var(--muted);line-height:1.7}
+.note strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="head"><div class="wrap">
+  <p class="eyebrow">Freccia Construction · Internal Preview Index</p>
+  <h1>All pages — <strong>click to review.</strong></h1>
+  <p class="sub">Every page on the new site. Click any row to open it. Nothing is live until Ryan deploys.</p>
+  <div class="stats">
+    <div class="stat"><span>Core pages</span>8</div>
+    <div class="stat"><span>Commercial project pages</span>3</div>
+    <div class="stat"><span>Team pages</span>10</div>
+    <div class="stat"><span>Resources</span>1</div>
+    <div class="stat"><span>Total pages</span>22+</div>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <div class="sec">
+    <h2>Start Here <span class="cnt">2</span></h2>
+    <div class="grid">
+      <a class="row row--gold" href="index.html"><span>Homepage</span><span class="tag">start here</span></a>
+      <a class="row row--hero" href="build.html"><span>BUILD — Commercial Construction</span><span class="tag">primary page</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Main Navigation Pages <span class="cnt">6</span></h2>
+    <div class="grid">
+      <a class="row" href="projects.html"><span>Projects Hub</span><span class="tag">all projects</span></a>
+      <a class="row" href="residential.html"><span>Residential Projects</span><span class="tag">filterable</span></a>
+      <a class="row" href="financing.html"><span>Financing</span><span class="tag">nav item</span></a>
+      <a class="row" href="about.html"><span>About Us</span><span class="tag">team + story</span></a>
+      <a class="row" href="partners.html"><span>Partners</span><span class="tag">trade partners</span></a>
+      <a class="row" href="contact.html"><span>Start a Project (Contact)</span><span class="tag">CTA destination</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Resources Hub <span class="cnt">1</span></h2>
+    <div class="grid">
+      <a class="row" href="resources/index.html"><span>Resources — FAQs + Case Studies</span><span class="tag">replaces blog</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Commercial Project Pages <span class="cnt">3</span></h2>
+    <div class="grid">
+      <a class="row" href="projects/rebelz-gym.html"><span>Rebelz Gym</span><span class="tag">case study</span></a>
+      <a class="row" href="projects/building-kidz-daycare.html"><span>Building Kidz Daycare</span><span class="tag">case study</span></a>
+      <a class="row" href="projects/james-avery-plaza.html"><span>James Avery Plaza</span><span class="tag">case study</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Team Pages — Leadership <span class="cnt">4</span></h2>
+    <div class="grid">
+      <a class="row" href="team/waldemar-severi.html"><span>Waldemar Severi</span><span class="tag">Founder</span></a>
+      <a class="row" href="team/rebekah-severi.html"><span>Rebekah Severi</span><span class="tag">Owner & Managing Partner</span></a>
+      <a class="row" href="team/josh-clements.html"><span>Josh Clements</span><span class="tag">Commercial Division</span></a>
+      <a class="row" href="team/daniel-quezada.html"><span>Daniel Quezada</span><span class="tag">Project Manager</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Team Pages — Full Team <span class="cnt">6</span></h2>
+    <div class="grid">
+      <a class="row" href="team/jacqueline-clements.html"><span>Jacqueline Clements</span><span class="tag">Freccia Team</span></a>
+      <a class="row" href="team/rebecca-rivera.html"><span>Rebecca Rivera</span><span class="tag">Freccia Team</span></a>
+      <a class="row" href="team/maryiedth-malott.html"><span>Maryiedth Malott</span><span class="tag">Freccia Team</span></a>
+      <a class="row" href="team/ronald-kyambadde.html"><span>Ronald Kyambadde</span><span class="tag">Field Operations</span></a>
+      <a class="row" href="team/edson-rodriguez.html"><span>Edson Rodriguez</span><span class="tag">Field Operations</span></a>
+      <a class="row" href="team/victor-ramirez.html"><span>Victor Ramirez</span><span class="tag">Field Operations</span></a>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Still to build:</strong> about.html (team grid linking all 10 pages + company story) · contact.html (review/update) · location pages for Austin TX + Round Rock TX + Cedar Park TX (local SEO) · residential project detail cards (Castle Ridge, Mandeville, Lerwick, Remington).<br><br>
+    <strong>Photos needed from Rebekah:</strong> Rebelz Gym, Building Kidz Daycare, James Avery Plaza, Castle Ridge, Mandeville, Lerwick, Remington, and team headshots for all 10 members. H: Drive subfolders are currently empty.<br><br>
+    <strong>Deployment:</strong> Ryan deploys via git push to Netlify. Rebekah Severi is sole approver — drafts only until she signs off.
+  </div>
+
+</div>
+</body>
+</html>

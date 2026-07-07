@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Freccia Construction | Austin Metro Projects</title>
+  <meta name="description" content="Browse Freccia Construction's portfolio of custom homes, luxury remodels, and commercial projects across Austin Metro and Central Texas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: clip; scroll-behavior: smooth; }
+    body { overflow-x: clip; font-family: var(--font-body); color: var(--color-ink); background: var(--color-paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: var(--gutter); }
+    .btn { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: var(--space-4) var(--space-8); border-radius: var(--radius-sm); transition: all var(--dur-base) var(--ease-out); min-height: 48px; cursor: pointer; border: none; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--color-gold); color: var(--color-navy-deep); }
+    .btn-primary:hover { background: var(--color-gold-light); box-shadow: 0 4px 20px oklch(72% 0.12 75 / 0.35); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-6) 0; background: var(--color-navy-deep); box-shadow: 0 1px 0 oklch(100% 0 0 / 0.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; }
+    .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity var(--dur-fast), color var(--dur-fast); }
+    .nav-links a:hover, .nav-links a[aria-current] { opacity: 1; color: var(--color-gold); }
+    .nav-mobile-toggle { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); color: var(--color-ink-on-dark); cursor: pointer; border: none; background: none; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: currentColor; }
+
+    .page-hero { padding-top: 100px; padding-bottom: var(--space-16); background: var(--color-navy); }
+    .hero-eyebrow { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-gold); }
+    .page-hero h1 { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; line-height: 1.1; color: var(--color-ink-on-dark); overflow-wrap: anywhere; min-width: 0; max-width: 700px; }
+    .page-hero h1 em { font-style: italic; color: var(--color-gold); }
+    .page-hero-sub { font-size: var(--text-lg); color: var(--color-ink-muted); max-width: 520px; margin-top: var(--space-5); line-height: 1.7; }
+
+    /* Filter tabs */
+    .filter-bar { padding: var(--space-8) 0; border-bottom: 1px solid var(--color-border); position: sticky; top: 80px; z-index: 10; background: var(--color-paper); }
+    .filter-tabs { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+    .filter-tab { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: var(--space-2) var(--space-5); border-radius: 100px; border: 1px solid var(--color-border); color: var(--color-ink-2); cursor: pointer; transition: all var(--dur-fast) var(--ease-out); background: none; font-family: var(--font-body); }
+    .filter-tab:hover { border-color: var(--color-navy); color: var(--color-navy); }
+    .filter-tab.active { background: var(--color-navy); color: var(--color-ink-on-dark); border-color: var(--color-navy); }
+
+    /* Portfolio grid */
+    .portfolio-section { padding: var(--space-12) 0 var(--space-20); }
+    .project-group { margin-bottom: var(--space-20); }
+    .project-group-label { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-8); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-3); }
+    .project-group-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-gold); }
+
+    .project-card-featured { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0; border-radius: var(--radius); overflow: hidden; margin-bottom: var(--space-3); }
+    .project-card-featured-img { position: relative; overflow: hidden; }
+    .project-card-featured-img img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; transition: transform var(--dur-slow) var(--ease-out); }
+    .project-card-featured:hover .project-card-featured-img img { transform: scale(1.03); }
+    .project-card-featured-content { background: var(--color-navy); padding: var(--space-12); display: flex; flex-direction: column; justify-content: center; }
+    .project-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-3); }
+    .project-name { font-family: var(--font-display); font-size: var(--text-h2); font-weight: 600; color: var(--color-ink-on-dark); line-height: 1.2; overflow-wrap: anywhere; min-width: 0; }
+    .project-meta { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: var(--space-3); line-height: 1.65; }
+    .project-details { margin-top: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+    .project-detail { display: flex; gap: var(--space-3); font-size: var(--text-sm); }
+    .project-detail-label { color: var(--color-gold); font-weight: 500; min-width: 80px; }
+    .project-detail-value { color: var(--color-ink-muted); }
+
+    .projects-small { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+    .project-card { overflow: hidden; border-radius: var(--radius); cursor: default; }
+    .project-card-img { position: relative; overflow: hidden; }
+    .project-card-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
+    .project-card:hover .project-card-img img { transform: scale(1.04); }
+    .project-card-info { padding: var(--space-4) var(--space-5); background: var(--color-navy-mid); }
+    .project-card-tag { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); }
+    .project-card-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); margin-top: var(--space-1); }
+    .project-card-sub { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: 2px; }
+
+    /* CTA */
+    .cta-banner { padding: var(--space-20) 0; background: var(--color-navy); position: relative; }
+    .cta-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--color-gold), transparent); }
+    .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: var(--space-12); align-items: center; }
+    .cta-title { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; color: var(--color-ink-on-dark); line-height: 1.15; overflow-wrap: anywhere; min-width: 0; }
+    .cta-title em { font-style: italic; color: var(--color-gold); }
+    .cta-sub { font-size: var(--text-base); color: var(--color-ink-muted); margin-top: var(--space-4); max-width: 480px; }
+    .cta-actions { display: flex; flex-direction: column; gap: var(--space-3); align-items: flex-end; flex-shrink: 0; }
+    .cta-contact { font-size: var(--text-sm); color: var(--color-ink-muted); text-align: right; }
+    .cta-contact a { color: var(--color-gold-light); }
+
+    .footer { background: var(--color-navy-deep); padding: var(--space-16) 0 var(--space-8); border-top: 1px solid oklch(100% 0 0 / 0.06); }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-8); padding-bottom: var(--space-12); border-bottom: 1px solid oklch(100% 0 0 / 0.08); }
+    .footer-brand img { height: 32px; width: auto; margin-bottom: var(--space-4); }
+    .footer-tagline { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.65; max-width: 260px; }
+    .footer-address { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.8; margin-top: var(--space-4); }
+    .footer-col-title { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+    .footer-links a { font-size: var(--text-sm); color: var(--color-ink-muted); transition: color var(--dur-fast); }
+    .footer-links a:hover { color: var(--color-ink-on-dark); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-8); gap: var(--space-4); flex-wrap: wrap; }
+    .footer-copy { font-size: var(--text-xs); color: var(--color-ink-3); }
+    .footer-legal { display: flex; gap: var(--space-6); }
+    .footer-legal a { font-size: var(--text-xs); color: var(--color-ink-3); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--dur-enter) var(--ease-out), transform var(--dur-enter) var(--ease-out); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+
+    @media (max-width: 1024px) { .project-card-featured { grid-template-columns: 1fr; } .project-card-featured-img img { min-height: 300px; } .cta-inner { grid-template-columns: 1fr; } .cta-actions { align-items: flex-start; } .cta-contact { text-align: left; } .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: flex; } .projects-small { grid-template-columns: 1fr 1fr; } .footer-top { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .projects-small { grid-template-columns: 1fr; } .filter-tabs { gap: var(--space-2); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 150ms !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="/" aria-label="Freccia Construction — Home"><img src="assets/images/logo-horizontal.png" alt="Freccia Construction" style="height:36px;width:auto;" onerror="this.style.display='none'"></a>
+          <ul class="nav-links" role="list">
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="residential.html">Residential</a></li>
+            <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Start a Project</a>
+          <button class="nav-mobile-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="hero-eyebrow reveal">Our Work</p>
+        <h1 class="reveal reveal-delay-1">Projects across<br><em>Austin Metro.</em></h1>
+        <p class="page-hero-sub reveal reveal-delay-2">Custom homes, luxury remodels, and commercial build-outs. Every project here was built by our team, with our hands on the work.</p>
+      </div>
+    </section>
+
+    <div class="filter-bar">
+      <div class="container">
+        <div class="filter-tabs" role="tablist" aria-label="Filter projects by type">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+          <button class="filter-tab" data-filter="residential" role="tab" aria-selected="false">Residential</button>
+          <button class="filter-tab" data-filter="commercial" role="tab" aria-selected="false">Commercial</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="portfolio-section">
+      <div class="container">
+
+        <!-- Residential -->
+        <div class="project-group" data-category="residential">
+          <p class="project-group-label reveal">Residential</p>
+
+          <div class="project-card-featured reveal">
+            <div class="project-card-featured-img">
+              <img src="assets/images/Priority (2).JPG" alt="5406 Waterbrook Drive — exterior aerial view, custom new build, Windsor Park Austin" loading="lazy">
+            </div>
+            <div class="project-card-featured-content">
+              <p class="project-tag">Custom New Build</p>
+              <h2 class="project-name">5406 Waterbrook Drive</h2>
+              <p class="project-meta">Windsor Park · Austin, TX</p>
+              <div class="project-details">
+                <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Custom new build</span></div>
+                <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Windsor Park, Austin TX</span></div>
+                <div class="project-detail"><span class="project-detail-label">Scope</span><span class="project-detail-value">Ground-up custom home with wood cladding, metal roof, custom landscaping</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects-small">
+            <div class="project-card reveal">
+              <div class="project-card-img"><img src="assets/images/Priority.jpeg" alt="Luxury primary bathroom with freestanding tub and gold fixtures" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · Luxury Remodel</p><h3 class="project-card-name">Primary Bath</h3><p class="project-card-sub">Freestanding tub, gold fixtures, custom tile</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+              <div class="project-card-img"><img src="assets/images/Priority (1).JPG" alt="Custom double vanity bathroom with marble shower" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · Luxury Remodel</p><h3 class="project-card-name">Primary Suite Bath</h3><p class="project-card-sub">Dark vanity, marble shower, double mirrors</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+              <div class="project-card-img"><img src="assets/images/POSTED 2021 Charlton-Kitchen.jpeg" alt="Custom kitchen remodel with marble countertops — 7301 Charlton" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · Kitchen Remodel</p><h3 class="project-card-name">7301 Charlton</h3><p class="project-card-sub">Full kitchen renovation, marble counters</p></div>
+            </div>
+            <div class="project-card reveal">
+              <div class="project-card-img"><img src="assets/images/E 13th - Unit 1, Floor 1.jpg" alt="Custom new build unit interior — 2919 E 13th Street, East Austin" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · New Build</p><h3 class="project-card-name">2919 E 13th St — Unit 1</h3><p class="project-card-sub">East Austin custom new build</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+              <div class="project-card-img"><img src="assets/images/E 13th - Unit 2, 1st Floor.jpg" alt="Custom new build — Unit 2 interior, 2919 E 13th Street" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · New Build</p><h3 class="project-card-name">2919 E 13th St — Unit 2</h3><p class="project-card-sub">East Austin custom new build</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+              <div class="project-card-img"><img src="assets/images/Priority (3).JPG" alt="Custom home interior detail" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Residential · Custom Build</p><h3 class="project-card-name">Waterbrook — Interior</h3><p class="project-card-sub">Custom finishes, craftsmanship detail</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="project-group" data-category="commercial">
+          <p class="project-group-label reveal">Commercial</p>
+
+          <div class="project-card-featured reveal">
+            <div class="project-card-featured-img">
+              <img src="assets/images/commercial/2F6B7080.jpg" alt="6300 N. 138A Suite 220 — after commercial build-out, January 2025" loading="lazy">
+            </div>
+            <div class="project-card-featured-content">
+              <p class="project-tag">Tenant Improvement</p>
+              <h2 class="project-name">6300 N. 138A — Suite 220</h2>
+              <p class="project-meta">Austin Metro · Completed January 2025</p>
+              <div class="project-details">
+                <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Full tenant improvement build-out</span></div>
+                <div class="project-detail"><span class="project-detail-label">Completed</span><span class="project-detail-value">January 2025</span></div>
+                <div class="project-detail"><span class="project-detail-label">Scope</span><span class="project-detail-value">Shell space to finished commercial suite — offices, hallways, full interior fit-out</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects-small">
+            <div class="project-card reveal">
+              <div class="project-card-img"><img src="assets/images/commercial/2F6B4814.JPG" alt="Suite 220 before — empty shell space, October 2024" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Commercial · Before</p><h3 class="project-card-name">Suite 220 — Raw Shell</h3><p class="project-card-sub">October 2024 — pre-construction</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+              <div class="project-card-img"><img src="assets/images/commercial/2F6B7085.jpg" alt="Suite 220 after — interior detail, offices complete" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Commercial · After</p><h3 class="project-card-name">Suite 220 — Offices</h3><p class="project-card-sub">January 2025 — complete</p></div>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+              <div class="project-card-img"><img src="assets/images/commercial/2F6B7090.jpg" alt="Suite 220 hallway — after commercial build-out" loading="lazy"></div>
+              <div class="project-card-info"><p class="project-card-tag">Commercial · After</p><h3 class="project-card-name">Suite 220 — Hallway</h3><p class="project-card-sub">January 2025 — complete</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-inner">
+          <div>
+            <h2 class="cta-title reveal">Want to see<br><em>more work?</em></h2>
+            <p class="cta-sub reveal reveal-delay-1">We have more projects to share. Reach out and we'll walk you through work that's relevant to your project.</p>
+          </div>
+          <div class="cta-actions reveal reveal-delay-2">
+            <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+            <p class="cta-contact">Email: <a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/logo-horizontal.png" alt="Freccia Construction" onerror="this.style.display='none'">
+          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <address class="footer-address" style="font-style:normal;">Round Rock, TX · Austin Metro<br><a href="tel:5126595550" style="color:inherit;">512.659.5550</a></address>
+        </div>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Custom Homes</a></li><li><a href="residential.html">Luxury Remodels</a></li><li><a href="commercial.html">Commercial Build-Outs</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html">Our Team</a></li></ul></nav>
+        <nav aria-label="Contact"><p class="footer-col-title">Contact</p><ul class="footer-links" role="list"><li><a href="tel:5126595550">512.659.5550</a></li><li><a href="tel:5125518660">512.551.8660 (Commercial)</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Freccia Group LLC. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => obs.observe(el));
+
+    // Filter tabs
+    const tabs = document.querySelectorAll('.filter-tab');
+    const groups = document.querySelectorAll('.project-group');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
+        const filter = tab.dataset.filter;
+        groups.forEach(g => {
+          g.style.display = (filter === 'all' || g.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
