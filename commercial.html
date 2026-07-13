@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commercial Construction — Freccia Group Commercial | Austin Metro</title>
-  <meta name="description" content="Freccia Group Commercial builds tenant improvements, office build-outs, and new commercial construction across Austin Metro. $200K floor. Design-build delivery.">
+  <title>Commercial Construction: Freccia Construction | Austin Metro</title>
+  <meta name="description" content="Freccia Construction builds tenant improvements, office build-outs, and new commercial construction across Austin Metro. Design-build delivery.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,7 @@
     .btn { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: var(--space-4) var(--space-8); border-radius: var(--radius-sm); transition: background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); min-height: 48px; }
     .btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
     .btn:active { transform: translateY(1px); }
-    .btn-primary { background: var(--color-gold); color: var(--color-navy-deep); }
+    .btn-primary { background: var(--color-gold); color: var(--color-navy-deep); padding: var(--space-3) var(--space-6); border: 2px solid var(--color-gold-light); outline: 3px solid var(--color-navy); outline-offset: -3px; white-space: nowrap; }
     .btn-primary:hover { background: var(--color-gold-light); box-shadow: 0 4px 20px oklch(72% 0.12 75 / 0.35); }
     .btn-outline { background: transparent; color: var(--color-ink-on-dark); border: 1px solid oklch(100% 0 0 / 0.35); }
     .btn-outline:hover { border-color: var(--color-gold); color: var(--color-gold); }
@@ -98,9 +98,15 @@
     /* Footer */
     .footer { background: var(--color-navy-deep); padding: var(--space-16) 0 var(--space-8); border-top: 1px solid oklch(100% 0 0 / 0.06); }
     .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-8); padding-bottom: var(--space-12); border-bottom: 1px solid oklch(100% 0 0 / 0.08); }
-    .footer-brand img { height: 32px; width: auto; margin-bottom: var(--space-4); }
+    .footer-brand img { height: 44px; width: auto; margin-bottom: var(--space-4); }
     .footer-tagline { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.65; max-width: 260px; }
     .footer-address { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.8; margin-top: var(--space-4); }
+    .footer-connect{margin-top:var(--space-4)}
+    .footer-connect-title{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-gold);font-weight:600;margin-bottom:var(--space-3)}
+    .social-icons{display:flex;gap:var(--space-3)}
+    .social-icon{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:6px;background:var(--color-navy-mid);color:var(--color-ink-on-dark);transition:background 0.2s,color 0.2s}
+    .social-icon:hover{background:var(--color-gold);color:var(--color-navy)}
+    .social-icon svg{width:18px;height:18px;fill:currentColor}
     .footer-col-title { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
     .footer-links a { font-size: var(--text-sm); color: var(--color-ink-muted); transition: color var(--dur-fast) var(--ease-out); }
@@ -128,8 +134,8 @@
     <nav class="nav" aria-label="Main navigation">
       <div class="container">
         <div class="nav-inner">
-          <a href="/" aria-label="Freccia Construction — Home">
-            <img src="assets/images/logo-horizontal.png" alt="Freccia Construction" style="height:36px;width:auto;" onerror="this.style.display='none'">
+          <a href="/" aria-label="Freccia Construction, Home">
+            <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" style="height:48px;width:auto;" onerror="this.style.display='none'">
           </a>
           <ul class="nav-links" role="list">
             <li><a href="commercial.html" aria-current="page">Commercial</a></li>
@@ -148,68 +154,20 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <p class="hero-eyebrow reveal">Freccia Group Commercial LLC</p>
-        <h1 class="reveal reveal-delay-1">Commercial builds done <em>right.</em></h1>
-        <p class="page-hero-sub reveal reveal-delay-2">Tenant improvements, office build-outs, and new commercial construction across Austin Metro. $200K floor. Design-build delivery. We don't do service calls.</p>
+        <p class="hero-eyebrow reveal">Freccia Construction — Commercial</p>
+        <h1 class="reveal reveal-delay-1">Commercial Builds Done <em>Right.</em></h1>
+        <p class="page-hero-sub reveal reveal-delay-2">Tenant improvements, office build-outs, and new commercial construction across Austin Metro. Design-build delivery. We don't do service calls.</p>
       </div>
     </section>
 
-    <!-- Before / After showcase -->
-    <section class="section">
+    <!-- Groundbreaking Video -->
+    <section class="section" style="padding-top:0">
       <div class="container">
-        <p class="section-label reveal">Featured Project</p>
-        <h2 class="section-title reveal reveal-delay-1">6300 N. 138A — Suite 220</h2>
-        <p class="section-body reveal reveal-delay-2">Full tenant improvement build-out. Completed January 2025. Before and after.</p>
-        <div class="ba-grid reveal">
-          <div class="ba-card ba-wide">
-            <img src="assets/images/commercial/2F6B7080.jpg" alt="Suite 220 after build-out — completed January 2025" loading="lazy">
-            <span class="ba-badge">After · Jan 2025</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Suite 220 — Completed</p>
-              <p class="ba-caption-sub">6300 N. 138A · January 2025</p>
-            </div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/commercial/2F6B4814.JPG" alt="Suite 220 before build-out — October 2024" loading="lazy">
-            <span class="ba-badge">Before</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Raw Shell Space</p>
-              <p class="ba-caption-sub">October 2024</p>
-            </div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/commercial/2F6B7085.jpg" alt="Suite 220 interior detail after completion" loading="lazy">
-            <span class="ba-badge">After</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Interior Detail</p>
-              <p class="ba-caption-sub">Final walkthrough</p>
-            </div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/commercial/2F6B4819.JPG" alt="Suite 220 before — open floor plan" loading="lazy">
-            <span class="ba-badge">Before</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Floor Plan — Unfitted</p>
-              <p class="ba-caption-sub">Pre-construction</p>
-            </div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/commercial/2F6B7090.jpg" alt="Suite 220 hallway and offices after build-out" loading="lazy">
-            <span class="ba-badge">After</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Offices + Hallway</p>
-              <p class="ba-caption-sub">January 2025</p>
-            </div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/commercial/2F6B4824.JPG" alt="Suite 220 before — raw space" loading="lazy">
-            <span class="ba-badge">Before</span>
-            <div class="ba-caption">
-              <p class="ba-caption-title">Raw Space — East End</p>
-              <p class="ba-caption-sub">Pre-construction</p>
-            </div>
-          </div>
-        </div>
+        <p class="section-label reveal">On the Job Site</p>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:var(--space-6)">Breaking Ground on <em style="font-style:italic;color:var(--color-gold)">Central Texas SPCA.</em></h2>
+        <video controls preload="metadata" style="width:100%;border-radius:var(--radius);background:var(--color-navy)" poster="assets/images/commercial/2F6B7090.jpg">
+          <source src="assets/videos/spca-groundbreaking.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
@@ -217,27 +175,12 @@
     <section class="section section-dark">
       <div class="container">
         <p class="section-label reveal">What We Build</p>
-        <h2 class="section-title section-title-light reveal reveal-delay-1">Commercial scope,<br>no limits.</h2>
+        <h2 class="section-title section-title-light reveal reveal-delay-1">Commercial Scope,<br>No Limits.</h2>
         <div class="services-grid">
           <div class="service-card reveal">
-            <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="4" y="8" width="32" height="24" rx="2" stroke="#c9a84c" stroke-width="2"/><line x1="4" y1="16" x2="36" y2="16" stroke="#c9a84c" stroke-width="2"/><line x1="14" y1="16" x2="14" y2="32" stroke="#c9a84c" stroke-width="2"/></svg>
-            <h3 class="service-title">Tenant Improvements</h3>
-            <p class="service-body">We take your raw shell space and build the office, clinic, or retail environment your business needs — on time and to spec.</p>
-          </div>
-          <div class="service-card reveal reveal-delay-1">
-            <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 34V14l14-8 14 8v20H6Z" stroke="#c9a84c" stroke-width="2"/><rect x="15" y="22" width="10" height="12" rx="1" stroke="#c9a84c" stroke-width="2"/></svg>
-            <h3 class="service-title">Office Build-Outs</h3>
-            <p class="service-body">Conference rooms, private offices, open plans, server rooms. We build commercial interiors that work for how your people actually work.</p>
-          </div>
-          <div class="service-card reveal reveal-delay-2">
-            <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 34h32M8 34V20m0-6V8m24 26V20m0-6V8M8 14h24M8 20h24" stroke="#c9a84c" stroke-width="2"/></svg>
-            <h3 class="service-title">New Commercial Builds</h3>
-            <p class="service-body">Office parks, multi-suite buildings, ground-up commercial construction. Larger footprint projects where quality and schedule both matter.</p>
-          </div>
-          <div class="service-card reveal">
             <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="14" stroke="#c9a84c" stroke-width="2"/><path d="M20 10v10l6 4" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
-            <h3 class="service-title">Design-Build Delivery</h3>
-            <p class="service-body">One point of contact from design through completion. Faster decisions, cleaner accountability, and a finished project that matches the original vision.</p>
+            <h3 class="service-title">Design Build</h3>
+            <p class="service-body">Tenant improvements, office build-outs, and new commercial construction, all under one point of contact from design through completion. Faster decisions, cleaner accountability, and a finished project that matches the original vision.</p>
           </div>
           <div class="service-card reveal reveal-delay-1">
             <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M10 30l10-20 10 20H10Z" stroke="#c9a84c" stroke-width="2"/><line x1="20" y1="18" x2="20" y2="24" stroke="#c9a84c" stroke-width="2"/><circle cx="20" cy="27" r="1" fill="#c9a84c"/></svg>
@@ -246,8 +189,8 @@
           </div>
           <div class="service-card reveal reveal-delay-2">
             <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="6" y="6" width="28" height="28" rx="2" stroke="#c9a84c" stroke-width="2"/><path d="M6 20h28M20 6v28" stroke="#c9a84c" stroke-width="2"/></svg>
-            <h3 class="service-title">Property Owner Services</h3>
-            <p class="service-body">Working with investors, developers, and property owners to prep, improve, and build out commercial spaces for lease or sale.</p>
+            <h3 class="service-title">CMAR (Construction Manager at Risk)</h3>
+            <p class="service-body">Working with investors, developers, and property owners as the builder brought in early, prepping, improving, and building out commercial spaces for lease or sale.</p>
           </div>
         </div>
       </div>
@@ -257,7 +200,7 @@
     <section class="section section-alt">
       <div class="container">
         <p class="section-label reveal">How We Work</p>
-        <h2 class="section-title reveal reveal-delay-1">Four steps. No surprises.</h2>
+        <h2 class="section-title reveal reveal-delay-1">Four Steps. No Surprises.</h2>
         <div class="process-steps">
           <div class="process-step reveal">
             <span class="step-num">01</span>
@@ -288,12 +231,12 @@
       <div class="container">
         <div class="cta-inner">
           <div>
-            <h2 class="cta-title reveal">Have a commercial<br><em>project in mind?</em></h2>
-            <p class="cta-sub reveal reveal-delay-1">Talk to Josh directly. We respond same business day. $200K minimum — we're built for serious commercial work.</p>
+            <h2 class="cta-title reveal">Have a Commercial<br><em>Project in Mind?</em></h2>
+            <p class="cta-sub reveal reveal-delay-1">Talk to Josh directly. We respond same business day. We're built for serious commercial work.</p>
           </div>
           <div class="cta-actions reveal reveal-delay-2">
             <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-            <a href="tel:5125518660" class="btn btn-outline">Call Josh — 512.551.8660</a>
+            <a href="tel:5125518660" class="btn btn-outline">Call Josh: 512.551.8660</a>
             <p class="cta-contact">Email: <a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></p>
           </div>
         </div>
@@ -305,16 +248,24 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/images/logo-horizontal.png" alt="Freccia Construction" onerror="this.style.display='none'">
+          <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
           <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
-          <address class="footer-address" style="font-style:normal;">Round Rock, TX · Austin Metro<br><a href="tel:5126595550" style="color:inherit;">512.659.5550</a></address>
+          <address class="footer-address" style="font-style:normal;">Round Rock, TX · Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
+          <div class="footer-connect">
+            <p class="footer-connect-title">Connect With Us</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
+              <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+              <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            </div>
+          </div>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="#">Custom Homes</a></li><li><a href="#">Luxury Remodels</a></li><li><a href="commercial.html">Commercial Build-Outs</a></li><li><a href="#">Tenant Improvements</a></li><li><a href="#">Design-Build</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html">Our Team</a></li><li><a href="#">Our Process</a></li></ul></nav>
-        <nav aria-label="Contact"><p class="footer-col-title">Contact</p><ul class="footer-links" role="list"><li><a href="tel:5126595550">512.659.5550</a></li><li><a href="tel:5125518660">512.551.8660 (Commercial)</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Contact"><p class="footer-col-title">Contact</p><ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul></nav>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 Freccia Group LLC. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2025 Freccia Construction. All rights reserved.</p>
         <nav class="footer-legal" aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
       </div>
     </div>

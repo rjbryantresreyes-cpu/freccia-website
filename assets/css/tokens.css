@@ -1,41 +1,48 @@
 /* Hallmark · macrostructure: Marquee Hero · tone: bold-established-premium · anchor hue: gold
- * theme: custom (vibe: "established Texas builder, navy gold premium craft")
- * paper: oklch(14% 0.03 250) · accent: oklch(72% 0.12 75) · display: Playfair Display · body: DM Sans
- * axes: dark / italic-serif / warm-gold
+ * theme: Freccia Construction official brand guide (April 2025 v2)
+ * paper: Porcelain White #F4F2ED · accent: Gold #B1975A · display: Lora · body: Montserrat
+ * axes: dark / serif-headers / warm-gold
  */
 
 :root {
-  /* ── Brand colours ─────────────────────────────────── */
-  --color-navy:        oklch(17% 0.04 252);   /* #1a2340 */
-  --color-navy-deep:   oklch(12% 0.03 252);
-  --color-navy-mid:    oklch(22% 0.05 252);
-  --color-gold:        oklch(72% 0.12 75);    /* #c9a84c */
-  --color-gold-light:  oklch(82% 0.10 75);
-  --color-gold-dark:   oklch(58% 0.11 75);
+  /* ── Brand colours (Freccia brand guide, main) ──────── */
+  --color-navy:        #1E1B18;   /* Obsidian Black */
+  --color-navy-deep:   #141210;
+  --color-navy-mid:    #2A2621;
+  --color-gold:        #B1975A;   /* Gold */
+  --color-gold-light:  #C4AD79;
+  --color-gold-dark:   #8F7A47;
+
+  /* ── Secondary palette (Freccia brand guide) ────────── */
+  --color-walnut-taupe:   #9C8F80;
+  --color-light-gray:     #D9D9D9;
+  --color-light-blue-gray:#DCE5EC;
+  --color-slate-blue:     #3D5D75;
+  --color-soft-green:     #8AA45E;
 
   /* ── Paper / surface ────────────────────────────────── */
-  --color-paper:       oklch(97% 0.004 80);   /* #f7f6f2 warm off-white */
-  --color-paper-2:     oklch(94% 0.006 80);
-  --color-white:       oklch(100% 0 0);
+  --color-paper:       #F4F2ED;   /* Porcelain White */
+  --color-paper-2:     #EAE7DF;
+  --color-white:       #FFFFFF;
 
   /* ── Text ───────────────────────────────────────────── */
-  --color-ink:         oklch(14% 0.02 250);
-  --color-ink-2:       oklch(35% 0.03 250);
-  --color-ink-3:       oklch(55% 0.02 250);
-  --color-ink-on-dark: oklch(97% 0.004 80);
-  --color-ink-muted:   oklch(75% 0.02 250);
+  --color-ink:         #1E1B18;
+  --color-ink-2:       #3D3934;
+  --color-ink-3:       #6B6560;
+  --color-ink-on-dark: #F4F2ED;
+  --color-ink-muted:   #A39D93;
 
   /* ── Semantic ───────────────────────────────────────── */
   --color-accent:      var(--color-gold);
   --color-surface:     var(--color-paper);
-  --color-border:      oklch(88% 0.008 80);
+  --color-border:      #DAD5CB;
   --color-focus:       var(--color-gold);
-  --color-overlay:     oklch(12% 0.04 252 / 0.72);
-  --color-overlay-deep:oklch(10% 0.04 252 / 0.85);
+  --color-overlay:     rgba(30, 27, 24, 0.72);
+  --color-overlay-deep:rgba(20, 18, 16, 0.85);
 
-  /* ── Typography ─────────────────────────────────────── */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  /* ── Typography (Freccia brand guide) ────────────────── */
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
 
   /* ── Type scale ─────────────────────────────────────── */
@@ -54,6 +61,7 @@
   --space-2:   0.5rem;
   --space-3:   0.75rem;
   --space-4:   1rem;
+  --space-5:   1.25rem;
   --space-6:   1.5rem;
   --space-8:   2rem;
   --space-10:  2.5rem;
