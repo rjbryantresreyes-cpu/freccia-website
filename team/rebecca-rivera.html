@@ -18,7 +18,7 @@
     img { max-width: 100%; height: auto; display: block; } a { text-decoration: none; color: inherit; }
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy); }
     .nav.scrolled { box-shadow: 0 2px 20px oklch(0% 0 0 / 0.3); }
-    .nav-logo img { height: 48px; } .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; }
+    .nav-logo img { height: 48px; } .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
     .nav-links a:hover { opacity: 1; color: var(--color-gold); } .nav-build { color: var(--color-gold) !important; opacity: 1 !important; font-weight: 600 !important; }
     .nav-cta { background: var(--color-gold); color: var(--color-navy) !important; opacity: 1 !important; padding: var(--space-3) var(--space-6) !important; font-weight: 600 !important; white-space: nowrap; border: 2px solid var(--color-gold-light); outline: 3px solid var(--color-navy); outline-offset: -3px; }
