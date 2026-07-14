@@ -123,6 +123,9 @@
 
     /* SERVICES */
     .services-section { padding: var(--space-20) var(--space-8); background: oklch(96% 0.005 80); }
+    .services-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
+    .services-img { overflow: hidden; aspect-ratio: 4/3; border-radius: var(--radius); }
+    .services-img img { width: 100%; height: 100%; object-fit: cover; }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--color-border); margin-top: var(--space-10); }
     .svc { background: var(--color-paper); padding: var(--space-8); border-top: 2px solid transparent; transition: border-color 0.2s; }
     .svc:hover { border-color: var(--color-gold); }
@@ -224,6 +227,7 @@
       .certs-list { justify-content: center; gap: var(--space-6); }
       .cert { height: 52px; }
       .services-grid { grid-template-columns: 1fr; }
+      .services-inner { grid-template-columns: 1fr; gap: var(--space-8); }
       .process-grid { grid-template-columns: 1fr; }
       .about-inner { grid-template-columns: 1fr; }
       .scroll-hint { display: none; }
@@ -351,11 +355,16 @@
 
 <!-- ═══ SERVICES TEASER ═══ -->
 <section class="services-section" aria-labelledby="svc-h2">
-  <div class="container">
-    <div class="sec-eyebrow reveal"><span>Commercial Services · Central Texas</span></div>
-    <h2 class="sec-title reveal" id="svc-h2">Every Commercial Scope.<br><em>One Trusted Team.</em></h2>
-    <p class="reveal" style="font-size:var(--text-lg);color:var(--color-ink-2);max-width:560px;margin-top:var(--space-6)">Tenant improvements, ground-up builds, office build-outs, remodels, and CMAR delivery, all under one team from concept to certificate of occupancy.</p>
-    <a href="build.html" class="btn-gold reveal" style="margin-top:var(--space-8)">See Our Commercial Services</a>
+  <div class="services-inner">
+    <div class="services-text">
+      <div class="sec-eyebrow reveal"><span>Commercial Services · Central Texas</span></div>
+      <h2 class="sec-title reveal" id="svc-h2">Every Commercial Scope.<br><em>One Trusted Team.</em></h2>
+      <p class="reveal" style="font-size:var(--text-lg);color:var(--color-ink-2);max-width:560px;margin-top:var(--space-6)">Tenant improvements, ground-up builds, office build-outs, remodels, and CMAR delivery, all under one team from concept to certificate of occupancy.</p>
+      <a href="build.html" class="btn-gold reveal" style="margin-top:var(--space-8)">See Our Commercial Services</a>
+    </div>
+    <div class="services-img reveal">
+      <img src="assets/images/spca-groundbreaking.jpg" alt="Freccia Construction groundbreaking ceremony, Central Texas SPCA commercial project" loading="lazy">
+    </div>
   </div>
 </section>
 
