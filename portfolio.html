@@ -22,10 +22,10 @@
     .btn-primary { background: var(--color-gold); color: var(--color-navy-deep); padding: var(--space-3) var(--space-6); border: 2px solid var(--color-gold-light); outline: 3px solid var(--color-navy); outline-offset: -3px; white-space: nowrap; }
     .btn-primary:hover { background: var(--color-gold-light); box-shadow: 0 4px 20px oklch(72% 0.12 75 / 0.35); }
 
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-6) 0; background: var(--color-navy-deep); box-shadow: 0 1px 0 oklch(100% 0 0 / 0.08); }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-4) 0; background: var(--color-navy-deep); box-shadow: 0 1px 0 oklch(100% 0 0 / 0.08); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); }
-    .nav-inner > a.btn-primary { margin-left: auto; }
-    .nav-logo img { height: 36px; width: auto; }
+    .nav-inner > a.btn-primary { margin-left: auto; padding: var(--space-4) var(--space-8); }
+    .nav-logo img { height: 48px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity var(--dur-fast), color var(--dur-fast); }
     .nav-links a:hover, .nav-links a[aria-current] { opacity: 1; color: var(--color-gold); }
