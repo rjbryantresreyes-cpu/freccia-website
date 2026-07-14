@@ -65,15 +65,25 @@
     .project-detail-label { color: var(--color-gold); font-weight: 500; min-width: 80px; }
     .project-detail-value { color: var(--color-ink-muted); }
 
-    .projects-small { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
-    .project-card { overflow: hidden; border-radius: var(--radius); cursor: default; }
-    .project-card-img { position: relative; overflow: hidden; }
-    .project-card-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
-    .project-card:hover .project-card-img img { transform: scale(1.04); }
-    .project-card-info { padding: var(--space-4) var(--space-5); background: var(--color-navy-mid); }
-    .project-card-tag { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); }
-    .project-card-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); margin-top: var(--space-1); }
-    .project-card-sub { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: 2px; }
+    /* Project showcase cards (one card per project, image carousel) */
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-6); }
+    .project-showcase { border-radius: var(--radius); overflow: hidden; background: var(--color-navy-mid); }
+    .showcase-carousel { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--color-navy); }
+    .carousel-viewport { position: relative; width: 100%; height: 100%; }
+    .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; }
+    .carousel-slide.is-active { opacity: 1; }
+    .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 50%; background: oklch(10% 0 0 / 0.55); color: oklch(100% 0 0); border: none; cursor: pointer; font-size: 1.1rem; line-height: 1; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.2s; }
+    .carousel-arrow:hover { background: var(--color-gold); color: var(--color-navy); }
+    .carousel-prev { left: var(--space-3); }
+    .carousel-next { right: var(--space-3); }
+    .carousel-count { position: absolute; top: var(--space-3); right: var(--space-3); background: oklch(10% 0 0 / 0.55); color: oklch(100% 0 0); font-size: var(--text-xs); letter-spacing: 0.04em; padding: 2px 8px; border-radius: 100px; z-index: 2; }
+    .carousel-dots { position: absolute; bottom: var(--space-3); left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 2; }
+    .carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: oklch(100% 0 0 / 0.5); border: none; cursor: pointer; padding: 0; transition: background 0.2s, width 0.2s; }
+    .carousel-dot.is-active { background: var(--color-gold); width: 18px; border-radius: 4px; }
+    .showcase-info { padding: var(--space-5) var(--space-6); }
+    .showcase-tag { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-2); }
+    .showcase-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); }
+    .showcase-loc { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: 2px; }
 
     /* CTA */
     .cta-banner { padding: var(--space-20) 0; background: var(--color-navy); position: relative; }
@@ -111,9 +121,9 @@
     .reveal-delay-1 { transition-delay: 100ms; }
     .reveal-delay-2 { transition-delay: 200ms; }
 
-    @media (max-width: 1024px) { .project-card-featured { grid-template-columns: 1fr; } .project-card-featured-img img { min-height: 300px; } .cta-inner { grid-template-columns: 1fr; } .cta-actions { align-items: flex-start; } .cta-contact { text-align: left; } .footer-top { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: flex; } .projects-small { grid-template-columns: 1fr 1fr; } .footer-top { grid-template-columns: 1fr; } }
-    @media (max-width: 480px) { .projects-small { grid-template-columns: 1fr; } .filter-tabs { gap: var(--space-2); } }
+    @media (max-width: 1024px) { .cta-inner { grid-template-columns: 1fr; } .cta-actions { align-items: flex-start; } .cta-contact { text-align: left; } .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: flex; } .showcase-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .filter-tabs { gap: var(--space-2); } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 150ms !important; } .reveal { opacity: 1; transform: none; } }
   </style>
 </head>
@@ -150,8 +160,8 @@
       <div class="container">
         <div class="filter-tabs" role="tablist" aria-label="Filter projects by type">
           <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
-          <button class="filter-tab" data-filter="residential" role="tab" aria-selected="false">Residential</button>
           <button class="filter-tab" data-filter="commercial" role="tab" aria-selected="false">Commercial</button>
+          <button class="filter-tab" data-filter="residential" role="tab" aria-selected="false">Residential</button>
         </div>
       </div>
     </div>
@@ -159,86 +169,85 @@
     <section class="portfolio-section">
       <div class="container">
 
-        <!-- Residential -->
-        <div class="project-group" data-category="residential">
-          <p class="project-group-label reveal">Residential</p>
-
-          <div class="project-card-featured reveal">
-            <div class="project-card-featured-img">
-              <img src="assets/images/Priority (2).JPG" alt="5406 Waterbrook Drive, exterior aerial view, custom new build, Windsor Park Austin" loading="lazy">
-            </div>
-            <div class="project-card-featured-content">
-              <p class="project-tag">Custom New Build</p>
-              <h2 class="project-name">5406 Waterbrook Drive</h2>
-              <p class="project-meta">Windsor Park · Austin, TX</p>
-              <div class="project-details">
-                <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Custom new build</span></div>
-                <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Windsor Park, Austin TX</span></div>
-                <div class="project-detail"><span class="project-detail-label">Scope</span><span class="project-detail-value">Ground-up custom home with wood cladding, metal roof, custom landscaping</span></div>
+        <!-- Commercial -->
+        <div class="project-group" data-category="commercial">
+          <p class="project-group-label reveal">Commercial</p>
+          <div class="showcase-grid">
+            <div class="project-showcase reveal">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/james-avery-plaza/office-suite-wide.jpg" alt="James Avery Plaza, retail tenant improvement Austin TX by Freccia Construction" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/james-avery-plaza/office-open-area.jpg" alt="James Avery Plaza open office area" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/james-avery-plaza/office-conference-room.jpg" alt="James Avery Plaza conference room build-out" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/james-avery-plaza/office-glass-partition.jpg" alt="James Avery Plaza finished tenant space" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">4 photos</span>
+                <div class="carousel-dots"></div>
               </div>
-            </div>
-          </div>
-
-          <div class="projects-small">
-            <div class="project-card reveal">
-              <div class="project-card-img"><img src="assets/images/Priority.jpeg" alt="Luxury primary bathroom with freestanding tub and gold fixtures" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · Luxury Remodel</p><h3 class="project-card-name">Primary Bath</h3><p class="project-card-sub">Freestanding tub, gold fixtures, custom tile</p></div>
-            </div>
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img"><img src="assets/images/Priority (1).JPG" alt="Custom double vanity bathroom with marble shower" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · Luxury Remodel</p><h3 class="project-card-name">Primary Suite Bath</h3><p class="project-card-sub">Dark vanity, marble shower, double mirrors</p></div>
-            </div>
-            <div class="project-card reveal reveal-delay-2">
-              <div class="project-card-img"><img src="assets/images/POSTED 2021 Charlton-Kitchen.jpeg" alt="Custom kitchen remodel with marble countertops, 7301 Charlton" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · Kitchen Remodel</p><h3 class="project-card-name">7301 Charlton</h3><p class="project-card-sub">Full kitchen renovation, marble counters</p></div>
-            </div>
-            <div class="project-card reveal">
-              <div class="project-card-img"><img src="assets/images/E 13th - Unit 1, Floor 1.jpg" alt="Custom new build unit interior, 2919 E 13th Street, East Austin" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · New Build</p><h3 class="project-card-name">2919 E 13th St: Unit 1</h3><p class="project-card-sub">East Austin custom new build</p></div>
-            </div>
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img"><img src="assets/images/E 13th - Unit 2, 1st Floor.jpg" alt="Custom new build, Unit 2 interior, 2919 E 13th Street" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · New Build</p><h3 class="project-card-name">2919 E 13th St: Unit 2</h3><p class="project-card-sub">East Austin custom new build</p></div>
-            </div>
-            <div class="project-card reveal reveal-delay-2">
-              <div class="project-card-img"><img src="assets/images/Priority (3).JPG" alt="Custom home interior detail" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Residential · Custom Build</p><h3 class="project-card-name">Waterbrook: Interior</h3><p class="project-card-sub">Custom finishes, craftsmanship detail</p></div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Retail Plaza · Tenant Improvement</p>
+                <h3 class="showcase-name">James Avery Plaza</h3>
+                <p class="showcase-loc">Austin Metro, TX</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Commercial -->
-        <div class="project-group" data-category="commercial">
-          <p class="project-group-label reveal">Commercial</p>
-
-          <div class="project-card-featured reveal">
-            <div class="project-card-featured-img">
-              <img src="assets/images/james-avery-plaza/office-suite-wide.jpg" alt="James Avery Plaza, retail tenant improvement Austin TX by Freccia Construction" loading="lazy">
-            </div>
-            <div class="project-card-featured-content">
-              <p class="project-tag">Retail Plaza · Tenant Improvement</p>
-              <h2 class="project-name">James Avery Plaza</h2>
-              <p class="project-meta">Austin Metro, TX</p>
-              <div class="project-details">
-                <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Retail Tenant Improvement</span></div>
-                <div class="project-detail"><span class="project-detail-label">Delivery</span><span class="project-detail-value">General Contract · Tenant TI</span></div>
-                <div class="project-detail"><span class="project-detail-label">Scope</span><span class="project-detail-value">Full retail TI build-out, MEP coordination, landlord coordination, permitting, brand standards compliance</span></div>
+        <!-- Residential -->
+        <div class="project-group" data-category="residential">
+          <p class="project-group-label reveal">Residential</p>
+          <div class="showcase-grid">
+            <div class="project-showcase reveal">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/Priority (2).JPG" alt="5406 Waterbrook Drive, exterior aerial view, custom new build, Windsor Park Austin" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/Priority.jpeg" alt="5406 Waterbrook Drive, primary bathroom with freestanding tub" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/Priority (1).JPG" alt="5406 Waterbrook Drive, primary suite bath with marble shower" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/Priority (3).JPG" alt="5406 Waterbrook Drive, interior craftsmanship detail" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">4 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Custom New Build</p>
+                <h3 class="showcase-name">5406 Waterbrook Drive</h3>
+                <p class="showcase-loc">Windsor Park · Austin, TX</p>
               </div>
             </div>
-          </div>
-
-          <div class="projects-small">
-            <div class="project-card reveal">
-              <div class="project-card-img"><img src="assets/images/james-avery-plaza/office-open-area.jpg" alt="James Avery Plaza open office area Austin TX" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Commercial · Tenant Improvement</p><h3 class="project-card-name">Open Office Area</h3><p class="project-card-sub">James Avery Plaza</p></div>
+            <div class="project-showcase reveal reveal-delay-1">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/POSTED 2021 Charlton-Kitchen.jpeg" alt="Custom kitchen remodel with marble countertops, 7301 Charlton" loading="lazy">
+                </div>
+                <span class="carousel-count">1 photo</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Kitchen Remodel</p>
+                <h3 class="showcase-name">7301 Charlton</h3>
+                <p class="showcase-loc">Austin, TX</p>
+              </div>
             </div>
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img"><img src="assets/images/james-avery-plaza/office-conference-room.jpg" alt="James Avery Plaza conference room build-out" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Commercial · Tenant Improvement</p><h3 class="project-card-name">Conference Room</h3><p class="project-card-sub">James Avery Plaza</p></div>
-            </div>
-            <div class="project-card reveal reveal-delay-2">
-              <div class="project-card-img"><img src="assets/images/james-avery-plaza/office-glass-partition.jpg" alt="James Avery Plaza finished tenant space" loading="lazy"></div>
-              <div class="project-card-info"><p class="project-card-tag">Commercial · Tenant Improvement</p><h3 class="project-card-name">Finished Tenant Space</h3><p class="project-card-sub">James Avery Plaza</p></div>
+            <div class="project-showcase reveal reveal-delay-2">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/E 13th - Unit 1, Floor 1.jpg" alt="2919 E 13th Street Unit 1, custom new build interior, East Austin" loading="lazy">
+                  <img class="carousel-slide" src="assets/images/E 13th - Unit 2, 1st Floor.jpg" alt="2919 E 13th Street Unit 2, custom new build interior, East Austin" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">2 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">New Build · Units 1 &amp; 2</p>
+                <h3 class="showcase-name">2919 E 13th Street</h3>
+                <p class="showcase-loc">East Austin, TX</p>
+              </div>
             </div>
           </div>
         </div>
@@ -306,6 +315,35 @@
           g.style.display = (filter === 'all' || g.dataset.category === filter) ? '' : 'none';
         });
       });
+    });
+
+    // Project photo carousels
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      if (slides.length < 2) return;
+      const dotsWrap = carousel.querySelector('.carousel-dots');
+      let index = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+      function goTo(i) {
+        slides[index].classList.remove('is-active');
+        dots[index].classList.remove('is-active');
+        index = (i + slides.length) % slides.length;
+        slides[index].classList.add('is-active');
+        dots[index].classList.add('is-active');
+      }
+
+      carousel.querySelector('.carousel-prev').addEventListener('click', () => goTo(index - 1));
+      carousel.querySelector('.carousel-next').addEventListener('click', () => goTo(index + 1));
     });
   </script>
 </body>
