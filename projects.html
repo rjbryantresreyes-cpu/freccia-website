@@ -17,7 +17,7 @@
     body{overflow-x:clip;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-ink);background:var(--color-paper);line-height:1.6}
     img{max-width:100%;height:auto;display:block}
     a{text-decoration:none;color:inherit}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy);transition:box-shadow .3s}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy-deep);transition:box-shadow .3s}
     .nav.scrolled{box-shadow:0 2px 20px oklch(0% 0 0/.3)}
     .nav-logo img{height:48px;width:auto}
     .nav-links{display:flex;align-items:center;gap:var(--space-8);list-style:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
@@ -27,8 +27,8 @@
     .nav-cta-btn{font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase;background:var(--color-gold);color:var(--color-navy)!important;opacity:1!important;padding:var(--space-4) var(--space-8)!important;font-weight:600!important;white-space:nowrap;border:2px solid var(--color-gold-light);outline:3px solid var(--color-navy);outline-offset:-3px;margin-left:auto}
     .nav-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:var(--space-2)}
     .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--color-ink-on-dark);margin:4px 0}
-    .page-hero{padding-top:160px;background:var(--color-navy);padding-bottom:var(--space-16)}
-    .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 var(--space-8)}
+    .page-hero{padding-top:140px;background:var(--color-navy-deep);padding-bottom:var(--space-16);min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end}
+    .page-hero-inner{max-width:1200px;width:100%;margin:0 auto;padding:0 var(--space-8)}
     .eyebrow{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)}
     .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--color-gold)}
     .eyebrow span{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
@@ -40,11 +40,11 @@
     .sec-eyebrow{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)}
     .sec-eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--color-gold)}
     .sec-eyebrow span{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
-    .sec-title{font-family:var(--font-display);font-size:var(--text-h1);font-weight:800;line-height:1.1;margin-bottom:var(--space-3)}
+    .sec-title{font-family:var(--font-display);font-size:var(--text-h1);font-weight:800;line-height:1.1;margin-bottom:var(--space-4)}
     .sec-title em{font-style:italic;color:var(--color-gold)}
     /* COMMERCIAL GRID */
     .comm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-5);margin-top:var(--space-10)}
-    .comm-card{position:relative;overflow:hidden;background:var(--color-navy);aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end}
+    .comm-card{position:relative;overflow:hidden;background:var(--color-navy-deep);aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end}
     .comm-card.wide{grid-column:span 2;aspect-ratio:16/9}
     .comm-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
     .comm-card:hover .comm-img{transform:scale(1.04)}
@@ -73,7 +73,7 @@
     .cta-section h2{font-family:var(--font-display);font-size:var(--text-h1);font-weight:800;color:var(--color-navy);line-height:1.1;margin-bottom:var(--space-4)}
     .cta-section h2 em{font-style:italic}
     .cta-section p{font-size:var(--text-lg);color:var(--color-navy);opacity:.75;max-width:440px;margin:0 auto var(--space-8)}
-    .btn-navy{display:inline-flex;align-items:center;background:var(--color-navy);color:var(--color-white);padding:var(--space-4) var(--space-10);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+    .btn-navy{display:inline-flex;align-items:center;background:var(--color-navy-deep);color:var(--color-white);padding:var(--space-4) var(--space-10);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
     .btn-navy:hover{background:var(--color-navy-deep)}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
@@ -85,7 +85,7 @@
 <nav class="nav" id="nav">
   <a href="/" class="nav-logo"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction"></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="build.html" class="nav-build">Commercial</a></li>
+    <li><a href="commercial.html" class="nav-build">Commercial</a></li>
     <li><a href="residential.html">Residential</a></li>
     <li><a href="projects.html" class="active">Projects</a></li>
     
@@ -110,24 +110,25 @@
   <div class="container">
     <div class="sec-eyebrow reveal"><span>Commercial Projects</span></div>
     <h2 class="sec-title reveal" id="comm-h2">Commercial Work<br><em>Across Austin Metro.</em></h2>
-    <p class="reveal" style="font-size:var(--text-lg);color:var(--color-ink-2);max-width:500px;line-height:1.7">Gyms, daycares, retail build-outs, office suites, and tenant improvements. <a href="build.html" style="color:var(--color-gold);font-weight:600">See all commercial services →</a></p>
+    <p class="reveal" style="font-size:var(--text-lg);color:var(--color-ink-2);max-width:500px;line-height:1.7">Gyms, daycares, retail build-outs, office suites, and tenant improvements. <a href="commercial.html" style="color:var(--color-gold);font-weight:600">See all commercial services →</a></p>
     <div class="comm-grid reveal">
       <article class="comm-card wide">
-        <img class="comm-img" src="assets/images/rebelz-gym/gym-floor-banner.jpg" alt="Rebelz Gym, commercial fitness construction Austin TX" loading="lazy">
-        <div class="comm-grad"></div>
-        <div class="comm-body"><p class="comm-type">Fitness Facility · New Build</p><h3 class="comm-name">Rebelz Gym</h3><p class="comm-loc">Austin Metro, TX</p><a href="projects/rebelz-gym.html" class="comm-link">View Case Study</a></div>
-      </article>
-      <article class="comm-card">
-        <div class="comm-grad"></div>
-        <div class="comm-body"><p class="comm-type">Childcare Facility · New Build</p><h3 class="comm-name">Building Kidz Daycare</h3><p class="comm-loc">Palmera Ridge · Round Rock, TX</p><a href="projects/building-kidz-daycare.html" class="comm-link">View Case Study</a></div>
-      </article>
-      <article class="comm-card">
         <img class="comm-img" src="assets/images/james-avery-plaza/office-suite-wide.jpg" alt="James Avery Plaza, retail tenant improvement Austin TX" loading="lazy">
         <div class="comm-grad"></div>
         <div class="comm-body"><p class="comm-type">Retail Plaza · Tenant Improvement</p><h3 class="comm-name">James Avery Plaza</h3><p class="comm-loc">Austin Metro, TX</p><a href="projects/james-avery-plaza.html" class="comm-link">View Case Study</a></div>
       </article>
+      <article class="comm-card">
+        <img class="comm-img" src="assets/images/building-kidz-daycare/exterior-entrance.jpg" alt="Building Kidz Daycare, childcare facility new build, Round Rock TX" loading="lazy">
+        <div class="comm-grad"></div>
+        <div class="comm-body"><p class="comm-type">Childcare Facility · New Build</p><h3 class="comm-name">Building Kidz Daycare</h3><p class="comm-loc">Palmera Ridge · Round Rock, TX</p><a href="projects/building-kidz-daycare.html" class="comm-link">View Case Study</a></div>
+      </article>
+      <article class="comm-card">
+        <img class="comm-img" src="assets/images/rebelz-gym/gym-floor-banner.jpg" alt="Rebelz Gym, commercial fitness construction Austin TX" loading="lazy">
+        <div class="comm-grad"></div>
+        <div class="comm-body"><p class="comm-type">Fitness Facility · New Build</p><h3 class="comm-name">Rebelz Gym</h3><p class="comm-loc">Austin Metro, TX</p><a href="projects/rebelz-gym.html" class="comm-link">View Case Study</a></div>
+      </article>
     </div>
-    <a href="portfolio.html" class="res-cat" style="margin-top:var(--space-5);max-width:320px">View All Projects <span class="arrow">→</span></a>
+    <a href="portfolio.html#commercial" class="res-cat" style="margin-top:var(--space-5);max-width:320px">View All Projects <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -140,12 +141,12 @@
       <div class="res-intro reveal">
         <p>From whole-home renovations to kitchen remodels, outdoor living spaces, and home additions, Freccia brings the same standard to residential work that we bring to every commercial build we do.</p>
         <div class="res-cats">
-          <a href="residential.html" class="res-cat">All Residential Projects <span class="arrow">→</span></a>
+          <a href="residential.html" class="res-cat">Current Projects <span class="arrow">→</span></a>
           <a href="residential.html#kitchen" class="res-cat">Kitchen Renovations <span class="arrow">→</span></a>
           <a href="residential.html#bathroom" class="res-cat">Bathroom Renovations <span class="arrow">→</span></a>
           <a href="residential.html#outdoor" class="res-cat">Outdoor Living &amp; Pools <span class="arrow">→</span></a>
           <a href="residential.html#additions" class="res-cat">Home Additions <span class="arrow">→</span></a>
-          <a href="portfolio.html" class="res-cat">View All Projects <span class="arrow">→</span></a>
+          <a href="portfolio.html#residential" class="res-cat">View All Projects <span class="arrow">→</span></a>
         </div>
       </div>
       <div class="res-photo-grid reveal">
@@ -169,11 +170,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
-          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="build.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="partners.html">Partners</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>

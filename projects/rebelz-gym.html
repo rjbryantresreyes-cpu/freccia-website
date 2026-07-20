@@ -18,7 +18,7 @@
     img{max-width:100%;height:auto;display:block}
     a{text-decoration:none;color:inherit}
     .container{max-width:1200px;margin:0 auto}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy);transition:box-shadow .3s}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy-deep);transition:box-shadow .3s}
     .nav.scrolled{box-shadow:0 2px 20px oklch(0% 0 0/.3)}
     .nav-logo img{height:48px;width:auto}
     .nav-links{display:flex;align-items:center;gap:var(--space-8);list-style:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
@@ -47,11 +47,11 @@
     .hero-quote-btn{display:inline-flex;align-items:center;border:1px solid oklch(90% 0 0/.4);color:var(--color-white);padding:var(--space-4) var(--space-8);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,color .2s}
     .hero-quote-btn:hover{border-color:var(--color-gold);color:var(--color-gold)}
     /* TRUST STRIP */
-    .trust-strip{background:var(--color-navy-deep);padding:var(--space-6) var(--space-8)}
+    .trust-strip{background:var(--color-paper);padding:var(--space-6) var(--space-8)}
     .trust-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:var(--space-4);text-align:center}
     .trust-strip-label{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:600}
     .trust-strip-logos{display:flex;justify-content:center;gap:var(--space-10);flex-wrap:wrap;align-items:center;width:100%}
-    .trust-strip-logos img{height:110px;width:auto;opacity:.9;transition:opacity .2s}
+    .trust-strip-logos img{height:110px;width:auto;opacity:.85;filter:brightness(0);transition:opacity .2s}
     @media(min-width:1150px){.trust-strip-logos{justify-content:space-between;gap:var(--space-8)}}
     /* STATS BAR */
     .stats-bar{background:var(--color-gold);padding:var(--space-6) var(--space-8)}
@@ -67,12 +67,12 @@
     .case-body p{font-size:var(--text-base);line-height:1.8;color:var(--color-ink-2);margin-bottom:var(--space-6)}
     .case-body h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:var(--space-3);margin-top:var(--space-8)}
     .case-sidebar{position:sticky;top:100px}
-    .sidebar-card{background:var(--color-navy);padding:var(--space-8)}
-    .sidebar-card h3{font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--color-ink-on-dark);margin-bottom:var(--space-6)}
-    .detail-row{display:flex;flex-direction:column;gap:var(--space-1);margin-bottom:var(--space-5);padding-bottom:var(--space-5);border-bottom:1px solid oklch(100% 0 0/.08)}
+    .sidebar-card{background:var(--color-white);border:1px solid var(--color-border);padding:var(--space-8)}
+    .sidebar-card h3{font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-6)}
+    .detail-row{display:flex;flex-direction:column;gap:var(--space-1);margin-bottom:var(--space-5);padding-bottom:var(--space-5);border-bottom:1px solid var(--color-border)}
     .detail-row:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
     .detail-label{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
-    .detail-val{font-size:var(--text-sm);color:var(--color-ink-on-dark);line-height:1.5}
+    .detail-val{font-size:var(--text-sm);color:var(--color-ink);line-height:1.5}
     .sidebar-cta{display:block;background:var(--color-gold);color:var(--color-navy);text-align:center;padding:var(--space-4);font-size:var(--text-sm);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:var(--space-6);transition:background .2s}
     .sidebar-cta:hover{background:var(--color-gold-light)}
     /* QUOTE FORM CARD */
@@ -85,7 +85,7 @@
     .quote-submit:hover{background:var(--color-gold-light)}
     .quote-success{display:none;text-align:center;padding:var(--space-4) 0}
     .quote-success-icon{font-size:1.75rem;margin-bottom:var(--space-2)}
-    .quote-success p{font-size:var(--text-sm);color:var(--color-ink-on-dark);line-height:1.6;margin-bottom:0}
+    .quote-success p{font-size:var(--text-sm);color:var(--color-ink);line-height:1.6;margin-bottom:0}
     /* MOBILE STICKY CALL BAR */
     .mobile-call-bar{display:none}
     /* PHOTO GRID */
@@ -100,7 +100,7 @@
     .next-inner{max-width:1200px;margin:0 auto}
     .next-label{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-6)}
     .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)}
-    .next-card{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--color-navy);display:flex;flex-direction:column;justify-content:flex-end}
+    .next-card{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--color-navy-deep);display:flex;flex-direction:column;justify-content:flex-end}
     .next-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
     .next-card:hover img{transform:scale(1.04)}
     .next-card-grad{position:absolute;inset:0;background:linear-gradient(to top,oklch(10% .04 252/.9) 0%,transparent 60%)}
@@ -117,7 +117,7 @@
 <nav class="nav" id="nav">
   <a href="../" class="nav-logo"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction"></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="../build.html" class="nav-build">Commercial</a></li>
+    <li><a href="../commercial.html" class="nav-build">Commercial</a></li>
     <li><a href="../residential.html">Residential</a></li>
     <li><a href="../projects.html" class="active">Projects</a></li>
     
@@ -236,6 +236,7 @@
     <p class="next-label">More Commercial Projects</p>
     <div class="next-grid">
       <a href="building-kidz-daycare.html" class="next-card">
+        <img src="../assets/images/building-kidz-daycare/exterior-entrance.jpg" alt="Building Kidz Daycare, Round Rock TX" loading="lazy">
         <div class="next-card-grad"></div>
         <div class="next-card-body"><p class="next-type">Childcare Facility · New Build</p><p class="next-name">Building Kidz Daycare</p><p class="next-loc">Palmera Ridge · Round Rock, TX</p></div>
       </a>
@@ -258,11 +259,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
-          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../build.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>

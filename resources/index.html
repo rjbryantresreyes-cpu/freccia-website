@@ -41,7 +41,7 @@
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
 
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy); transition: box-shadow 0.3s; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy-deep); transition: box-shadow 0.3s; }
     .nav.scrolled { box-shadow: 0 2px 20px oklch(0% 0 0 / 0.3); }
     .nav-logo img { height: 48px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
@@ -53,7 +53,8 @@
     .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: var(--space-2); }
     .nav-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-ink-on-dark); margin: 4px 0; }
 
-    .page-hero { padding-top: calc(80px + var(--space-20)); padding-bottom: var(--space-16); background: var(--color-navy); }
+    .page-hero { padding-top: 140px; padding-bottom: var(--space-16); background: var(--color-navy-deep); min-height: 70vh; display: flex; flex-direction: column; justify-content: flex-end; }
+    .page-hero > .container { width: 100%; }
     .page-hero .eyebrow { font-size: var(--text-sm); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); }
     .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--color-ink-on-dark); line-height: 1.15; margin-bottom: var(--space-6); }
     .page-hero h1 em { font-style: italic; color: var(--color-gold); }
@@ -106,7 +107,7 @@
     .cta-section h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); color: var(--color-navy); margin-bottom: var(--space-4); }
     .cta-section h2 em { font-style: italic; }
     .cta-section p { color: var(--color-navy); opacity: 0.8; margin-bottom: var(--space-8); max-width: 560px; margin-left: auto; margin-right: auto; }
-    .btn-navy { display: inline-block; background: var(--color-navy); color: var(--color-ink-on-dark); padding: var(--space-4) var(--space-10); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: var(--text-sm); transition: background 0.2s; }
+    .btn-navy { display: inline-block; background: var(--color-navy-deep); color: var(--color-ink-on-dark); padding: var(--space-4) var(--space-10); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: var(--text-sm); transition: background 0.2s; }
     .btn-navy:hover { background: var(--color-navy-mid); }
 
     .footer-col ul li { margin-bottom: var(--space-2); }
@@ -120,7 +121,7 @@
     }
     @media (max-width: 768px) {
       .nav { padding: var(--space-4); }
-      .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--color-navy); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; }
+      .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--color-navy-deep); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; }
       .nav-links.open { display: flex; }
       .nav-menu-btn { display: block; position: relative; z-index: 101; }
       .case-grid { grid-template-columns: 1fr; }
@@ -138,7 +139,7 @@
     <a href="../index.html"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction"></a>
   </div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="../build.html" class="nav-build">Commercial</a></li>
+    <li><a href="../commercial.html" class="nav-build">Commercial</a></li>
     <li><a href="../residential.html">Residential</a></li>
     <li><a href="../projects.html">Projects</a></li>
     
@@ -181,6 +182,8 @@
       </article>
 
       <article class="case-card reveal">
+        <img class="case-img" src="../assets/images/building-kidz-daycare/exterior-wide-playground.jpg"
+             alt="Building Kidz Daycare commercial tenant improvement Round Rock TX, Freccia Construction" loading="lazy">
         <div class="case-body">
           <p class="case-tag">Commercial · Tenant Improvement · Round Rock TX</p>
           <h3>Building Kidz Daycare</h3>
@@ -197,6 +200,39 @@
           <h3>James Avery Plaza</h3>
           <p>A multi-tenant retail plaza tenant improvement, managing phased delivery, retail-grade finishes, and landlord coordination across multiple suite buildouts.</p>
           <a href="../projects/james-avery-plaza.html" class="case-link">Read the Case Study →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal">
+        <img class="case-img" src="../assets/images/commercial/tails-of-hope/pour-1.jpg"
+             alt="Tails of Hope animal shelter new build, formerly Central Texas SPCA, Leander TX, Freccia Construction" loading="lazy">
+        <div class="case-body">
+          <p class="case-tag">Commercial · New Build · Leander TX</p>
+          <h3>Tails of Hope</h3>
+          <p>An animal shelter new build for Tails of Hope, formerly Central Texas SPCA, in Leander. The foundation is poured and framing is underway on this active build.</p>
+          <a href="../projects/tails-of-hope.html" class="case-link">Read the Case Study →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal">
+        <img class="case-img" src="../assets/images/commercial/peace-lutheran/groundbreaking-1.jpg"
+             alt="Peace Lutheran Church groundbreaking ceremony, Austin Metro TX, Freccia Construction" loading="lazy">
+        <div class="case-body">
+          <p class="case-tag">Commercial · Groundbreaking · Austin Metro TX</p>
+          <h3>Peace Lutheran Church</h3>
+          <p>A new church build for Peace Lutheran Church in the Austin Metro area, marked by a groundbreaking ceremony. Construction is set to begin following the ceremony.</p>
+          <a href="../projects/peace-lutheran-church.html" class="case-link">Read the Case Study →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal">
+        <img class="case-img" src="../assets/images/commercial/mueller-gym/gym-1-arched-mirrors.jpg"
+             alt="Mueller Gym fitness amenity build-out, Mueller neighborhood Austin TX, Freccia Construction" loading="lazy">
+        <div class="case-body">
+          <p class="case-tag">Commercial · Fitness Amenity · Austin TX</p>
+          <h3>Mueller Gym</h3>
+          <p>A fitness amenity build-out in the Mueller neighborhood of Austin, including a full gym floor, cardio and free-weight areas, and a lounge nook with a wet bar for residents.</p>
+          <a href="../projects/mueller-gym.html" class="case-link">Read the Case Study →</a>
         </div>
       </article>
 
@@ -353,7 +389,29 @@
           <p class="case-tag">Commercial · Certification</p>
           <h3>Working with a HUB-Certified Contractor in Texas</h3>
           <p>Freccia is a Texas HUB-certified contractor. Here's what that means for government and public projects, DBE requirements, and why it matters on certain commercial builds in Austin Metro.</p>
-          <a href="../build.html" class="case-link">Commercial Services →</a>
+          <a href="../commercial.html" class="case-link">Commercial Services →</a>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <img src="../assets/images/residential/castle-ridge/DSC06421.JPG"
+             alt="Finished kitchen renovation with island and gas range, Freccia Construction Austin TX" loading="lazy">
+        <div class="feature-card-body">
+          <p class="case-tag">Residential · Kitchen Renovation</p>
+          <h3>What to Expect From a Kitchen Renovation in Austin</h3>
+          <p>Cabinetry, counters, layout changes, and appliance upgrades. Here's what a Freccia kitchen renovation looks like from first design conversation to final install in Austin Metro homes.</p>
+          <a href="../residential.html#kitchen" class="case-link">See Kitchen Projects →</a>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <img src="../assets/images/residential/tristan-stone/2F6B5066.JPG"
+             alt="Finished bathroom renovation with frameless glass shower, Freccia Construction Austin TX" loading="lazy">
+        <div class="feature-card-body">
+          <p class="case-tag">Residential · Bathroom Renovation</p>
+          <h3>Planning a Bathroom Renovation That Actually Works</h3>
+          <p>Layout, plumbing moves, and finish selections. Here's how Freccia approaches a bathroom renovation so the result holds up in daily use, not just in photos.</p>
+          <a href="../residential.html#bathroom" class="case-link">See Bathroom Projects →</a>
         </div>
       </article>
 
@@ -374,11 +432,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
-          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../build.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>

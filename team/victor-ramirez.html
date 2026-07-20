@@ -17,7 +17,7 @@
     html { overflow-x: clip; } body { overflow-x: clip; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-ink); background: var(--color-paper); line-height: 1.6; }
     img { max-width: 100%; height: auto; display: block; } a { text-decoration: none; color: inherit; }
     .container { max-width: 1200px; margin: 0 auto; }
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy); }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy-deep); }
     .nav.scrolled { box-shadow: 0 2px 20px oklch(0% 0 0 / 0.3); } .nav-logo img { height: 48px; }
     .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
@@ -25,11 +25,11 @@
     .nav-cta { font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; background: var(--color-gold); color: var(--color-navy) !important; opacity: 1 !important; padding: var(--space-4) var(--space-8) !important; font-weight: 600 !important; white-space: nowrap; border: 2px solid var(--color-gold-light); outline: 3px solid var(--color-navy); outline-offset: -3px; margin-left: auto; }
     .nav-cta:hover { background: var(--color-gold-light) !important; } .nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: var(--space-2); }
     .nav-menu-btn span { display: block; width: 22px; height: 2px; background: var(--color-ink-on-dark); margin: 4px 0; }
-    .breadcrumb { padding: calc(80px + var(--space-6)) var(--space-8) var(--space-4); background: var(--color-navy); font-size: var(--text-sm); color: var(--color-ink-muted); }
+    .breadcrumb { padding: calc(80px + var(--space-6)) var(--space-8) var(--space-4); background: var(--color-navy-deep); font-size: var(--text-sm); color: var(--color-ink-muted); }
     .breadcrumb a { color: var(--color-gold); } .breadcrumb span { margin: 0 var(--space-2); opacity: 0.4; }
-    .profile-hero { background: var(--color-navy); padding: var(--space-12) var(--space-8) var(--space-20); }
+    .profile-hero { background: var(--color-navy-deep); padding: 140px var(--space-8) var(--space-20); }
     .profile-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 340px 1fr; gap: var(--space-16); align-items: start; }
-    .profile-photo-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--color-navy-mid); display: flex; align-items: center; justify-content: center; }
+    .profile-photo-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--color-navy-deep); display: flex; align-items: center; justify-content: center; }
     .profile-eyebrow { font-size: var(--text-sm); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-3); }
     .profile-name { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); color: var(--color-ink-on-dark); line-height: 1.1; margin-bottom: var(--space-3); }
     .profile-title { font-size: var(--text-xl); color: var(--color-gold-light); margin-bottom: var(--space-8); }
@@ -46,25 +46,25 @@
     .profile-content ul li { padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-ink-2); display: flex; align-items: center; gap: var(--space-3); }
     .profile-content ul li::before { content: ''; width: 6px; height: 6px; background: var(--color-gold); display: block; flex-shrink: 0; }
     .profile-sidebar { position: sticky; top: 100px; }
-    .sidebar-card { background: var(--color-navy); padding: var(--space-8); margin-bottom: var(--space-6); }
-    .sidebar-card h3 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink-on-dark); margin-bottom: var(--space-6); }
-    .sidebar-item { border-bottom: 1px solid oklch(30% 0.04 252); padding: var(--space-4) 0; } .sidebar-item:last-child { border-bottom: none; }
+    .sidebar-card { background: var(--color-white); border: 1px solid var(--color-border); padding: var(--space-8); margin-bottom: var(--space-6); }
+    .sidebar-card h3 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); margin-bottom: var(--space-6); }
+    .sidebar-item { border-bottom: 1px solid var(--color-border); padding: var(--space-4) 0; } .sidebar-item:last-child { border-bottom: none; }
     .sidebar-label { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-1); }
-    .sidebar-value { font-size: var(--text-sm); color: var(--color-ink-muted); }
+    .sidebar-value { font-size: var(--text-sm); color: var(--color-ink-3); }
     .sidebar-cta { display: block; background: var(--color-gold); color: var(--color-navy); padding: var(--space-4) var(--space-6); text-align: center; font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.05em; text-transform: uppercase; }
     .sidebar-cta:hover { background: var(--color-gold-light); }
     .back-team { text-align: center; padding: var(--space-16) var(--space-8); }
     .back-team a { display: inline-block; border: 2px solid var(--color-navy); color: var(--color-navy); padding: var(--space-4) var(--space-10); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
-    .back-team a:hover { background: var(--color-navy); color: var(--color-ink-on-dark); }
+    .back-team a:hover { background: var(--color-navy-deep); color: var(--color-ink-on-dark); }
     @media (max-width: 1024px) { .profile-hero-inner { grid-template-columns: 260px 1fr; } .profile-body { grid-template-columns: 1fr; } .profile-sidebar { position: static; } .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
-    @media (max-width: 768px) { .nav { padding: var(--space-4); } .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--color-navy); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; } .nav-links.open { display: flex; } .nav-menu-btn { display: block; position: relative; z-index: 101; } .profile-hero-inner { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    @media (max-width: 768px) { .nav { padding: var(--space-4); } .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--color-navy-deep); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; } .nav-links.open { display: flex; } .nav-menu-btn { display: block; position: relative; z-index: 101; } .profile-hero-inner { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
 <nav class="nav" id="nav">
   <div class="nav-logo"><a href="../index.html"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction"></a></div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="../build.html" class="nav-build">Commercial</a></li><li><a href="../residential.html">Residential</a></li>
+    <li><a href="../commercial.html" class="nav-build">Commercial</a></li><li><a href="../residential.html">Residential</a></li>
     <li><a href="../projects.html">Projects</a></li>
     <li><a href="../about.html" class="active">About Us</a></li><li><a href="../resources/index.html">Resources</a></li></ul>
   <a href="../contact.html" class="nav-cta">Start a Project</a>
@@ -121,11 +121,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
-          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../build.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>

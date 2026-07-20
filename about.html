@@ -21,10 +21,10 @@
     .btn:active { transform: translateY(1px); }
     .btn-primary { background: var(--color-gold); color: var(--color-navy-deep); padding: var(--space-3) var(--space-6); border: 2px solid var(--color-gold-light); outline: 3px solid var(--color-navy); outline-offset: -3px; white-space: nowrap; }
     .btn-primary:hover { background: var(--color-gold-light); box-shadow: 0 4px 20px oklch(72% 0.12 75 / 0.35); }
-    .btn-outline { background: transparent; color: var(--color-ink-on-dark); border: 1px solid oklch(100% 0 0 / 0.35); }
+    .btn-outline { background: transparent; color: var(--color-ink); border: 1px solid oklch(0% 0 0 / 0.25); }
     .btn-outline:hover { border-color: var(--color-gold); color: var(--color-gold); }
 
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-4) 0; background: var(--color-navy-deep); box-shadow: 0 1px 0 oklch(100% 0 0 / 0.08); }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-4) 0; background: var(--color-navy-deep); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); }
     .nav-inner > a.btn-primary { margin-left: auto; padding: var(--space-4) var(--space-8); }
     .nav-logo img { height: 48px; width: auto; }
@@ -35,7 +35,8 @@
     .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: currentColor; }
 
     /* Story hero */
-    .story-hero { padding-top: 160px; background: var(--color-navy); }
+    .story-hero { padding-top: 140px; background: var(--color-navy-deep); min-height: 70vh; display: flex; align-items: flex-end; }
+    .story-hero > .container { width: 100%; }
     .story-hero-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
     .story-hero-content { padding: var(--space-20) var(--space-12) var(--space-20) 0; display: flex; flex-direction: column; justify-content: center; }
     .hero-eyebrow { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
@@ -48,7 +49,7 @@
 
     .section { padding: var(--space-20) 0; }
     .section-alt { background: var(--color-paper-2); }
-    .section-dark { background: var(--color-navy); }
+    .section-dark { background: var(--color-paper); }
     .section-label { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
     .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-gold); }
     .section-title { font-family: var(--font-display); font-size: var(--text-h1); font-weight: 600; line-height: 1.15; overflow-wrap: anywhere; min-width: 0; }
@@ -69,40 +70,39 @@
 
     /* Stats */
     .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); margin-top: var(--space-10); }
-    .stat { text-align: center; padding: var(--space-6); border: 1px solid oklch(100% 0 0 / 0.1); border-radius: var(--radius); }
+    .stat { text-align: center; padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius); }
     .stat-num { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--color-gold); line-height: 1; }
-    .stat-label { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: var(--space-2); line-height: 1.4; }
+    .stat-label { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: var(--space-2); line-height: 1.4; }
 
     /* Team */
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); margin-top: var(--space-10); }
-    .team-card { padding: var(--space-8); background: var(--color-paper-2); border-radius: var(--radius); border-top: 3px solid var(--color-gold); }
-    .team-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink); }
-    .team-role { font-size: var(--text-sm); font-weight: 500; color: var(--color-gold); letter-spacing: 0.04em; text-transform: uppercase; margin-top: var(--space-1); }
-    .team-bio { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; margin-top: var(--space-4); }
-    .team-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }
-    .team-avatar-frame { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--color-gold); background: var(--color-navy-mid); }
-    .team-avatar { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: center top; }
-    .team-avatar-placeholder { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; border: 2px solid var(--color-gold); background: var(--color-navy-mid); display: flex; align-items: center; justify-content: center; padding: 14px; }
-    .team-avatar-placeholder img { width: 100%; height: 100%; object-fit: contain; }
-    .team-contact { margin-top: var(--space-4); font-size: var(--text-sm); }
-    .team-contact a { color: var(--color-gold); font-weight: 500; transition: color var(--dur-fast); }
-    .team-contact a:hover { color: var(--color-gold-dark); }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: var(--space-10); }
+    .team-card { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--color-navy-deep); }
+    .team-avatar { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .team-avatar-placeholder { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 22%; }
+    .team-avatar-placeholder img { width: 100%; height: 100%; object-fit: contain; opacity: 0.8; }
+    .team-card-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--space-6) var(--space-5) var(--space-5); background: linear-gradient(to top, oklch(15% 0.02 60 / 0.92) 0%, oklch(15% 0.02 60 / 0.55) 55%, transparent 100%); }
+    .team-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); line-height: 1.15; }
+    .team-role { font-size: 0.7rem; font-weight: 600; color: var(--color-ink-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: var(--space-2); }
+    .team-credential { font-size: 0.7rem; font-weight: 700; color: var(--color-gold-light); letter-spacing: 0.02em; text-transform: uppercase; margin-top: var(--space-1); line-height: 1.4; }
+    .team-readmore { display: inline-block; margin-top: var(--space-4); padding: var(--space-2) var(--space-4); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-ink-on-dark); border: 1px solid oklch(100% 0 0 / 0.5); border-radius: var(--radius-sm); transition: background var(--dur-fast), border-color var(--dur-fast); }
+    .team-readmore:hover { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-navy-deep); }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
 
     /* Values */
     .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); margin-top: var(--space-10); }
-    .value-item { padding: var(--space-8); background: var(--color-navy-mid); border-radius: var(--radius); }
-    .value-title { font-weight: 600; font-size: var(--text-base); color: var(--color-ink-on-dark); margin-bottom: var(--space-3); }
-    .value-body { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.7; }
+    .value-item { padding: var(--space-8); background: var(--color-paper-2); border: 1px solid var(--color-border); border-radius: var(--radius); }
+    .value-title { font-weight: 600; font-size: var(--text-base); color: var(--color-ink); margin-bottom: var(--space-3); }
+    .value-body { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; }
 
-    .cta-banner { padding: var(--space-20) 0; background: var(--color-navy); position: relative; }
+    .cta-banner { padding: var(--space-20) 0; background: var(--color-paper); position: relative; }
     .cta-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--color-gold), transparent); }
     .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: var(--space-12); align-items: center; }
-    .cta-title { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; color: var(--color-ink-on-dark); line-height: 1.15; overflow-wrap: anywhere; min-width: 0; }
+    .cta-title { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; color: var(--color-ink); line-height: 1.15; overflow-wrap: anywhere; min-width: 0; }
     .cta-title em { font-style: italic; color: var(--color-gold); }
-    .cta-sub { font-size: var(--text-base); color: var(--color-ink-muted); margin-top: var(--space-4); max-width: 480px; }
+    .cta-sub { font-size: var(--text-base); color: var(--color-ink-2); margin-top: var(--space-4); max-width: 480px; }
     .cta-actions { display: flex; flex-direction: column; gap: var(--space-3); align-items: flex-end; flex-shrink: 0; }
-    .cta-contact { font-size: var(--text-sm); color: var(--color-ink-muted); text-align: right; }
-    .cta-contact a { color: var(--color-gold-light); }
+    .cta-contact { font-size: var(--text-sm); color: var(--color-ink-2); text-align: right; }
+    .cta-contact a { color: var(--color-gold-dark); }
 
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--dur-enter) var(--ease-out), transform var(--dur-enter) var(--ease-out); }
@@ -124,7 +124,7 @@
         <div class="nav-inner">
           <a href="/" aria-label="Freccia Construction, Home"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" style="height:48px;width:auto;" onerror="this.style.display='none'"></a>
           <ul class="nav-links" role="list">
-            <li><a href="build.html">Commercial</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
             <li><a href="residential.html">Residential</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="about.html" aria-current="page">About Us</a></li>
@@ -144,7 +144,7 @@
           <div class="story-hero-content">
             <p class="hero-eyebrow reveal">About Freccia</p>
             <h1 class="reveal reveal-delay-1">Built on Craft.<br><em>Driven by Purpose.</em></h1>
-            <p class="story-hero-sub reveal reveal-delay-2">Freccia Construction is a family-led builder based in Round Rock, TX. Custom homes and commercial construction across Austin Metro since 2016.</p>
+            <p class="story-hero-sub reveal reveal-delay-2">Freccia Construction is a local, family-owned builder based in Round Rock, TX. Custom homes and commercial construction across Austin Metro since 2016.</p>
           </div>
           <div class="story-hero-image">
             <img src="assets/images/rebelz-gym/exterior-aerial-2.jpg" alt="Freccia Construction commercial project, aerial exterior view, Austin Metro" loading="eager">
@@ -158,7 +158,7 @@
       <div class="container">
         <p class="section-label reveal" style="justify-content:center;">Our Mission</p>
         <div class="mission-block reveal reveal-delay-1">
-          <p class="mission-quote">We exist to do more for our community. It is our hope that one day, we will build and gift homes entirely free to the families who need them most.</p>
+          <p class="mission-quote">We exist to do more for our community: to build spaces that elevate lives and bring people together, with intention, craftsmanship, and unwavering care.</p>
           <cite class="mission-cite">Rebekah Severi, Co-Owner, Freccia Construction</cite>
         </div>
       </div>
@@ -213,84 +213,70 @@
         <h2 class="section-title reveal reveal-delay-1">The People Behind the Build.</h2>
         <div class="team-grid">
           <div class="team-card reveal">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Waldemar Severi</h3>
-                <p class="team-role">Owner | Managing Partner</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/waldemar-severi.jpg" alt="Waldemar Severi" style="object-position:center top; transform:scale(1.7);"></div>
+            <img class="team-avatar" src="assets/images/team/waldemar-severi.jpg" alt="Waldemar Severi, Owner and Managing Partner at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 20%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Waldemar Severi</h3>
+              <p class="team-role">Owner | Managing Partner</p>
+              <p class="team-credential">2026 HBA Director At Large &amp; Membership Committee</p>
+              <a class="team-readmore" href="team/waldemar-severi.html">Read More</a>
             </div>
-            <p class="team-bio">Waldemar runs the field. He oversees construction operations, site management, and project execution. The Severi family built Freccia from the ground up and it shows in the craftsmanship on every project.</p>
           </div>
           <div class="team-card reveal reveal-delay-1">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Rebekah Severi</h3>
-                <p class="team-role">Owner | Managing Partner</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/rebekah-severi.jpg" alt="Rebekah Severi" style="object-position:68% top; transform:scale(1.7);"></div>
+            <img class="team-avatar" src="assets/images/team/rebekah-severi.jpg" alt="Rebekah Severi, Owner and Managing Partner at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 15%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Rebekah Severi</h3>
+              <p class="team-role">Owner | Managing Partner</p>
+              <p class="team-credential">2026 HomeAid Austin Fund Development Committee</p>
+              <a class="team-readmore" href="team/rebekah-severi.html">Read More</a>
             </div>
-            <p class="team-bio">Rebekah oversees the legal, finance, and administrative side of Freccia. She's the primary decision-maker for the residential division, working alongside Waldemar.</p>
           </div>
           <div class="team-card reveal reveal-delay-2">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Joshua Clements</h3>
-                <p class="team-role">Owner | Managing Partner</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/josh-clements.jpg" alt="Joshua Clements" style="object-position:65% top; transform:scale(1.7);"></div>
+            <img class="team-avatar" src="assets/images/team/josh-clements.jpg" alt="Josh Clements, Owner and Managing Partner at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 15%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Josh Clements</h3>
+              <p class="team-role">Owner | Managing Partner</p>
+              <a class="team-readmore" href="team/josh-clements.html">Read More</a>
             </div>
-            <p class="team-bio">Josh leads commercial sales and business development at Freccia Construction. He's the first point of contact for commercial build-outs, tenant improvements, and new commercial construction inquiries.</p>
           </div>
           <div class="team-card reveal">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Jacqueline Clements</h3>
-                <p class="team-role">Owner | Managing Partner</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/jacqueline-clements.jpg" alt="Jacqueline Clements" style="object-position:58% top; transform:scale(1.7);"></div>
+            <img class="team-avatar" src="assets/images/team/jacqueline-clements.jpg" alt="Jacqueline Clements, Owner and Managing Partner at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 15%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Jacqueline Clements</h3>
+              <p class="team-role">Owner | Managing Partner</p>
+              <a class="team-readmore" href="team/jacqueline-clements.html">Read More</a>
             </div>
-            <p class="team-bio">Jacqueline is part of the ownership team at Freccia Construction, supporting operations across commercial and residential projects in Austin Metro.</p>
+          </div>
+          <div class="team-card reveal">
+            <img class="team-avatar" src="assets/images/team/rebecca-rivera.jpg" alt="Rebecca Rivera, Accounting Lead at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 15%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Rebecca Rivera</h3>
+              <p class="team-role">Accounting Lead</p>
+              <a class="team-readmore" href="team/rebecca-rivera.html">Read More</a>
+            </div>
+          </div>
+          <div class="team-card reveal reveal-delay-1">
+            <img class="team-avatar" src="assets/images/team/maryiedth-malott.jpg" alt="Maryiedth Malott, Purchasing Coordinator at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX" style="object-position:center 15%;">
+            <div class="team-card-overlay">
+              <h3 class="team-name">Maryiedth Malott</h3>
+              <p class="team-role">Purchasing Coordinator</p>
+              <a class="team-readmore" href="team/maryiedth-malott.html">Read More</a>
+            </div>
           </div>
           <div class="team-card reveal reveal-delay-2">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Rebecca Rivera</h3>
-                <p class="team-role">Accounting Lead</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/rebecca-rivera.jpg" alt="Rebecca Rivera" style="object-position:45% top; transform:scale(1.8);"></div>
+            <div class="team-avatar-placeholder"><img src="assets/images/logo-icon-gold.png" alt="Edson Rodriguez, Project Manager at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX"></div>
+            <div class="team-card-overlay">
+              <h3 class="team-name">Edson Rodriguez</h3>
+              <p class="team-role">Project Manager</p>
+              <a class="team-readmore" href="team/edson-rodriguez.html">Read More</a>
             </div>
-            <p class="team-bio">Rebecca manages accounting and financial operations for Freccia Construction.</p>
           </div>
           <div class="team-card reveal">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Maryiedth Malott</h3>
-                <p class="team-role">Purchasing Coordinator</p>
-              </div>
-              <div class="team-avatar-frame"><img class="team-avatar" src="assets/images/team/maryiedth-malott.jpg" alt="Maryiedth Malott" style="object-position:62% top; transform:scale(1.7);"></div>
+            <div class="team-avatar-placeholder"><img src="assets/images/logo-icon-gold.png" alt="Victor Ramirez, Project Manager at Freccia Construction, custom home and commercial builder in Round Rock and Austin Metro TX"></div>
+            <div class="team-card-overlay">
+              <h3 class="team-name">Victor Ramirez</h3>
+              <p class="team-role">Project Manager</p>
+              <a class="team-readmore" href="team/victor-ramirez.html">Read More</a>
             </div>
-            <p class="team-bio">Maryiedth coordinates purchasing and procurement for Freccia's active projects.</p>
-          </div>
-          <div class="team-card reveal reveal-delay-2">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Edson Rodriguez</h3>
-                <p class="team-role">Project Manager</p>
-              </div>
-              <div class="team-avatar-placeholder"><img src="assets/images/logo-icon-gold.png" alt=""></div>
-            </div>
-            <p class="team-bio">Edson manages day-to-day execution on Freccia's active job sites.</p>
-          </div>
-          <div class="team-card reveal">
-            <div class="team-card-head">
-              <div>
-                <h3 class="team-name">Victor Ramirez</h3>
-                <p class="team-role">Project Manager</p>
-              </div>
-              <div class="team-avatar-placeholder"><img src="assets/images/logo-icon-gold.png" alt=""></div>
-            </div>
-            <p class="team-bio">Victor manages day-to-day execution on Freccia's active job sites.</p>
           </div>
         </div>
       </div>
@@ -300,7 +286,7 @@
     <section class="section section-dark">
       <div class="container">
         <p class="section-label reveal">What We Stand For</p>
-        <h2 class="section-title section-title-light reveal reveal-delay-1">How We Build.</h2>
+        <h2 class="section-title reveal reveal-delay-1">How We Build.</h2>
         <div class="values-grid">
           <div class="value-item reveal">
             <h3 class="value-title">Craftsmanship over Volume</h3>
@@ -344,11 +330,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
-          <p class="footer-tagline">Custom homes and commercial construction across Austin Metro and Central Texas.</p>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
-        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="build.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li></ul></nav>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="partners.html">Partners</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
