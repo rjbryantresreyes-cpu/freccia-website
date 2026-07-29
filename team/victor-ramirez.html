@@ -29,6 +29,7 @@
     .breadcrumb a { color: var(--color-gold); } .breadcrumb span { margin: 0 var(--space-2); opacity: 0.4; }
     .profile-hero { background: var(--color-navy-deep); padding: 140px var(--space-8) var(--space-20); }
     .profile-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 340px 1fr; gap: var(--space-16); align-items: start; }
+    .profile-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; }
     .profile-photo-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--color-navy-deep); display: flex; align-items: center; justify-content: center; }
     .profile-eyebrow { font-size: var(--text-sm); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-3); }
     .profile-name { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); color: var(--color-ink-on-dark); line-height: 1.1; margin-bottom: var(--space-3); }
@@ -57,7 +58,7 @@
     .back-team a { display: inline-block; border: 2px solid var(--color-navy); color: var(--color-navy); padding: var(--space-4) var(--space-10); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
     .back-team a:hover { background: var(--color-navy-deep); color: var(--color-ink-on-dark); }
     @media (max-width: 1024px) { .profile-hero-inner { grid-template-columns: 260px 1fr; } .profile-body { grid-template-columns: 1fr; } .profile-sidebar { position: static; } .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
-    @media (max-width: 768px) { .nav { padding: var(--space-4); } .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--color-navy-deep); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; } .nav-links.open { display: flex; } .nav-menu-btn { display: block; position: relative; z-index: 101; } .profile-hero-inner { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    @media (max-width: 768px) { .nav { padding: var(--space-4); } .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; transform: none; background: var(--color-navy-deep); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; } .nav-links.open { display: flex; } .nav-cta { padding: var(--space-2) var(--space-4) !important; font-size: var(--text-xs) !important; outline: none !important; border: 1px solid var(--color-gold-light); margin: 0 var(--space-2) !important; display: inline-flex !important; align-items: center; justify-content: center; min-height: 36px; } .nav-logo img { height: 36px; } .nav-menu-btn { display: block; position: relative; z-index: 101; } .profile-hero-inner { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
@@ -73,11 +74,11 @@
 <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="../about.html">About Us</a><span>›</span>Victor Ramirez</div>
 <section class="profile-hero">
   <div class="profile-hero-inner">
-    <div class="profile-photo-placeholder"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="30" r="18" stroke="white" stroke-width="2"/><path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="white" stroke-width="2"/></svg></div>
+    <img class="profile-photo" src="../assets/images/team/victor-ramirez.jpg" alt="Victor Ramirez, Project Manager, Freccia Construction" loading="eager">
     <div class="profile-info">
       <p class="profile-eyebrow">Freccia Construction · Field Operations</p>
       <h1 class="profile-name">Victor Ramirez</h1>
-      <p class="profile-title">Freccia Construction Team</p>
+      <p class="profile-title">Project Manager</p>
       <div class="profile-meta">
         <div class="profile-meta-item"><p class="profile-meta-label">Company</p><p class="profile-meta-value">Freccia Construction</p></div>
         <div class="profile-meta-item"><p class="profile-meta-label">Location</p><p class="profile-meta-value">Austin Metro, TX</p></div>
@@ -125,7 +126,7 @@
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
         <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li><li><a href="../resources/index.html#faq-commercial">FAQ</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
@@ -135,6 +136,7 @@
               <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
               <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
               <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
             </div>
           </div>
         </nav>

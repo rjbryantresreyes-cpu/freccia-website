@@ -57,7 +57,7 @@
     .upcoming-eyebrow { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
     .upcoming-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-gold); }
     .upcoming-title { font-family: var(--font-display); font-size: var(--text-h1); font-weight: 600; line-height: 1.15; color: var(--color-ink); }
-    .upcoming-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-10); }
+    .upcoming-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); margin-top: var(--space-10); }
     .upcoming-card { background: var(--color-white); border: 1px solid var(--color-border); border-top: 3px solid var(--color-gold); padding: var(--space-8); }
     .upcoming-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink); }
     .upcoming-loc { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: var(--space-2); }
@@ -108,6 +108,9 @@
     .showcase-tag { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-2); }
     .showcase-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); }
     .showcase-loc { font-size: var(--text-sm); color: var(--color-ink-muted); margin-top: 2px; }
+    .showcase-credit { font-size: var(--text-xs); color: var(--color-ink-muted); margin-top: var(--space-2); opacity: .75; }
+    .showcase-credit a { color: var(--color-ink-muted); text-decoration: underline; text-decoration-color: oklch(75% .01 80/.4); }
+    .showcase-credit a:hover { color: var(--color-gold); }
 
     /* CTA */
     .cta-banner { padding: var(--space-20) 0; background: var(--color-paper); position: relative; }
@@ -127,7 +130,17 @@
     .reveal-delay-2 { transition-delay: 200ms; }
 
     @media (max-width: 1024px) { .cta-inner { grid-template-columns: 1fr; } .cta-actions { align-items: flex-start; } .cta-contact { text-align: left; } .footer-top { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: flex; } .showcase-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      .nav-inner { gap: var(--space-2); }
+      .nav-inner > a:first-child { flex-shrink: 0; }
+      .nav-inner > a.btn-primary { padding: var(--space-2) var(--space-4) !important; font-size: var(--text-xs) !important; min-height: 36px; border: 1px solid var(--color-gold-light) !important; outline: none !important; white-space: nowrap; }
+      .nav-logo img { height: 36px; }
+      .nav-links { display: none; position: fixed; inset: 0; transform: none; background: var(--color-navy-deep); flex-direction: column; align-items: center; justify-content: center; gap: var(--space-8); z-index: 200; }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: var(--text-base); }
+      .nav-mobile-toggle { display: flex; z-index: 300; flex-shrink: 0; }
+      .showcase-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr; }
+    }
     @media (max-width: 480px) { .filter-tabs { gap: var(--space-2); } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 150ms !important; } .reveal { opacity: 1; transform: none; } }
 
@@ -158,7 +171,7 @@
     <nav class="nav" aria-label="Main navigation">
       <div class="container">
         <div class="nav-inner">
-          <a href="/" aria-label="Freccia Construction, Home"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" style="height:48px;width:auto;" onerror="this.style.display='none'"></a>
+          <a href="/" class="nav-logo" aria-label="Freccia Construction, Home"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></a>
           <ul class="nav-links" role="list">
             <li><a href="commercial.html">Commercial</a></li>
             <li><a href="residential.html">Residential</a></li>
@@ -167,7 +180,7 @@
             <li><a href="resources/index.html">Resources</a></li>
           </ul>
           <a href="contact.html" class="btn btn-primary">Start a Project</a>
-          <button class="nav-mobile-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+          <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
       </div>
     </nav>
@@ -202,9 +215,9 @@
             <div class="project-showcase reveal">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/james-avery-plaza/office-suite-wide.jpg" alt="James Avery Plaza, retail tenant improvement Austin TX by Freccia Construction" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/james-avery-plaza/office-glass-partition.jpg" alt="James Avery Plaza finished tenant space" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/james-avery-plaza/office-finished-detail.jpg" alt="James Avery Plaza finished office detail with city view" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/james-avery-plaza/office-suite-wide.jpg" alt="James Avery Plaza, retail tenant improvement Leander TX by Freccia Construction" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/james-avery-plaza/office-glass-partition.jpg" alt="James Avery Plaza finished tenant space" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/james-avery-plaza/office-finished-detail.jpg" alt="James Avery Plaza finished office detail with city view" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -213,19 +226,19 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Retail Plaza · Tenant Improvement</p>
-                <h3 class="showcase-name">James Avery Plaza</h3>
-                <p class="showcase-loc">Austin Metro, TX</p>
+                <h3 class="showcase-name">Leander Insurance Agency</h3>
+                <p class="showcase-loc">Leander, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-1" id="building-kidz-daycare">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/building-kidz-daycare/exterior-wide-playground.jpg" alt="Building Kidz Daycare exterior with outdoor play area, Palmera Ridge, Round Rock, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/building-kidz-daycare/exterior-entrance.jpg" alt="Building Kidz Daycare entrance, Round Rock, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/building-kidz-daycare/exterior-side.jpg" alt="Building Kidz Daycare exterior side view, Round Rock, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/building-kidz-daycare/classroom-1.jpg" alt="Building Kidz Daycare classroom, Round Rock, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/building-kidz-daycare/classroom-2.jpg" alt="Building Kidz Daycare classroom, Round Rock, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/building-kidz-daycare/kitchen-prep.jpg" alt="Building Kidz Daycare kitchen and prep area, Round Rock, TX" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/building-kidz-daycare/exterior-wide-playground.jpg" alt="Building Kidz Daycare exterior with outdoor play area, Palmera Ridge, Leander, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/building-kidz-daycare/exterior-entrance.jpg" alt="Building Kidz Daycare entrance, Leander, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/building-kidz-daycare/exterior-side.jpg" alt="Building Kidz Daycare exterior side view, Leander, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/building-kidz-daycare/classroom-1.jpg" alt="Building Kidz Daycare classroom, Leander, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/building-kidz-daycare/classroom-2.jpg" alt="Building Kidz Daycare classroom, Leander, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/building-kidz-daycare/kitchen-prep.jpg" alt="Building Kidz Daycare kitchen and prep area, Leander, TX" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -234,38 +247,43 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Childcare Facility · New Build</p>
-                <h3 class="showcase-name">Building Kidz Daycare</h3>
-                <p class="showcase-loc">Palmera Ridge · Round Rock, TX</p>
+                <h3 class="showcase-name">Leander Daycare (Palmera Ridge)</h3>
+                <p class="showcase-loc">Palmera Ridge · Leander, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-2">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/rebelz-gym/gym-floor-banner.jpg" alt="Rebelz Gym finished training floor with NCA National Championship banners" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/rebelz-gym/training-equipment.jpg" alt="Rebelz Gym tumbling and training equipment area" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/rebelz-gym/gym-floor-wide.jpg" alt="Rebelz Gym wide view of finished cheer and tumbling floor" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/rebelz-gym/lobby-viewing-area.jpg" alt="Rebelz Gym parent lobby and viewing area" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/training-equipment.jpg" alt="Rebelz Gym tumbling and training equipment area" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/gym-floor-wide.jpg" alt="Rebelz Gym wide view of finished cheer and tumbling floor" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/lobby-viewing-area.jpg" alt="Rebelz Gym parent lobby and viewing area" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/parent-lounge.jpg" alt="Rebelz Gym parent lounge with training floor observation windows" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/restroom.jpg" alt="Rebelz Gym finished restroom facilities" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/equipment-storage.jpg" alt="Rebelz Gym training floor with equipment storage and Rebelz banner wall" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/championship-banners.jpg" alt="Rebelz Gym training floor with championship banners and mirror wall" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/rebelz-gym/banner-wall-frontal.jpg" alt="Rebelz Gym Rebelz Cheer and Tumbling banner wall with national championship banners" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">4 photos</span>
+                <span class="carousel-count">9 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Fitness Facility · Commercial New Build</p>
-                <h3 class="showcase-name">Rebelz Gym</h3>
-                <p class="showcase-loc">Austin Metro, TX</p>
+                <h3 class="showcase-name">Georgetown Cheer Gym</h3>
+                <p class="showcase-loc">Georgetown, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="tails-of-hope">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/commercial/tails-of-hope/pour-1.jpg" alt="Tails of Hope animal shelter, concrete pour by Freccia Construction, Leander, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/tails-of-hope/pour-2.jpg" alt="Tails of Hope animal shelter foundation and concrete pour, Leander, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/tails-of-hope/pour-3.jpg" alt="Tails of Hope animal shelter foundation slab, Leander, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/tails-of-hope/framing-1.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/tails-of-hope/framing-2.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/tails-of-hope/framing-3.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/tails-of-hope/pour-2.jpg" alt="Tails of Hope animal shelter foundation and concrete pour, Leander, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/tails-of-hope/pour-3.jpg" alt="Tails of Hope animal shelter foundation slab, Leander, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/tails-of-hope/framing-1.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/tails-of-hope/framing-2.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/tails-of-hope/framing-3.jpg" alt="Tails of Hope animal shelter framing, Leander, TX, photo 6" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -274,23 +292,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Animal Shelter &middot; In Progress</p>
-                <h3 class="showcase-name">Tails of Hope</h3>
-                <p class="showcase-loc">Leander, TX &middot; Formerly Central Texas SPCA</p>
+                <h3 class="showcase-name">Leander Animal Shelter</h3>
+                <p class="showcase-loc">Leander, TX &middot; Formerly Tails of Hope / Central Texas SPCA</p>
               </div>
             </div>
-            <div class="project-showcase reveal" id="peace-lutheran-church">
+            <div class="project-showcase reveal" id="peace-family-housing-project">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/commercial/peace-lutheran/groundbreaking-1.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-2.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-3.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-4.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-5.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-6.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-7.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-8.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-9.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/peace-lutheran/groundbreaking-10.jpg" alt="Peace Lutheran Church groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/commercial/peace-lutheran/groundbreaking-1.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-2.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-3.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-4.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-5.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-6.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-7.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-8.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-9.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/peace-lutheran/groundbreaking-10.jpg" alt="Peace Family Housing Project groundbreaking ceremony, Freccia Construction, Austin Metro, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -298,8 +316,8 @@
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
-                <p class="showcase-tag">Church &middot; Groundbreaking</p>
-                <h3 class="showcase-name">Peace Lutheran Church</h3>
+                <p class="showcase-tag">Transitional Housing &middot; In Progress</p>
+                <h3 class="showcase-name">Austin Housing for Families</h3>
                 <p class="showcase-loc">Austin Metro, TX</p>
               </div>
             </div>
@@ -307,10 +325,10 @@
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/commercial/mueller-gym/gym-1-arched-mirrors.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/mueller-gym/gym-2-entry-windows.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/mueller-gym/gym-3-lounge-nook.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/mueller-gym/gym-4-wide-floor.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/commercial/mueller-gym/gym-5-rack-bench.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/mueller-gym/gym-2-entry-windows.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/mueller-gym/gym-3-lounge-nook.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/mueller-gym/gym-4-wide-floor.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/mueller-gym/gym-5-rack-bench.jpg" alt="Mueller Gym fitness amenity, Mueller, Austin, TX, photo 5" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -318,9 +336,65 @@
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
-                <p class="showcase-tag">Fitness Amenity &middot; Commercial</p>
-                <h3 class="showcase-name">Mueller Gym</h3>
+                <p class="showcase-tag">Fitness Amenity &middot; In Progress</p>
+                <h3 class="showcase-name">Mueller Fitness Amenity Build-Out</h3>
                 <p class="showcase-loc">Mueller, Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="willow-salon-collective">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/commercial/willow-salon/willow-1.jpg" alt="Willow Salon Collective, Liberty Hill, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/willow-salon/willow-2.jpg" alt="Willow Salon Collective, Liberty Hill, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/willow-salon/willow-3.jpg" alt="Willow Salon Collective, Liberty Hill, TX, photo 3" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">3 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Salon Buildout &middot; In Progress</p>
+                <h3 class="showcase-name">Liberty Hill Salon Build-Out</h3>
+                <p class="showcase-loc">Liberty Hill, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="easton-park-business-park">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/commercial/easton-park/easton-park-1.jpg" alt="Easton Park Business Park, Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/easton-park/easton-park-2.jpg" alt="Easton Park Business Park, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/easton-park/easton-park-3.jpg" alt="Easton Park Business Park, Austin, TX, photo 3" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">3 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Business Park &middot; In Progress</p>
+                <h3 class="showcase-name">Easton Park Business Park</h3>
+                <p class="showcase-loc">Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="salt-and-waves-salon">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/commercial/salt-and-waves/saltwaves-1.jpg" alt="Salt & Waves Salon at the Preserve, Georgetown, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/salt-and-waves/saltwaves-2.jpg" alt="Salt & Waves Salon at the Preserve, Georgetown, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/salt-and-waves/saltwaves-3.jpg" alt="Salt & Waves Salon at the Preserve, Georgetown, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/salt-and-waves/saltwaves-4.jpg" alt="Salt & Waves Salon at the Preserve, Georgetown, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/commercial/salt-and-waves/saltwaves-5.jpg" alt="Salt & Waves Salon at the Preserve, Georgetown, TX, photo 5" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">5 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Salon Buildout &middot; In Progress</p>
+                <h3 class="showcase-name">Georgetown Salon Build-Out (The Preserve)</h3>
+                <p class="showcase-loc">Georgetown, TX</p>
               </div>
             </div>
           </div>
@@ -333,40 +407,39 @@
             <div class="project-showcase reveal" id="waterbrook">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/waterbrook/DJI_0521.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5153.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5174.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5246.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5218.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5214.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5198.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/2F6B5252.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/waterbrook/DJI_0536.JPG" alt="5406 Waterbrook Drive, custom new build, Windsor Park, Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/waterbrook/DJI_0521.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5153.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5174.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5246.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5218.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5214.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5198.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/waterbrook/2F6B5252.JPG" alt="Windsor Park Custom Home Build, custom new build, Windsor Park, Austin, TX, photo 8" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">9 photos</span>
+                <span class="carousel-count">8 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Custom New Build</p>
-                <h3 class="showcase-name">5406 Waterbrook Drive</h3>
-                <p class="showcase-loc">Windsor Park · Austin, TX</p>
+                <h3 class="showcase-name">Windsor Park Custom Home Build</h3>
+                <p class="showcase-loc">Windsor Park, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="e-13th-unit-1">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/e13th-unit-1/Copy of 1.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 2.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 3.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 4.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 5.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 6.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 7.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 8.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 9.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-1/Copy of 10.JPG" alt="East 13th Unit 1, custom new build, East Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/e13th-unit-1/Copy of 1.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 2.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 3.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 4.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 5.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 6.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 7.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 8.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 9.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-1/Copy of 10.JPG" alt="East Austin New Build Unit 1, custom new build, East Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -375,23 +448,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">New Build</p>
-                <h3 class="showcase-name">East 13th &mdash; Unit 1</h3>
+                <h3 class="showcase-name">East Austin New Build &mdash; Unit 1</h3>
                 <p class="showcase-loc">East Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="e-13th-unit-2">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/e13th-unit-2/Copy of 1.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 2.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 3.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 4.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 5.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 6.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 7.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 8.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 9.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e13th-unit-2/Copy of 10.JPG" alt="East 13th Unit 2, custom new build, East Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/e13th-unit-2/Copy of 1.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 2.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 3.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 4.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 5.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 6.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 7.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 8.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 9.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e13th-unit-2/Copy of 10.JPG" alt="East Austin New Build Unit 2, custom new build, East Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -400,23 +473,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">New Build</p>
-                <h3 class="showcase-name">East 13th &mdash; Unit 2</h3>
+                <h3 class="showcase-name">East Austin New Build &mdash; Unit 2</h3>
                 <p class="showcase-loc">East Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-1" id="charlton">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/charlton/2021 Charlton-Kitchen Island.jpeg" alt="Charlton, kitchen island, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Front.jpeg" alt="Charlton, finished exterior front, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Living Room.jpeg" alt="7301 Charlton, living room, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Master Bathroom.jpeg" alt="7301 Charlton, master bathroom, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Master Bathroom Vanities.jpeg" alt="7301 Charlton, master bathroom vanity, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Master Bedroom(1).jpeg" alt="7301 Charlton, master bedroom, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Bedroom.jpeg" alt="7301 Charlton, secondary bedroom, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton Back Porch.jpeg" alt="7301 Charlton, back porch, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Kitchen.jpeg" alt="Charlton, kitchen renovation, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/charlton/2021 Charlton-Fireplace.jpeg" alt="7301 Charlton, living room fireplace detail, Austin, TX" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/charlton/2021 Charlton-Kitchen Island.jpeg" alt="Charlton, kitchen island, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Front.jpeg" alt="Charlton, finished exterior front, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Living Room.jpeg" alt="7301 Charlton, living room, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Master Bathroom.jpeg" alt="7301 Charlton, master bathroom, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Master Bathroom Vanities.jpeg" alt="7301 Charlton, master bathroom vanity, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Master Bedroom(1).jpeg" alt="7301 Charlton, master bedroom, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Bedroom.jpeg" alt="7301 Charlton, secondary bedroom, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton Back Porch.jpeg" alt="7301 Charlton, back porch, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Kitchen.jpeg" alt="Charlton, kitchen renovation, University Hills, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/charlton/2021 Charlton-Fireplace.jpeg" alt="7301 Charlton, living room fireplace detail, University Hills, East Austin, TX" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -425,24 +498,24 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Charlton</h3>
-                <p class="showcase-loc">Austin, TX</p>
+                <h3 class="showcase-name">University Hills Home Renovation (Kitchen &amp; Fireplace)</h3>
+                <p class="showcase-loc">University Hills, East Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="castle-ridge">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/castle-ridge-kitchen.jpg" alt="Castle Ridge finished kitchen with white oak cabinets and marble waterfall island, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06403.JPG" alt="Castle Ridge finished open-concept kitchen and living space, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06421.JPG" alt="Castle Ridge finished kitchen island and gas range, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06448.JPG" alt="Castle Ridge finished kitchen with double oven and pantry, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06536.JPG" alt="Castle Ridge finished bathroom with wood vanity and tiled tub, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06506.JPG" alt="Castle Ridge finished walk-in shower with marble tile, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06385.JPG" alt="Castle Ridge finished living room with stone fireplace, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/2F6B7966.JPG" alt="Castle Ridge finished exterior, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DSC06320.JPG" alt="Castle Ridge finished pool and covered patio, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge/DJI_20250804104129_0750_D.JPG" alt="Castle Ridge aerial view of home and pool, Austin, TX" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/castle-ridge-pool-exterior.jpg" alt="Castle Ridge finished pool, Austin, TX" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/castle-ridge-kitchen.jpg" alt="Castle Ridge finished kitchen with white oak cabinets and marble waterfall island, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06403.JPG" alt="Castle Ridge finished open-concept kitchen and living space, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06421.JPG" alt="Castle Ridge finished kitchen island and gas range, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06448.JPG" alt="Castle Ridge finished kitchen with double oven and pantry, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06536.JPG" alt="Castle Ridge finished bathroom with wood vanity and tiled tub, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06506.JPG" alt="Castle Ridge finished walk-in shower with marble tile, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06385.JPG" alt="Castle Ridge finished living room with stone fireplace, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/2F6B7966.JPG" alt="Castle Ridge finished exterior, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DSC06320.JPG" alt="Castle Ridge finished pool and covered patio, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge/DJI_20250804104129_0750_D.JPG" alt="Castle Ridge aerial view of home and pool, Lost Creek, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/castle-ridge-pool-exterior.jpg" alt="Castle Ridge finished pool, Lost Creek, Austin, TX" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -451,23 +524,24 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation, Home Addition &amp; Pool</p>
-                <h3 class="showcase-name">Castle Ridge</h3>
-                <p class="showcase-loc">Austin, TX</p>
+                <h3 class="showcase-name">Lost Creek Home Renovation &amp; Pool</h3>
+                <p class="showcase-loc">Lost Creek, Austin, TX</p>
+                <p class="showcase-credit">Architect: <a href="https://www.3dhomedesigns.com" target="_blank" rel="noopener">Aaron Lytal, 3D Home Designs</a> &middot; Cabinetry: <a href="https://woodenwoodworks.com" target="_blank" rel="noopener">Wooden Woodworks</a></p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-1" id="lily-terrace">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/lily-terrace/1.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/3.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/12.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/13.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/21.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/20.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/8.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/9.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/29.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lily-terrace/25.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/3.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/12.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/13.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/21.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/20.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/8.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/9.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/29.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lily-terrace/25.JPG" alt="Lily Terrace finished New Build, Montopolis, Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -476,44 +550,43 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">New Build</p>
-                <h3 class="showcase-name">Lily Terrace</h3>
+                <h3 class="showcase-name">Montopolis Custom Home Build</h3>
                 <p class="showcase-loc">Montopolis, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-2" id="lerwick">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/lerwick/2F6B3745.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/POSTED 2F6B3770.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/2F6B3765.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/2F6B3780.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/2F6B3760.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/2F6B3750.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/2F6B3775.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/lerwick/POSTED 2F6B3755.jpg" alt="Lerwick finished Kitchen Renovation, Round Rock, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/lerwick/2F6B3745.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/POSTED 2F6B3770.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/2F6B3780.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/2F6B3760.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/2F6B3750.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/2F6B3775.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/lerwick/POSTED 2F6B3755.jpg" alt="Lerwick finished Kitchen Renovation, Cat Hollow, Round Rock, TX, photo 7" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">8 photos</span>
+                <span class="carousel-count">7 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Kitchen Renovation</p>
-                <h3 class="showcase-name">Lerwick</h3>
-                <p class="showcase-loc">Round Rock, TX</p>
+                <h3 class="showcase-name">Cat Hollow Kitchen Renovation</h3>
+                <p class="showcase-loc">Cat Hollow, Round Rock, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="remington">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/remington/DSC04679.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04639.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04609.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04619.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04669.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04629.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04659.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/remington/DSC04649.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04639.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04609.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04619.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04669.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04629.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04659.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/remington/DSC04649.JPG" alt="Remington finished Full Home Renovation, Crestview, Austin, TX, photo 8" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -522,7 +595,7 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">New Build / ADU</p>
-                <h3 class="showcase-name">Remington</h3>
+                <h3 class="showcase-name">Crestview ADU Custom Build</h3>
                 <p class="showcase-loc">Crestview, Austin, TX</p>
               </div>
             </div>
@@ -530,40 +603,39 @@
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/marywood/2F6B1815.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1887.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1857.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1863.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1839.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1898.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1854.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1866.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1875.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/marywood/2F6B1845.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1887.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1857.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1863.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1839.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1854.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1866.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1875.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/marywood/2F6B1845.JPG" alt="Marywood finished Full Home Renovation, University Hills, Austin, TX, photo 9" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">10 photos</span>
+                <span class="carousel-count">9 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Marywood</h3>
+                <h3 class="showcase-name">University Hills Home Renovation</h3>
                 <p class="showcase-loc">University Hills, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-2" id="scotland-well">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/scotland-well/DSC04699.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04749.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04694.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04744.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04704.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04739.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04714.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04759.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04773.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/scotland-well/DSC04729.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/scotland-well/DSC04699.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04749.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04694.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04744.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04704.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04739.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04714.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04759.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04773.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/scotland-well/DSC04729.JPG" alt="Scotland Well finished Kitchen Renovation, Spicewood Springs, Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -572,23 +644,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Scotland Well</h3>
-                <p class="showcase-loc">Spicewood Springs, TX</p>
+                <h3 class="showcase-name">Spicewood Springs Home Renovation</h3>
+                <p class="showcase-loc">Spicewood Springs, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="walnut-ave">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/walnut-ave/2F6B9151.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9187.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9167.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9183.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9132.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9144.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9179.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9140.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9120.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/walnut-ave/2F6B9108.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/walnut-ave/2F6B9151.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9187.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9167.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9183.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9132.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9144.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9179.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9140.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9120.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/walnut-ave/2F6B9108.JPG" alt="Walnut Ave finished Kitchen Renovation, Rosewood, East Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -597,19 +669,19 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Walnut Ave</h3>
-                <p class="showcase-loc">Rosewood, Austin, TX</p>
+                <h3 class="showcase-name">Rosewood Home Renovation</h3>
+                <p class="showcase-loc">Rosewood, East Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-1" id="tristan-stone">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/tristan-stone/2F6B5066.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/tristan-stone/2F6B5070.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/tristan-stone/2F6B5082.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/tristan-stone/2F6B5074.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/tristan-stone/2F6B5078.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/tristan-stone/2F6B5086.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Pflugerville, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/tristan-stone/2F6B5066.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/tristan-stone/2F6B5070.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/tristan-stone/2F6B5082.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/tristan-stone/2F6B5074.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/tristan-stone/2F6B5078.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/tristan-stone/2F6B5086.JPG" alt="Tristan Stone Dr finished Bathroom Renovation, Avalon, Pflugerville, TX, photo 6" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -618,73 +690,71 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Bathroom Renovation</p>
-                <h3 class="showcase-name">Tristan Stone Dr</h3>
-                <p class="showcase-loc">Pflugerville, TX</p>
+                <h3 class="showcase-name">Avalon Bathroom Renovation</h3>
+                <p class="showcase-loc">Avalon, Pflugerville, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-2" id="milway">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/milway/2F6B4965.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4985.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4925.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4955.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4915.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4935.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4950.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4945.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4930.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/milway/2F6B4960.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4985.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4955.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4915.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4935.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4950.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4945.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/milway/2F6B4930.JPG" alt="Milway home renovation, North Shoal Creek, Austin, TX, photo 8" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">10 photos</span>
+                <span class="carousel-count">8 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Milway</h3>
+                <h3 class="showcase-name">North Shoal Creek Home Renovation</h3>
                 <p class="showcase-loc">North Shoal Creek, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="e18">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/e18/2F6B8239.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8252.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8126.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8161.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8146.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8183.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/POSTED 2F6B8156.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8170.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/POSTED 2F6B8224.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/e18/2F6B8209.JPG" alt="E 18 1-2 home renovation, East MLK, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/e18/2F6B8239.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8252.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8126.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8161.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8146.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8183.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8170.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/POSTED 2F6B8224.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/e18/2F6B8209.JPG" alt="E 18 1-2 home renovation, East MLK, East Austin, TX, photo 9" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">10 photos</span>
+                <span class="carousel-count">9 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">E 18 1-2</h3>
-                <p class="showcase-loc">East MLK, Austin, TX</p>
+                <h3 class="showcase-name">East MLK Home Renovation</h3>
+                <p class="showcase-loc">East MLK, East Austin, TX</p>
+                <p class="showcase-credit">Architect: <a href="https://www.chriscobbarchitecture.com" target="_blank" rel="noopener">Chris Cobb Architecture</a></p>
               </div>
             </div>
             <div class="project-showcase reveal reveal-delay-1" id="cedar-park">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/cedar-park/2F6B6217.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6238.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6223.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6201.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6220.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6241.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6199.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6230.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6226.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/cedar-park/2F6B6214.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6238.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6223.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6201.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6220.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6241.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6199.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6230.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6226.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/cedar-park/2F6B6214.JPG" alt="Cedar Park Dr finished Outdoor Living, Cedar Park, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -693,45 +763,43 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Outdoor Living</p>
-                <h3 class="showcase-name">Cedar Park Dr</h3>
+                <h3 class="showcase-name">Cedar Park Outdoor Living &amp; Screened Patio</h3>
                 <p class="showcase-loc">Cedar Park, TX</p>
-              </div>
-            </div>
-            <div class="project-showcase reveal reveal-delay-2" id="delavan">
-              <div class="showcase-carousel" data-carousel>
-                <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/delavan/2F6B5552-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5547-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5549-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5550-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5555-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5548-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5551-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5554-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/delavan/2F6B5553-Edit.JPG" alt="Delavan Ave finished Pool and Outdoor Kitchen, Avery Ranch, Austin, TX, photo 9" loading="lazy">
-                </div>
-                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
-                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">9 photos</span>
-                <div class="carousel-dots"></div>
-              </div>
-              <div class="showcase-info">
-                <p class="showcase-tag">Pool &amp; Outdoor Kitchen</p>
-                <h3 class="showcase-name">Delavan Ave</h3>
-                <p class="showcase-loc">Avery Ranch, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="running-deer">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/running-deer/2F6B6538.JPG" alt="Running Deer Trail finished living room with Hill Country view, Apache Shores, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6563.JPG" alt="Running Deer Trail finished Outdoor Living, Apache Shores, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6576.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6618.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6546.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6632.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6592.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/running-deer/2F6B6602.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/running-deer/2F6B6538.JPG" alt="Running Deer Trail finished living room with Hill Country view, Apache Shores, Austin, TX (Lake Travis), photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6563.JPG" alt="Running Deer Trail finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6576.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6618.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6546.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6592.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/running-deer/2F6B6602.JPG" alt="Running Deer Trl finished Outdoor Living, Apache Shores, Austin, TX (Lake Travis), photo 7" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">7 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Full Home Renovation</p>
+                <h3 class="showcase-name">Apache Shores Home Renovation</h3>
+                <p class="showcase-loc">Apache Shores, Austin, TX (Lake Travis)</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal reveal-delay-1" id="plumewood">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/plumewood/2F6B0116.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/2F6B0083.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/POSTED 2F6B0122.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/2F6B0065.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/POSTED 2F6B0134.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/2F6B0159.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/POSTED 2F6B0154.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/plumewood/POSTED 2F6B0189.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 8" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -739,33 +807,8 @@
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
-                <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Running Deer Trail</h3>
-                <p class="showcase-loc">Apache Shores, TX</p>
-              </div>
-            </div>
-            <div class="project-showcase reveal reveal-delay-1" id="plumewood">
-              <div class="showcase-carousel" data-carousel>
-                <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/plumewood/2F6B0116.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/2F6B0089.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/2F6B0092.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/2F6B0083.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/POSTED 2F6B0122.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/2F6B0065.JPG" alt="Plumewood finished Full Home Renovation and Home Addition, Balcones, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/POSTED 2F6B0134.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/2F6B0159.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/POSTED 2F6B0154.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/plumewood/POSTED 2F6B0189.JPG" alt="Plumewood finished Home Addition and Remodel, Balcones, Austin, TX, photo 10" loading="lazy">
-                </div>
-                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
-                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">10 photos</span>
-                <div class="carousel-dots"></div>
-              </div>
-              <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation &amp; Home Addition</p>
-                <h3 class="showcase-name">Plumewood</h3>
+                <h3 class="showcase-name">Balcones Home Renovation &amp; Addition</h3>
                 <p class="showcase-loc">Balcones, Austin, TX</p>
               </div>
             </div>
@@ -773,15 +816,15 @@
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
                   <img class="carousel-slide is-active" src="assets/images/residential/mustang-chase/2F6B6736.JPG" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6677.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6775.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6778.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6706.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6711.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6671.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6726.JPG" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/DJI_20250625132628_0238_D.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mustang-chase/2F6B6681.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6677.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6775.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6778.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6706.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6711.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6671.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6726.JPG" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/DJI_20250625132628_0238_D.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mustang-chase/2F6B6681.jpg" alt="Mustang Chase finished Home Addition, Balcones Woods, Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -790,23 +833,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Home Addition &amp; Renovation</p>
-                <h3 class="showcase-name">Mustang Chase</h3>
+                <h3 class="showcase-name">Balcones Woods Home Addition &amp; Pool</h3>
                 <p class="showcase-loc">Balcones Woods, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="rambling-brook">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/rambling-brook/2F6B4222.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/DJI_20240410124243_0714_D.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4235.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/DJI_20240410124033_0704_D.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4219.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4216.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4229.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4213.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/DJI_20240410124015_0703_D.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/rambling-brook/2F6B4226.JPG" alt="Rambling Brook Ct home addition and casita, Georgetown, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/rambling-brook/2F6B4222.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/DJI_20240410124243_0714_D.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4235.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/DJI_20240410124033_0704_D.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4219.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4216.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4229.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4213.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/DJI_20240410124015_0703_D.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/rambling-brook/2F6B4226.JPG" alt="Rambling Brook Ct home addition and casita, West Georgetown, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -815,23 +858,23 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Home Addition &amp; Casita</p>
-                <h3 class="showcase-name">Rambling Brook Ct</h3>
-                <p class="showcase-loc">Georgetown, TX</p>
+                <h3 class="showcase-name">West Georgetown Home Addition &amp; Casita</h3>
+                <p class="showcase-loc">West Georgetown, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="summer-alcove">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/summer-alcove/DSC06754.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06775.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06772.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06769.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06799.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06778.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06760.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06793.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 8" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06811.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 9" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/summer-alcove/DSC06757.jpg" alt="Summer Alcove Way finished Full Home Renovation, Austin, TX, photo 10" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/summer-alcove/DSC06754.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 1" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06775.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 2" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06772.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 3" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06769.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06799.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 5" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06778.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 6" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06760.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 7" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06793.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06811.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 9" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/summer-alcove/DSC06757.jpg" alt="Summer Alcove Way finished Full Home Renovation, Steiner Ranch, Austin, TX, photo 10" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
@@ -840,50 +883,193 @@
               </div>
               <div class="showcase-info">
                 <p class="showcase-tag">Full Home Renovation</p>
-                <h3 class="showcase-name">Summer Alcove Way</h3>
-                <p class="showcase-loc">Austin, TX</p>
+                <h3 class="showcase-name">Steiner Ranch Home Renovation</h3>
+                <p class="showcase-loc">Steiner Ranch, Austin, TX</p>
               </div>
             </div>
             <div class="project-showcase reveal" id="mandeville">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/mandeville/DSC04785.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04786.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04788.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04790.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 4" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04792.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 5" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04793.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 6" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04795.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 7" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/mandeville/DSC04797.jpg" alt="Mandeville full home renovation in progress, Austin Metro, TX, photo 8" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/mandeville-finished/mandeville-finished-25.jpg" alt="Mandeville finished full home renovation, twilight pool and patio, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-01.jpg" alt="Mandeville finished kitchen with green cabinetry and waterfall island, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-03.jpg" alt="Mandeville finished open-concept kitchen and living space, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-06.jpg" alt="Mandeville finished living room with fireplace, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-08.jpg" alt="Mandeville finished living room fireplace with pool view, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-17.jpg" alt="Mandeville finished front entry and staircase, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-09.jpg" alt="Mandeville finished foyer, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-19.jpg" alt="Mandeville finished primary bathroom with double vanity, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-13.jpg" alt="Mandeville finished powder room, Anderson Mill, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/mandeville-finished/mandeville-finished-23.jpg" alt="Mandeville finished bedroom with balcony door, Anderson Mill, NW Austin, TX" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">8 photos</span>
+                <span class="carousel-count">10 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
-                <p class="showcase-tag">Full Home Renovation &middot; In Progress</p>
-                <h3 class="showcase-name">Mandeville</h3>
-                <p class="showcase-loc">Austin Metro, TX</p>
+                <p class="showcase-tag">Full Home Renovation</p>
+                <h3 class="showcase-name">Anderson Mill Home Renovation</h3>
+                <p class="showcase-loc">Anderson Mill, NW Austin, TX</p>
+                <p class="showcase-credit">Architect: <a href="https://www.3dhomedesigns.com" target="_blank" rel="noopener">Aaron Lytal, 3D Home Designs</a> &middot; Cabinetry: <a href="https://woodenwoodworks.com" target="_blank" rel="noopener">Wooden Woodworks</a></p>
               </div>
             </div>
             <div class="project-showcase reveal" id="along-creek-cove">
               <div class="showcase-carousel" data-carousel>
                 <div class="carousel-viewport">
-                  <img class="carousel-slide is-active" src="assets/images/residential/along-creek-cove/DSC03558.jpg" alt="Along Creek Cove full home renovation in progress, Austin Metro, TX, photo 1" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/along-creek-cove/DSC03556.jpg" alt="Along Creek Cove full home renovation in progress, Austin Metro, TX, photo 2" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/along-creek-cove/DSC03559.jpg" alt="Along Creek Cove full home renovation in progress, Austin Metro, TX, photo 3" loading="lazy">
-                  <img class="carousel-slide" src="assets/images/residential/along-creek-cove/DSC03557.jpg" alt="Along Creek Cove full home renovation in progress, Austin Metro, TX, photo 4" loading="lazy">
+                  <img class="carousel-slide is-active" src="assets/images/residential/along-creek-cove/along-creek-cove-finished-02.jpg" alt="Along Creek Cove finished kitchen with marble waterfall island, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-01.jpg" alt="Along Creek Cove finished kitchen, wide view with pantry wall and refrigerator, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-03.jpg" alt="Along Creek Cove finished kitchen range wall and island, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-04.jpg" alt="Along Creek Cove finished kitchen and dining transition with statement chandelier, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-05.jpg" alt="Along Creek Cove finished dining nook with bay window, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-06.jpg" alt="Along Creek Cove finished dining area with sliding door to backyard, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-07.jpg" alt="Along Creek Cove finished primary bathroom with soaking tub and glass shower, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-08.jpg" alt="Along Creek Cove finished powder bathroom with oval mirrors, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-09.jpg" alt="Along Creek Cove finished secondary bathroom with floating vanity, Avery Ranch, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/along-creek-cove/along-creek-cove-finished-10.jpg" alt="Along Creek Cove finished secondary bathroom vanity, Avery Ranch, Austin, TX" loading="lazy">
                 </div>
                 <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
                 <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
-                <span class="carousel-count">4 photos</span>
+                <span class="carousel-count">10 photos</span>
                 <div class="carousel-dots"></div>
               </div>
               <div class="showcase-info">
-                <p class="showcase-tag">Full Home Renovation &middot; In Progress</p>
-                <h3 class="showcase-name">Along Creek Cove</h3>
-                <p class="showcase-loc">Austin Metro, TX</p>
+                <p class="showcase-tag">Full Home Renovation</p>
+                <h3 class="showcase-name">Avery Ranch Home Renovation</h3>
+                <p class="showcase-loc">Avery Ranch, Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="angelina">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/angelina/angelina-01.jpg" alt="Rosewood custom new build, exterior front facade, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-02.jpg" alt="Rosewood custom new build, exterior entrance detail, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-03.jpg" alt="Rosewood custom new build, kitchen with open shelving, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-04.jpg" alt="Rosewood custom new build, kitchen sink and city-view window, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-05.jpg" alt="Rosewood custom new build, bright room with floor-to-ceiling glass wall, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-06.jpg" alt="Rosewood custom new build, bedroom with floor-to-ceiling glass, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-07.jpg" alt="Rosewood custom new build, primary bathroom vanity with marble and brass fixtures, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-08.jpg" alt="Rosewood custom new build, primary bathroom shower with marble tile and brass rain head, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-09.jpg" alt="Rosewood custom new build, hallway with marble accent, East Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/angelina/angelina-10.jpg" alt="Rosewood custom new build, rooftop deck with Austin skyline view, East Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">10 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">New Build</p>
+                <h3 class="showcase-name">Rosewood Custom Home Build</h3>
+                <p class="showcase-loc">Rosewood, East Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="valley-view">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/valley-view/valley-view-01.jpg" alt="South Lamar bathroom remodel, full room view with soaking tub and glass shower, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/valley-view/valley-view-02.jpg" alt="South Lamar bathroom remodel, tile detail toward soaking tub, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/valley-view/valley-view-03.jpg" alt="South Lamar bathroom remodel, shower fixtures and tub filler detail, Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">3 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Bathroom Renovation</p>
+                <h3 class="showcase-name">South Lamar Bathroom Remodel</h3>
+                <p class="showcase-loc">South Lamar, Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="fierro-cove">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/fierro-cove/fierro-cove-01.jpg" alt="Anderson Mill (Los Indios) home renovation, kitchen with green cabinetry and hex tile backsplash, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-02.jpg" alt="Anderson Mill (Los Indios) home renovation, kitchen range and hood detail, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-03.jpg" alt="Anderson Mill (Los Indios) home renovation, navy accent bedroom with bay windows, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-04.jpg" alt="Anderson Mill (Los Indios) home renovation, navy accent bedroom built-in bookcase, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-05.jpg" alt="Anderson Mill (Los Indios) home renovation, staircase with built-in shelf nook, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-06.jpg" alt="Anderson Mill (Los Indios) home renovation, charcoal media room with tile platform, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-07.jpg" alt="Anderson Mill (Los Indios) home renovation, formal navy dining room with bay window, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-08.jpg" alt="Anderson Mill (Los Indios) home renovation, open concept view with brick fireplace, NW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/fierro-cove/fierro-cove-09.jpg" alt="Anderson Mill (Los Indios) home renovation, kitchen toward hallway, NW Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">9 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Full Home Renovation</p>
+                <h3 class="showcase-name">Anderson Mill Home Renovation (Los Indios)</h3>
+                <p class="showcase-loc">Anderson Mill (Los Indios), NW Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="jumano">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/jumano/jumano-01.jpg" alt="Oak Hill kitchen renovation, wide view with navy island and double wall ovens, SW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/jumano/jumano-02.jpg" alt="Oak Hill kitchen renovation, range hood and cooktop wall, SW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/jumano/jumano-03.jpg" alt="Oak Hill kitchen renovation, sink to fridge angle with cage pendant lights, SW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/jumano/jumano-04.jpg" alt="Oak Hill kitchen renovation, navy island drawer hardware detail, SW Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/jumano/jumano-06.jpg" alt="Oak Hill kitchen renovation, window seat and pendant lights view toward fridge, SW Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">5 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Kitchen Renovation</p>
+                <h3 class="showcase-name">Oak Hill Kitchen Renovation</h3>
+                <p class="showcase-loc">Oak Hill, SW Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="dormarion">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/dormarion/dormarion-01.jpg" alt="Tarrytown pool and outdoor living, wide view of pool and spa toward outdoor kitchen, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-02.jpg" alt="Tarrytown pool and outdoor living, wide view toward main house, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-03.jpg" alt="Tarrytown pool and outdoor living, spa and outdoor kitchen detail, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-04.jpg" alt="Tarrytown pool and outdoor living, covered outdoor kitchen and dining pergola, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-05.jpg" alt="Tarrytown pool and outdoor living, pool and cabana with tree line, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-06.jpg" alt="Tarrytown pool and outdoor living, spa and patio steps toward main house, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/dormarion/dormarion-07.jpg" alt="Tarrytown pool and outdoor living, full home exterior with pool in foreground, Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">7 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Pool &amp; Outdoor Living</p>
+                <h3 class="showcase-name">Tarrytown Pool &amp; Outdoor Living</h3>
+                <p class="showcase-loc">Tarrytown, Austin, TX</p>
+              </div>
+            </div>
+            <div class="project-showcase reveal" id="carnavon-ln">
+              <div class="showcase-carousel" data-carousel>
+                <div class="carousel-viewport">
+                  <img class="carousel-slide is-active" src="assets/images/residential/carnavon/carnavon-01.jpg" alt="South Congress home addition, primary bathroom with glass shower and dual vanity, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-02.jpg" alt="South Congress home addition, covered patio and sliding door exterior, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-03.jpg" alt="South Congress home addition, full exterior with new second-story addition, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-04.jpg" alt="South Congress home addition, vaulted living space toward hallway and closet, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-05.jpg" alt="South Congress home addition, bedroom corner with ceiling fan, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-06.jpg" alt="South Congress home addition, bedroom with closet and ensuite bath doors, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-07.jpg" alt="South Congress home addition, walk-in closet with built-in shelving, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-08.jpg" alt="South Congress home addition, living space with vaulted ceiling and sliding glass door, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-09.jpg" alt="South Congress home addition, primary bathroom walk-in glass shower detail, Austin, TX" loading="lazy">
+                  <img class="carousel-slide" data-src="assets/images/residential/carnavon/carnavon-10.jpg" alt="South Congress home addition, primary bathroom dual vanity with quartz countertop, Austin, TX" loading="lazy">
+                </div>
+                <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+                <button class="carousel-arrow carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+                <span class="carousel-count">10 photos</span>
+                <div class="carousel-dots"></div>
+              </div>
+              <div class="showcase-info">
+                <p class="showcase-tag">Home Addition</p>
+                <h3 class="showcase-name">South Congress Home Addition</h3>
+                <p class="showcase-loc">South Congress, Austin, TX</p>
               </div>
             </div>
           </div>
@@ -892,36 +1078,6 @@
       </div>
     </section>
 
-    <!-- On The Books -->
-    <section class="upcoming-section">
-      <div class="container">
-        <p class="upcoming-eyebrow reveal">On The Books</p>
-        <h2 class="upcoming-title reveal reveal-delay-1">Coming Up Next.</h2>
-        <div class="upcoming-grid reveal reveal-delay-2">
-          <div class="upcoming-card">
-            <h3 class="upcoming-name">Easton Park Business Park</h3>
-            <p class="upcoming-loc">Austin, TX</p>
-            <p class="upcoming-date">2028</p>
-          </div>
-          <div class="upcoming-card">
-            <h3 class="upcoming-name">Willow Salon Collective</h3>
-            <p class="upcoming-loc">Liberty Hill, TX</p>
-            <p class="upcoming-date">Spring 2027</p>
-          </div>
-          <div class="upcoming-card">
-            <h3 class="upcoming-name">Salt and Waves Salon</h3>
-            <p class="upcoming-loc">Georgetown, TX</p>
-            <p class="upcoming-date">Winter 2026</p>
-          </div>
-          <div class="upcoming-card">
-            <h3 class="upcoming-name">Peace Family Housing</h3>
-            <p class="upcoming-loc">Austin, TX</p>
-            <p class="upcoming-date">Groundbreaking Summer 2026</p>
-            <p class="upcoming-desc">Transitional housing for families facing homelessness, built with Peace Lutheran Church, HomeAid Austin, and the Foundation for the Homeless.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Past Partners -->
     <section class="partners-section">
@@ -943,6 +1099,7 @@
         </div>
       </div>
     </section>
+
 
     <section class="cta-banner">
       <div class="container">
@@ -969,7 +1126,7 @@
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>
         <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="residential.html">Residential</a></li><li><a href="commercial.html">Commercial</a></li></ul></nav>
-        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="partners.html">Partners</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources/index.html#faq-commercial">FAQ</a></li></ul></nav>
         <nav aria-label="Contact">
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
@@ -979,6 +1136,7 @@
               <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
               <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
               <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
             </div>
           </div>
         </nav>
@@ -1002,6 +1160,20 @@
     const reveals = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => obs.observe(el));
+
+    // Mobile menu
+    const navBtn = document.querySelector('.nav-mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navBtn.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
 
     // Filter tabs
     const tabs = document.querySelectorAll('.filter-tab');
@@ -1064,7 +1236,9 @@
         slides[index].classList.remove('is-active');
         dots[index].classList.remove('is-active');
         index = (i + slides.length) % slides.length;
-        slides[index].classList.add('is-active');
+        const next = slides[index];
+        if (!next.getAttribute('src') && next.dataset.src) next.src = next.dataset.src;
+        next.classList.add('is-active');
         dots[index].classList.add('is-active');
       }
 
@@ -1126,7 +1300,7 @@
         const openFromCard = () => {
           let active = slides.findIndex(s => s.classList.contains('is-active'));
           if (active < 0) active = 0;
-          open(slides.map(s => ({ src: s.src, alt: s.alt })), active);
+          open(slides.map(s => ({ src: s.getAttribute('src') || s.dataset.src, alt: s.alt })), active);
         };
         const viewport = carousel.querySelector('.carousel-viewport');
         const info = card.querySelector('.showcase-info');

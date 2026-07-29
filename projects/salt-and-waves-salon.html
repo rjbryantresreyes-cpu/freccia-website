@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgetown Salon Build-Out (The Preserve) | Freccia Construction</title>
+  <meta name="description" content="Freccia Construction is building out Georgetown Salon Build-Out (The Preserve) in Georgetown, TX, featuring styling stations, a wash bar, and marble reception.">
+  <link rel="canonical" href="https://frecciaconstruction.com/projects/salt-and-waves-salon">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Georgetown Salon Build-Out (The Preserve)","description":"Freccia Construction is building out Georgetown Salon Build-Out (The Preserve) in Georgetown, TX.","author":{"@type":"Organization","name":"Freccia Construction"},"publisher":{"@type":"Organization","name":"Freccia Construction","url":"https://frecciaconstruction.com"},"url":"https://frecciaconstruction.com/projects/salt-and-waves-salon","about":{"@type":"GeneralContractor","name":"Freccia Construction","address":{"@type":"PostalAddress","addressLocality":"Georgetown","addressRegion":"TX"}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{overflow-x:clip;scroll-behavior:smooth}
+    body{overflow-x:clip;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-ink);background:var(--color-paper);line-height:1.6}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:0 auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:var(--color-navy-deep);transition:box-shadow .3s}
+    .nav.scrolled{box-shadow:0 2px 20px oklch(0% 0 0/.3)}
+    .nav-logo img{height:48px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:var(--space-8);list-style:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+    .nav-links a{font-size:var(--text-sm);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-ink-on-dark);opacity:.8;transition:opacity .2s,color .2s}
+    .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--color-gold)}
+    .nav-build{font-weight:600!important}
+    .nav-cta-btn{font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase;background:var(--color-gold);color:var(--color-navy)!important;opacity:1!important;padding:var(--space-4) var(--space-8)!important;font-weight:600!important;white-space:nowrap;border:2px solid var(--color-gold-light);outline:3px solid var(--color-navy);outline-offset:-3px;margin-left:auto}
+    .nav-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:var(--space-2)}
+    .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--color-ink-on-dark);margin:4px 0}
+    .case-hero{padding-top:140px;position:relative;height:70vh;min-height:460px;display:flex;align-items:flex-end;overflow:hidden}
+    .case-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .case-hero-grad{position:absolute;inset:0;background:linear-gradient(to top,oklch(10% .04 252/.95) 0%,oklch(10% .04 252/.3) 60%,transparent 100%)}
+    .case-hero-body{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;padding:0 var(--space-8) var(--space-12)}
+    .breadcrumb{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);letter-spacing:.08em;color:oklch(70% .01 80);margin-bottom:var(--space-4)}
+    .breadcrumb a{color:oklch(70% .01 80);transition:color .2s}
+    .breadcrumb a:hover{color:var(--color-gold)}
+    .breadcrumb-sep{opacity:.4}
+    .case-type{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-3)}
+    .case-hero-body h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;color:var(--color-white);margin-bottom:var(--space-3)}
+    .case-loc{font-size:var(--text-lg);color:oklch(75% .01 80)}
+    .hero-cta-row{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6)}
+    .hero-call-btn{display:inline-flex;align-items:center;gap:var(--space-2);background:var(--color-gold);color:var(--color-navy);padding:var(--space-4) var(--space-8);font-size:var(--text-sm);font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+    .hero-call-btn:hover{background:var(--color-gold-light)}
+    .hero-quote-btn{display:inline-flex;align-items:center;border:1px solid oklch(90% 0 0/.4);color:var(--color-white);padding:var(--space-4) var(--space-8);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,color .2s}
+    .hero-quote-btn:hover{border-color:var(--color-gold);color:var(--color-gold)}
+    .trust-strip{background:var(--color-paper);padding:var(--space-6) var(--space-8)}
+    .trust-strip-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:var(--space-4);text-align:center}
+    .trust-strip-label{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:600}
+    .trust-strip-logos{display:flex;justify-content:center;gap:var(--space-10);flex-wrap:wrap;align-items:center;width:100%}
+    .trust-strip-logos img{height:110px;width:auto;opacity:.85;filter:brightness(0);transition:opacity .2s}
+    @media(min-width:1150px){.trust-strip-logos{justify-content:space-between;gap:var(--space-8)}}
+    .stats-bar{background:var(--color-gold);padding:var(--space-6) var(--space-8)}
+    .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4)}
+    .stat{text-align:center}
+    .stat-val{font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--color-navy);line-height:1}
+    .stat-label{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--color-navy);opacity:.7;margin-top:var(--space-1)}
+    .case-content{max-width:1200px;margin:0 auto;padding:var(--space-16) var(--space-8)}
+    .case-grid{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-12);align-items:start}
+    .case-body h2{font-family:var(--font-display);font-size:var(--text-h2);font-weight:700;line-height:1.2;margin-bottom:var(--space-4)}
+    .case-body h2 em{font-style:italic;color:var(--color-gold)}
+    .case-body p{font-size:var(--text-base);line-height:1.8;color:var(--color-ink-2);margin-bottom:var(--space-6)}
+    .case-body h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:var(--space-3);margin-top:var(--space-8)}
+    .case-fill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4);margin-top:var(--space-8);width:calc(100% + var(--space-8));margin-right:calc(-1 * var(--space-8))}
+    .case-fill-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .case-fill-item{overflow:hidden;aspect-ratio:4/3}
+    .case-fill-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .case-fill-item:hover img{transform:scale(1.05)}
+    .case-sidebar{position:sticky;top:100px}
+    .sidebar-card{background:var(--color-white);border:1px solid var(--color-border);padding:var(--space-8)}
+    .sidebar-card h3{font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-6)}
+    .detail-row{display:flex;flex-direction:column;gap:var(--space-1);margin-bottom:var(--space-5);padding-bottom:var(--space-5);border-bottom:1px solid var(--color-border)}
+    .detail-row:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .detail-label{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);font-weight:500}
+    .detail-val{font-size:var(--text-sm);color:var(--color-ink);line-height:1.5}
+    .detail-val a{color:var(--color-gold);text-decoration:underline;text-decoration-color:oklch(75% .12 85/.4)}
+    .detail-val a:hover{color:var(--color-gold-light)}
+    .sidebar-cta{display:block;background:var(--color-gold);color:var(--color-navy);text-align:center;padding:var(--space-4);font-size:var(--text-sm);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:var(--space-6);transition:background .2s}
+    .sidebar-cta:hover{background:var(--color-gold-light)}
+    .quote-card{margin-top:var(--space-6)}
+    .quote-card p{font-size:var(--text-sm);color:var(--color-ink-muted);margin-bottom:var(--space-5);line-height:1.6}
+    .quote-field{margin-bottom:var(--space-4)}
+    .quote-field input,.quote-field textarea{width:100%;font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-ink);background:var(--color-white);border:1px solid transparent;border-radius:2px;padding:var(--space-3);min-height:44px;box-sizing:border-box}
+    .quote-field textarea{min-height:80px;resize:vertical}
+    .quote-submit{display:block;width:100%;background:var(--color-gold);color:var(--color-navy);text-align:center;padding:var(--space-4);font-size:var(--text-sm);font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
+    .quote-submit:hover{background:var(--color-gold-light)}
+    .quote-success{display:none;text-align:center;padding:var(--space-4) 0}
+    .quote-success-icon{font-size:1.75rem;margin-bottom:var(--space-2)}
+    .quote-success p{font-size:var(--text-sm);color:var(--color-ink);line-height:1.6;margin-bottom:0}
+    .mobile-call-bar{display:none}
+    .photo-section{padding:0 var(--space-8) var(--space-16)}
+    .photo-section-inner{max-width:1200px;margin:0 auto}
+    .photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+    .photo-item{overflow:hidden;aspect-ratio:4/3}
+    .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .photo-item:hover img{transform:scale(1.05)}
+    .next-section{background:oklch(96% .005 80);padding:var(--space-16) var(--space-8)}
+    .next-inner{max-width:1200px;margin:0 auto}
+    .next-label{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-6)}
+    .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)}
+    .next-card{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--color-navy-deep);display:flex;flex-direction:column;justify-content:flex-end}
+    .next-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .next-card:hover img{transform:scale(1.04)}
+    .next-card-grad{position:absolute;inset:0;background:linear-gradient(to top,oklch(10% .04 252/.9) 0%,transparent 60%)}
+    .next-card-body{position:relative;z-index:1;padding:var(--space-8)}
+    .next-type{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-1)}
+    .next-name{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--color-white);margin-bottom:var(--space-1)}
+    .next-loc{font-size:var(--text-xs);color:var(--color-ink-muted)}
+    .view-all-row{text-align:center;margin-top:var(--space-10)}
+    .view-all-btn{display:inline-flex;align-items:center;background:var(--color-navy-deep);color:var(--color-white);padding:var(--space-4) var(--space-10);font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+    .view-all-btn:hover{background:var(--color-navy)}
+    @media(max-width:1024px){.case-grid{grid-template-columns:1fr}.case-sidebar{position:static}.stats-inner{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:768px){.nav{padding:var(--space-4)}.nav-links{display:none;position:fixed;inset:0;transform:none;background:var(--color-navy-deep);flex-direction:column;align-items:center;justify-content:center;gap:var(--space-8);z-index:200}.nav-links.open{display:flex}.nav-cta-btn{padding:var(--space-2) var(--space-4)!important;font-size:var(--text-xs)!important;outline:none!important;border:1px solid var(--color-gold-light);margin:0 var(--space-2)!important;display:inline-flex!important;align-items:center;justify-content:center;min-height:36px}.nav-logo img{height:36px}.nav-menu-btn{display:block;z-index:300}.case-hero-body{padding:0 var(--space-5) var(--space-8)}.case-content{padding:var(--space-10) var(--space-5)}.case-fill-grid{width:calc(100% + var(--space-5));margin-right:calc(-1 * var(--space-5))}.photo-section{padding:0 var(--space-5) var(--space-10)}.photo-grid-3{grid-template-columns:1fr 1fr}.case-fill-grid.cols-3{grid-template-columns:repeat(2,1fr)}.next-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,minmax(0,1fr))}.footer{padding:var(--space-10) var(--space-5) var(--space-6)}.next-section{padding:var(--space-10) var(--space-5)}.trust-strip-logos{justify-content:center;gap:var(--space-6)}.trust-strip-logos img{height:52px}.mobile-call-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:250;background:var(--color-navy-deep);padding:var(--space-3) var(--space-4);padding-bottom:calc(var(--space-3) + env(safe-area-inset-bottom));gap:var(--space-3);box-shadow:0 -2px 20px oklch(0% 0 0/.3)}.mobile-call-bar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;font-size:var(--text-sm);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:var(--space-3)}.mobile-call-bar .mcb-call{background:var(--color-gold);color:var(--color-navy)}.mobile-call-bar .mcb-quote{border:1px solid oklch(90% 0 0/.4);color:var(--color-white)}body{padding-bottom:68px}}
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="../" class="nav-logo"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../commercial.html" class="nav-build">Commercial</a></li>
+    <li><a href="../residential.html">Residential</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+
+
+    <li><a href="../about.html">About Us</a></li>
+    <li><a href="../resources/index.html">Resources</a></li>
+    </ul>
+  <a href="../contact.html" class="nav-cta-btn">Start a Project</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="case-hero">
+  <img class="case-hero-img" src="../assets/images/commercial/salt-and-waves/saltwaves-5.jpg" alt="Georgetown Salon Build-Out (The Preserve), styling floor, Georgetown, TX" loading="eager">
+  <div class="case-hero-grad"></div>
+  <div class="case-hero-body">
+    <nav class="breadcrumb"><a href="../">Home</a><span class="breadcrumb-sep">›</span><a href="../projects.html">Projects</a><span class="breadcrumb-sep">›</span><span>Georgetown Salon Build-Out (The Preserve)</span></nav>
+    <p class="case-type">Commercial · Salon Buildout · In Progress</p>
+    <h1>Georgetown Salon Build-Out (The Preserve)</h1>
+    <p class="case-loc">Georgetown, Texas</p>
+    <div class="hero-cta-row">
+      <a href="tel:5125518660" class="hero-call-btn">Call 512.551.8660</a>
+      <a href="#quote-form" class="hero-quote-btn">Schedule a Consultation</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-val">Salon Buildout</div><div class="stat-label">Project Type</div></div>
+    <div class="stat"><div class="stat-val">Georgetown</div><div class="stat-label">Location</div></div>
+    <div class="stat"><div class="stat-val">Commercial</div><div class="stat-label">Facility Type</div></div>
+    <div class="stat"><div class="stat-val">Freccia</div><div class="stat-label">General Contractor</div></div>
+  </div>
+</div>
+
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <p class="trust-strip-label">Member Of</p>
+    <div class="trust-strip-logos">
+      <img src="../assets/images/certs/hba-greater-austin.png" alt="HBA Greater Austin">
+      <img src="../assets/images/certs/nari.png" alt="NARI">
+      <img src="../assets/images/certs/bbb.png" alt="BBB Accredited">
+      <img src="../assets/images/certs/nahb.png" alt="NAHB">
+      <img src="../assets/images/certs/austin-infill-coalition.png" alt="Austin Infill Coalition">
+      <img src="../assets/images/certs/agc.png" alt="AGC">
+      <img src="../assets/images/certs/hub.png" alt="HUB Certified">
+      <img src="../assets/images/certs/tibd.png" alt="TIBD">
+    </div>
+  </div>
+</div>
+
+<div class="case-content">
+  <div class="case-grid">
+    <div class="case-body">
+      <h2>A Salon Buildout Under Construction <em>at the Preserve.</em></h2>
+      <p>Freccia Construction is building out this salon space, Georgetown Salon Build-Out (The Preserve), in Georgetown, TX. Plans call for a row of styling stations with statement pendant lighting, a dedicated wash bar, marble reception, and boutique retail shelving throughout.</p>
+      <p>These images are renderings showing the planned design. Warm neutral tones, arched mirrors, and natural textures will carry through the space for a calm, boutique feel.</p>
+      <p>Planning a salon or commercial build-out in Austin or Central Texas? <a href="../contact.html" style="color:var(--color-gold);font-weight:600">contact Freccia Construction</a> to discuss your project scope.</p>
+      <div class="case-fill-grid">
+        <div class="case-fill-item"><img src="../assets/images/commercial/salt-and-waves/saltwaves-1.jpg" alt="Salt & Waves Salon at the Preserve, reception, Georgetown, TX" loading="lazy"></div>
+        <div class="case-fill-item"><img src="../assets/images/commercial/salt-and-waves/saltwaves-2.jpg" alt="Salt & Waves Salon at the Preserve, styling row, Georgetown, TX" loading="lazy"></div>
+        <div class="case-fill-item"><img src="../assets/images/commercial/salt-and-waves/saltwaves-3.jpg" alt="Salt & Waves Salon at the Preserve, wash bar, Georgetown, TX" loading="lazy"></div>
+        <div class="case-fill-item"><img src="../assets/images/commercial/salt-and-waves/saltwaves-4.jpg" alt="Salt & Waves Salon at the Preserve, central aisle, Georgetown, TX" loading="lazy"></div>
+        <div class="case-fill-item"><img src="../assets/images/commercial/salt-and-waves/saltwaves-5.jpg" alt="Salt & Waves Salon at the Preserve, styling floor, Georgetown, TX" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="case-sidebar">
+      <div class="sidebar-card">
+        <h3>Project Details</h3>
+        <div class="detail-row"><span class="detail-label">Type</span><span class="detail-val">Commercial &middot; Salon Buildout</span></div>
+        <div class="detail-row"><span class="detail-label">Location</span><span class="detail-val">Georgetown, Texas</span></div>
+        <div class="detail-row"><span class="detail-label">Status</span><span class="detail-val">In Progress</span></div>
+        <div class="detail-row"><span class="detail-label">General Contractor</span><span class="detail-val">Freccia Construction</span></div>
+        <a href="../contact.html" class="sidebar-cta">Start a Similar Project</a>
+      </div>
+      <div class="sidebar-card">
+        <h3>Project Team</h3>
+        <div class="detail-row"><span class="detail-label">Designer</span><span class="detail-val"><a href="https://www.hollyandlo.com" target="_blank" rel="noopener">Holly Barrera, Holly & Lo Design Co.</a></span></div>
+      </div>
+      <div class="sidebar-card quote-card" id="quote-form">
+        <h3>Schedule a Consultation</h3>
+        <p>Tell us about your project. We'll follow up same business day.</p>
+        <form id="quote-form-saltwaves" name="quote-salt-and-waves" netlify data-netlify="true" netlify-honeypot="bot-field" method="POST" novalidate>
+          <input type="hidden" name="form-name" value="quote-salt-and-waves" />
+          <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+          <div class="quote-field"><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="quote-field"><input type="tel" name="phone" placeholder="Phone number" required></div>
+          <div class="quote-field"><input type="email" name="email" placeholder="Email"></div>
+          <div class="quote-field"><textarea name="message" placeholder="Tell us about your project"></textarea></div>
+          <button type="submit" class="quote-submit">Send</button>
+        </form>
+        <div class="quote-success" id="quote-success">
+          <div class="quote-success-icon">✓</div>
+          <p>Thanks! We'll be in touch same business day. Urgent? Call <a href="tel:5125518660" style="color:var(--color-gold)">512.551.8660</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="next-section">
+  <div class="next-inner">
+    <p class="next-label">More Commercial Projects</p>
+    <div class="next-grid">
+      <a href="james-avery-plaza.html" class="next-card">
+        <img src="../assets/images/james-avery-plaza/office-suite-wide.jpg" alt="Leander Insurance Agency, Leander TX" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Retail Plaza · Tenant Improvement</p><p class="next-name">Leander Insurance Agency</p><p class="next-loc">Leander, TX</p></div>
+      </a>
+      <a href="building-kidz-daycare.html" class="next-card">
+        <img src="../assets/images/building-kidz-daycare/exterior-wide-playground.jpg" alt="Building Kidz Daycare Leander TX" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Childcare Facility · New Build</p><p class="next-name">Leander Daycare (Palmera Ridge)</p><p class="next-loc">Leander, TX</p></div>
+      </a>
+    </div>
+    <div class="view-all-row">
+      <a href="../portfolio.html#commercial" class="view-all-btn">View All Commercial Projects</a>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-call-bar">
+  <a href="tel:5125518660" class="mcb-call">Call Now</a>
+  <a href="#quote-form" class="mcb-quote">Schedule</a>
+</div>
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
+          <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
+        </div>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="../partners.html">Partners</a></li><li><a href="../resources/index.html#faq-commercial">FAQ</a></li></ul></nav>
+        <nav aria-label="Contact">
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
+          <div class="footer-connect">
+            <p class="footer-connect-title">Connect With Us</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
+              <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+              <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Freccia Construction. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+  const btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+  btn.addEventListener('click',()=>{const o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+
+  // Netlify Forms submission — see BBC OS LEARNINGS/2026-05-28_netlify_forms_gotchas.md
+  const quoteForm=document.getElementById('quote-form-saltwaves');
+  quoteForm.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const formData=new FormData(quoteForm);
+    try{
+      const response=await fetch(window.location.pathname,{method:'POST',body:formData});
+      if(!response.ok) throw new Error('Submission failed with status '+response.status);
+      quoteForm.style.display='none';
+      document.getElementById('quote-success').style.display='block';
+    }catch(err){
+      alert('Something went wrong sending your message. Please call us directly at 512.551.8660.');
+    }
+  });
+</script>
+</body>
+</html>
