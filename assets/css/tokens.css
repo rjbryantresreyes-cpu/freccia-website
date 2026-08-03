@@ -19,6 +19,7 @@
   --color-light-blue-gray:#DCE5EC;
   --color-slate-blue:     #3D5D75;
   --color-soft-green:     #8AA45E;
+  --color-warm-gray-5:    #ACA39A;  /* Pantone Warm Gray 5 C, added 2026-08-03 per RJ's request */
 
   /* ── Paper / surface ────────────────────────────────── */
   --color-paper:       #F4F2ED;   /* Porcelain White */
@@ -115,11 +116,25 @@
 @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } .footer { padding-left: var(--space-5); padding-right: var(--space-5); } }
 
 /* PARTNERS STRIP — "Companies We've Worked With" logo showcase, shared across index/commercial/portfolio */
-.partners-strip { background: var(--color-paper-2); padding: var(--space-16) var(--space-8); text-align: center; }
+/* NOTE (2026-08-03): background matched to var(--color-paper) per RJ's request, it didn't match the
+   rest of the page. Part of the page-by-page secondary color review, more sections to come. */
+.partners-strip { background: var(--color-paper); padding: var(--space-16) var(--space-8); text-align: center; }
 .partners-strip .partners-eyebrow { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gold); font-weight: 600; margin-bottom: var(--space-8); }
-.partners-logos { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: var(--space-10) var(--space-12); }
-.partners-logos img { height: 64px; width: auto; max-width: 160px; object-fit: contain; opacity: 0.9; transition: opacity 0.2s, transform 0.2s; }
+.partners-logos { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: var(--space-10) var(--space-12); }
+.partners-logos--wide { max-width: 1320px; }
+.partners-logos img { height: 110px; width: 170px; object-fit: contain; opacity: 0.9; transition: opacity 0.2s, transform 0.2s; }
 .partners-logos img:hover { opacity: 1; transform: translateY(-2px); }
-.partners-logo-text { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-ink-2); font-weight: 600; transition: opacity 0.2s, transform 0.2s; }
+.partners-logo-text { height: 110px; width: 170px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-style: italic; font-size: 1.6rem; color: var(--color-ink-2); font-weight: 600; transition: opacity 0.2s, transform 0.2s; }
 .partners-logo-text:hover { opacity: 1; transform: translateY(-2px); }
-@media (max-width: 768px) { .partners-logos { gap: var(--space-6); } .partners-logos img { height: 44px; } .partners-logo-text { font-size: 1.1rem; } }
+/* Force exactly 6 per row regardless of viewport width, so 16 logos always land 6-6-4 */
+.partners-logos--wide img, .partners-logos--wide .partners-logo-text { width: calc((100% - 5 * var(--space-12)) / 6); flex: 0 0 auto; }
+@media (max-width: 768px) { .partners-logos { gap: var(--space-6); } .partners-logos img { height: 64px; width: 100px; } .partners-logo-text { height: 64px; width: 100px; font-size: 1.15rem; } .partners-logos--wide img, .partners-logos--wide .partners-logo-text { width: calc((100% - 1 * var(--space-6)) / 2); } }
+
+/* GIVE BACK STRIP — "We Care About Our Community" charity/community logo showcase */
+/* NOTE: was styled with Slate Blue for visual distinction from "Companies We've Worked With" (2026-07-31),
+   reverted to neutral per RJ's request pending a full review of where secondary brand colors should go
+   sitewide. See PENDING_SECONDARY_COLOR_REVIEW note. Color variant classes below are left defined but
+   unused so this can be reapplied without rebuilding.
+   2026-08-03: background matched to var(--color-paper), same fix as .partners-strip, it didn't match
+   the rest of the page either. */
+.giveback-strip { background: var(--color-paper); padding: var(--space-16) var(--space-8); text-align: center; }

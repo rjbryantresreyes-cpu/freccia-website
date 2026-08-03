@@ -92,11 +92,30 @@
     .svc{background:var(--color-paper);padding:var(--space-8);border-top:2px solid transparent;transition:border-color .2s}
     .svc:hover{border-color:var(--color-gold)}
     .svc-bar{width:28px;height:2px;background:var(--color-gold);margin-bottom:var(--space-4)}
+    .svc-icon{width:32px;height:32px;margin-bottom:var(--space-4);color:var(--color-gold)}
+    .svc-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
     .svc h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:var(--space-3)}
     .svc p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.7}
     /* INDUSTRIES */
-    .industries-grid{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}
-    .industry-chip{font-size:var(--text-sm);font-weight:600;color:var(--color-ink);background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-3) var(--space-6)}
+    /* NOTE (2026-07-31): color variants reverted to plain per RJ's request, pending a full review of
+       where secondary brand colors should go sitewide. Kept defined but unused below so they can be
+       reapplied to .industry-card without rebuilding. Chips upgraded to description cards 2026-08-01
+       per Rebekah's request to highlight sectors more. */
+    .industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);margin-top:var(--space-10)}
+    .industry-card{display:flex;flex-direction:column;background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-6);transition:border-color .2s,transform .2s,box-shadow .2s}
+    .industry-card:hover{border-color:var(--color-gold);transform:translateY(-3px);box-shadow:0 10px 26px oklch(14% .02 250/.12)}
+    .industry-card-bar{width:26px;height:2px;background:var(--color-gold);margin-bottom:var(--space-4)}
+    .industry-card-icon{width:32px;height:32px;margin-bottom:var(--space-4);color:var(--color-gold)}
+    .industry-card-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+    .industry-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-2)}
+    .industry-card p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.6;flex:1}
+    .industry-card-more{display:inline-block;font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--color-gold-dark);font-weight:600;margin-top:var(--space-4)}
+    .industry-card--blue{background:var(--color-light-blue-gray);border-color:var(--color-slate-blue)}
+    .industry-card--green{background:oklch(from var(--color-soft-green) 95% 0.03 h);border-color:var(--color-soft-green)}
+    .industry-card--taupe{background:oklch(from var(--color-walnut-taupe) 95% 0.01 h);border-color:var(--color-walnut-taupe)}
+    .industry-card--gray{background:var(--color-light-gray);border-color:oklch(from var(--color-light-gray) 70% 0.01 h)}
+    @media(max-width:1024px){.industries-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.industries-grid{grid-template-columns:1fr}}
     /* WHY FRECCIA */
     .why-section{padding:var(--space-20) var(--space-8)}
     .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center}
@@ -286,24 +305,65 @@
     <div class="sec-eyebrow reveal"><span>Commercial Services · Central Texas</span></div>
     <h2 class="sec-title reveal" id="svc-h2">Every Commercial Scope.<br><em>One Trusted Team.</em></h2>
     <div class="svc-grid reveal">
-      <div class="svc"><div class="svc-bar"></div><h3>Tenant Improvements</h3><p>Transform existing commercial spaces for new tenants across Austin Metro. Office conversions, retail refreshes, medical suite build-outs, on schedule, budget, and designed to impress.</p></div>
-      <div class="svc"><div class="svc-bar"></div><h3>New Commercial Builds</h3><p>Ground-up commercial construction in Central Texas. Fitness facilities, childcare centers, retail plazas, office buildings, built to code, built to last, delivered right with your business in mind.</p></div>
-      <div class="svc"><div class="svc-bar"></div><h3>Design Build</h3><p>One team from concept to certificate of occupancy. Our design-build approach eliminates coordination gaps, reduces risk, and keeps your commercial project on time and on budget, Austin to Georgetown.</p></div>
-      <div class="svc"><div class="svc-bar"></div><h3>Office Build-Outs</h3><p>Custom office construction tailored to how your team works. Open floor plans to executive suites, break rooms to server rooms, Freccia builds Austin Metro workspaces that actually work for your business.</p></div>
-      <div class="svc"><div class="svc-bar"></div><h3>Commercial Remodels</h3><p>Refresh and reposition your commercial property. We manage the full scope while you keep your business running, minimal downtime, maximum impact. Serving all of Central Texas.</p></div>
-      <div class="svc"><div class="svc-bar"></div><h3>Construction Manager at Risk (CMAR)</h3><p>We partner with commercial property owners and landlords on capital improvements, suite build-outs, and portfolio-wide upgrades across Austin Metro. Reliable. Repeat-ready. Right.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Tenant Improvements</h3><p>Transform existing commercial spaces for new tenants across Austin Metro. Office conversions, retail refreshes, medical suite build-outs, on schedule, budget, and designed to impress.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h11"/><path d="M6 21V9"/><path d="M6 9l12-5v5"/><path d="M18 9v6"/><path d="M18 12h3"/></svg></div><h3>New Commercial Builds</h3><p>Ground-up commercial construction in Central Texas. Fitness facilities, childcare centers, retail plazas, office buildings, built to code, built to last, delivered right with your business in mind.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Design Build</h3><p>One team from concept to certificate of occupancy. Our design-build approach eliminates coordination gaps, reduces risk, and keeps your commercial project on time and on budget, Austin to Georgetown.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></svg></div><h3>Office Build-Outs</h3><p>Custom office construction tailored to how your team works. Open floor plans to executive suites, break rooms to server rooms, Freccia builds Austin Metro workspaces that actually work for your business.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></div><h3>Commercial Remodels</h3><p>Refresh and reposition your commercial property. We manage the full scope while you keep your business running, minimal downtime, maximum impact. Serving all of Central Texas.</p></div>
+      <div class="svc"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Construction Manager at Risk (CMAR)</h3><p>We partner with commercial property owners and landlords on capital improvements, suite build-outs, and portfolio-wide upgrades across Austin Metro. Reliable. Repeat-ready. Right.</p></div>
     </div>
-    <div class="reveal reveal-delay-1" style="margin-top:var(--space-16)">
-      <div class="sec-eyebrow"><span>Industries We Serve</span></div>
-      <h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:0">Every Sector.<br><em>Built Right.</em></h2>
-      <div class="industries-grid">
-        <span class="industry-chip">Corporate Offices</span>
-        <span class="industry-chip">Healthcare Facilities</span>
-        <span class="industry-chip">Retail Spaces</span>
-        <span class="industry-chip">Multifamily Housing</span>
-        <span class="industry-chip">Mixed-Use Projects</span>
-        <span class="industry-chip">Religious</span>
-      </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES WE SERVE -->
+<section class="section" aria-labelledby="industries-h2">
+  <div class="container">
+    <div class="sec-eyebrow reveal"><span>Sectors We Build For · Central Texas</span></div>
+    <h2 class="sec-title reveal" id="industries-h2">Every Sector.<br><em>Built Right.</em></h2>
+    <p class="sec-lead reveal">From corporate offices to non-profits, Freccia Construction has the range to deliver commercial projects across every sector in Austin Metro.</p>
+    <div class="industries-grid reveal">
+      <a href="sectors/corporate-offices.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><line x1="8" y1="7" x2="8" y2="7.01"/><line x1="12" y1="7" x2="12" y2="7.01"/><line x1="16" y1="7" x2="16" y2="7.01"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><path d="M9 21v-3h6v3"/></svg></div>
+        <h3>Corporate Offices</h3>
+        <p>Office build-outs and tenant improvements built around how your team works.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/healthcare-facilities.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <h3>Healthcare Facilities</h3>
+        <p>Code-compliant medical office finish-outs, built with the precision healthcare spaces demand.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/retail-spaces.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><path d="M6 7h12l1 4H5l1-4z"/><path d="M5 11h14v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9z"/><path d="M9 15a3 3 0 0 0 6 0"/></svg></div>
+        <h3>Retail Spaces</h3>
+        <p>Retail build-outs and storefronts delivered on schedule, ready to open strong.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/multifamily-housing.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="1"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M10 22v-4h4v4"/></svg></div>
+        <h3>Multifamily Housing</h3>
+        <p>Resident amenities and housing developments built for the people who live there.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/mixed-use-projects.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <h3>Mixed-Use Projects</h3>
+        <p>Retail, dining, and commercial developments coordinated across every tenant and use.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/religious.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M10 4h4"/><path d="M6 22V10l6-4 6 4v12"/><path d="M9 22v-6h6v6"/></svg></div>
+        <h3>Religious</h3>
+        <p>Construction in partnership with faith communities serving their neighborhoods.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
+      <a href="sectors/non-profit.html" class="industry-card">
+        <div class="industry-card-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.8C1 9 2.5 5 6.5 5c2 0 3.5 1.2 4.5 2.5C12 6.2 13.5 5 15.5 5 19.5 5 21 9 19.5 12.2 17 16.65 12 21 12 21z"/></svg></div>
+        <h3>Non-Profit</h3>
+        <p>Facilities built for organizations doing mission-driven work across Austin Metro.</p>
+        <span class="industry-card-more">Learn More</span>
+      </a>
     </div>
   </div>
 </section>
@@ -322,7 +382,7 @@
           <li class="why-item"><span class="why-num">01</span><div><h3>Serious Commercial Projects</h3><p>We focus on substantial commercial projects where our full team and process makes the biggest impact. No small service calls, no diluted attention.</p></div></li>
           <li class="why-item"><span class="why-num">02</span><div><h3>One Point of Contact</h3><p>Every Freccia Construction commercial project has a single dedicated point of contact. No phone tag, no delegation. You talk to the person who owns the outcome.</p></div></li>
           <li class="why-item"><span class="why-num">03</span><div><h3>Design-Build Expertise</h3><p>We can run the full project, from initial design through final punch list. One contract, one team, zero finger-pointing between subs and designers.</p></div></li>
-          <li class="why-item"><span class="why-num">04</span><div><h3>Austin Metro Since 2016</h3><p>Nearly a decade of commercial construction across Austin, Round Rock, Cedar Park, Georgetown, and Central Texas. We know the market, the inspectors, and the suppliers.</p></div></li>
+          <li class="why-item"><span class="why-num">04</span><div><h3>Austin Metro Since 2016</h3><p>Over a decade of commercial construction across Austin, Round Rock, Cedar Park, Georgetown, and Central Texas. We know the market, the inspectors, and the suppliers.</p></div></li>
         </ul>
       </div>
     </div>
@@ -367,7 +427,7 @@
 <section class="partners-strip" aria-labelledby="partners-h2">
   <div class="container">
     <p class="partners-eyebrow" id="partners-h2">Companies We've Worked With</p>
-    <div class="partners-logos">
+    <div class="partners-logos partners-logos--wide">
       <img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy">
       <img src="assets/images/partners/peace-lutheran-church.jpg" alt="Peace Lutheran Church" loading="lazy">
       <img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy">
@@ -376,8 +436,31 @@
       <span class="partners-logo-text">Salt + Waves Salon</span>
       <img src="assets/images/partners/rebelz-cheer.png" alt="Rebelz Cheer" loading="lazy">
       <img src="assets/images/partners/building-kidz-school.svg" alt="Building Kidz School" loading="lazy">
+      <img src="assets/images/partners/goosehead-insurance.png" alt="Goosehead Insurance" loading="lazy">
+      <img src="assets/images/partners/samaritan-health-ministries.png" alt="Samaritan Health Ministries" loading="lazy">
+      <img src="assets/images/partners/austin-pets-alive.png" alt="Austin Pets Alive!" loading="lazy">
+      <img src="assets/images/partners/mad-greens.png" alt="MAD Greens" loading="lazy">
+      <img src="assets/images/partners/mod-architecture-design.png" alt="MOD Architecture + Design" loading="lazy">
+      <img src="assets/images/partners/all-seasons-comfort-air.png" alt="All Seasons Comfort Air" loading="lazy">
+      <img src="assets/images/partners/mccoys-building-supply.png" alt="McCoy's Building Supply" loading="lazy">
+      <img src="assets/images/partners/home-depot.png" alt="The Home Depot" loading="lazy">
+      <img src="assets/images/partners/builders-firstsource.png" alt="Builders FirstSource" loading="lazy">
+      <img src="assets/images/partners/moore-supply-co.png" alt="Moore Supply Co." loading="lazy">
+      <img src="assets/images/partners/ferguson.png" alt="Ferguson" loading="lazy">
+      <img src="assets/images/partners/abc-supply.png" alt="ABC Supply Co." loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- WE CARE ABOUT OUR COMMUNITY AND WE GIVE BACK -->
+<section class="giveback-strip" aria-labelledby="giveback-h2">
+  <div class="container">
+    <p class="partners-eyebrow" id="giveback-h2">We Care About Our Community And We Give Back</p>
+    <div class="partners-logos">
       <img src="assets/images/partners/operation-liberty-hill.png" alt="Operation Liberty Hill" loading="lazy">
       <img src="assets/images/partners/agape-womens-clinic.png" alt="Agape Women's Clinic" loading="lazy">
+      <img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy">
+      <img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy">
       <img src="assets/images/partners/lr-wrangler-pit-crew.png" alt="LR Wrangler Pit Crew" loading="lazy">
       <img src="assets/images/partners/lr-cheer.png" alt="LR Cheer" loading="lazy">
       <img src="assets/images/partners/liberty-hill-youth-league.png" alt="Liberty Hill Youth League" loading="lazy">
@@ -409,10 +492,10 @@
           <div class="footer-connect">
             <p class="footer-connect-title">Connect With Us</p>
             <div class="social-icons">
-              <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
-              <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
-              <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+              <a href="https://www.facebook.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
+              <a href="https://www.instagram.com/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#405DE6"/><stop offset="35%" stop-color="#833AB4"/><stop offset="60%" stop-color="#E1306C"/><stop offset="85%" stop-color="#FD1D1D"/><stop offset="100%" stop-color="#FCAF45"/></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+              <a href="https://www.linkedin.com/company/frecciagroup/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path transform="translate(-0.9,0)" fill="#25F4EE" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path transform="translate(0.9,0)" fill="#FE2C55" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FFFFFF" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g></svg></a>
             </div>
           </div>
         </nav>
