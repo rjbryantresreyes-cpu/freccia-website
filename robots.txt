@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_FILE_LOCATIONS.html
+Disallow: /_PREVIEW.html
+
+Sitemap: https://frecciaconstruction.com/sitemap.xml
