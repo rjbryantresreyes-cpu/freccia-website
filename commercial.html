@@ -19,7 +19,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Freccia Construction","url":"https://frecciaconstruction.com","telephone":"+15125518660","email":"sales@frecciagroup.com","address":{"@type":"PostalAddress","streetAddress":"1700 Bryant Dr. #101","addressLocality":"Round Rock","addressRegion":"TX","postalCode":"78664","addressCountry":"US"},"areaServed":["Austin, TX","Round Rock, TX","Cedar Park, TX","Georgetown, TX","Leander, TX"],"serviceType":["Tenant Improvements","Office Build-Outs","Commercial Construction","Design-Build"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -69,17 +71,20 @@
     .sec-header{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);margin-bottom:var(--space-10);flex-wrap:wrap}
     /* MORE COMMERCIAL PROJECTS — card grid, matches residential's project grid */
     .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
-    .proj-card{background:var(--color-white);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;border:1px solid var(--color-border)}
+    /* NOTE (2026-08-05): Light Blue-Gray applied per RJ's request, was var(--color-white). */
+    .proj-card{background:var(--color-light-blue-gray);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;border:1px solid var(--color-border)}
     .proj-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px oklch(14% .02 250/.14)}
     .proj-card-link{display:flex;flex-direction:column;flex:1;color:inherit;text-decoration:none}
     .proj-card-img{overflow:hidden;aspect-ratio:4/3}
     .proj-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
     .proj-card:hover .proj-card-img img{transform:scale(1.06)}
     .proj-card-body{padding:var(--space-6);flex:1;display:flex;flex-direction:column}
-    .proj-type{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);font-weight:500;margin-bottom:var(--space-2)}
+    /* NOTE (2026-08-06): all text below set to var(--color-ink) (black) per RJ's request, so text stays
+       readable now that the card background is Light Blue-Gray instead of white. */
+    .proj-type{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-ink);font-weight:500;margin-bottom:var(--space-2)}
     .proj-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--color-ink);line-height:1.25;margin-bottom:var(--space-2)}
-    .proj-card-body p.proj-desc{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.65;flex:1}
-    .proj-loc{font-size:var(--text-xs);color:var(--color-ink-3);margin-top:var(--space-3)}
+    .proj-card-body p.proj-desc{font-size:var(--text-sm);color:var(--color-ink);line-height:1.65;flex:1}
+    .proj-loc{font-size:var(--text-xs);color:var(--color-ink);margin-top:var(--space-3)}
     /* FEATURED PROJECTS — text left, photo right */
     .feat-item{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:var(--color-paper)}
     .feat-item+.feat-item{border-top:1px solid var(--color-border)}
@@ -97,28 +102,32 @@
     .feat-link:hover{gap:var(--space-3)}
     .feat-link::after{content:'→'}
     /* SERVICES */
-    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border)}
-    .svc{background:var(--color-paper);padding:var(--space-8);border-top:2px solid transparent;transition:border-color .2s}
+    /* NOTE (2026-08-05): real gap added per RJ's request, now that .svc cards have their own
+       Light Blue-Gray background, the old 1px-gap/border-color "grid line" trick looked flush/cramped. */
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
+    /* NOTE (2026-08-05): Light Blue-Gray applied per RJ's request, was var(--color-paper). */
+    .svc{background:var(--color-light-blue-gray);padding:var(--space-8);border-top:2px solid transparent;transition:border-color .2s}
     .svc:hover{border-color:var(--color-gold)}
     .svc-bar{width:28px;height:2px;background:var(--color-gold);margin-bottom:var(--space-4)}
     .svc-icon{width:32px;height:32px;margin-bottom:var(--space-4);color:var(--color-gold)}
     .svc-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-    .svc h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:var(--space-3)}
-    .svc p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.7}
+    .svc h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-3)}
+    .svc p{font-size:var(--text-sm);color:var(--color-ink);line-height:1.7}
     /* INDUSTRIES */
     /* NOTE (2026-07-31): color variants reverted to plain per RJ's request, pending a full review of
        where secondary brand colors should go sitewide. Kept defined but unused below so they can be
        reapplied to .industry-card without rebuilding. Chips upgraded to description cards 2026-08-01
        per Rebekah's request to highlight sectors more. */
     .industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);margin-top:var(--space-10)}
-    .industry-card{display:flex;flex-direction:column;background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-6);transition:border-color .2s,transform .2s,box-shadow .2s}
+    /* NOTE (2026-08-05): Light Blue-Gray applied per RJ's request, was var(--color-paper-2). */
+    .industry-card{display:flex;flex-direction:column;background:var(--color-light-blue-gray);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-6);transition:border-color .2s,transform .2s,box-shadow .2s}
     .industry-card:hover{border-color:var(--color-gold);transform:translateY(-3px);box-shadow:0 10px 26px oklch(14% .02 250/.12)}
     .industry-card-bar{width:26px;height:2px;background:var(--color-gold);margin-bottom:var(--space-4)}
     .industry-card-icon{width:32px;height:32px;margin-bottom:var(--space-4);color:var(--color-gold)}
     .industry-card-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
     .industry-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-2)}
-    .industry-card p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.6;flex:1}
-    .industry-card-more{display:inline-block;font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--color-gold-dark);font-weight:600;margin-top:var(--space-4)}
+    .industry-card p{font-size:var(--text-sm);color:var(--color-ink);line-height:1.6;flex:1}
+    .industry-card-more{display:inline-block;font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--color-ink);font-weight:600;margin-top:var(--space-4)}
     .industry-card--blue{background:var(--color-light-blue-gray);border-color:var(--color-slate-blue)}
     .industry-card--green{background:oklch(from var(--color-soft-green) 95% 0.03 h);border-color:var(--color-soft-green)}
     .industry-card--taupe{background:oklch(from var(--color-walnut-taupe) 95% 0.01 h);border-color:var(--color-walnut-taupe)}
@@ -138,18 +147,21 @@
     /* PROCESS */
     .process-section{padding:var(--space-20) var(--space-8);background:oklch(96% .005 80)}
     .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-8);margin-top:var(--space-12)}
-    .proc{border-top:1px solid var(--color-gold);padding-top:var(--space-6)}
+    /* NOTE (2026-08-05): Light Blue-Gray card background added per RJ's request, was plain text with
+       just a top border rule. */
+    .proc{border-top:1px solid var(--color-gold);background:var(--color-light-blue-gray);padding:var(--space-6)}
     .proc-num{font-family:var(--font-display);font-size:2.5rem;font-weight:800;line-height:1;margin-bottom:var(--space-4);color:transparent;-webkit-text-stroke:1px var(--color-gold);opacity:.5}
-    .proc h3{font-family:var(--font-display);font-size:1.125rem;font-weight:700;margin-bottom:var(--space-3)}
-    .proc p{font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.7}
+    .proc h3{font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--color-ink);margin-bottom:var(--space-3)}
+    .proc p{font-size:var(--text-sm);color:var(--color-ink);line-height:1.7}
     /* CONTACT JOSH */
     .josh-section{padding:var(--space-16) var(--space-8)}
     .josh-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center}
-    .josh-card{background:var(--color-white);border:1px solid var(--color-border);padding:var(--space-8)}
+    /* NOTE (2026-08-05): Light Blue-Gray applied per RJ's request, was var(--color-white). */
+    .josh-card{background:var(--color-light-blue-gray);border:1px solid var(--color-border);padding:var(--space-8)}
     .josh-card h3{font-family:var(--font-display);font-size:var(--text-h3);font-weight:700;color:var(--color-ink);margin-bottom:var(--space-2)}
     .josh-role{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-gold);margin-bottom:var(--space-6)}
     .josh-contact-row{display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-3)}
-    .josh-contact-row span{font-size:var(--text-sm);color:var(--color-ink-2)}
+    .josh-contact-row span{font-size:var(--text-sm);color:var(--color-ink)}
     .josh-contact-row a{font-size:var(--text-sm);color:var(--color-ink);transition:color .2s}
     .josh-contact-row a:hover{color:var(--color-gold)}
     /* CTA */

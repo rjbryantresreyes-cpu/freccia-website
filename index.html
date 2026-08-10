@@ -42,7 +42,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -165,8 +167,8 @@
        just a top border rule. */
     .proc-step { border-top: 1px solid var(--color-gold); background: var(--color-light-blue-gray); padding: var(--space-6); }
     .proc-num { font-family: var(--font-display); font-size: 2.75rem; font-weight: 800; line-height: 1; margin-bottom: var(--space-4); color: transparent; -webkit-text-stroke: 1px var(--color-gold); opacity: 0.5; }
-    .proc-step h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-3); }
-    .proc-step p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; }
+    .proc-step h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-3); }
+    .proc-step p { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.7; }
 
     /* ABOUT STRIP */
     .about-section { background: var(--color-paper); padding: var(--space-20) var(--space-8); }
@@ -191,7 +193,7 @@
     /* NOTE: was styled with Slate Blue (2026-07-31), reverted to the standard gold accent pending
        RJ's review of where secondary brand colors should go sitewide. */
     .testi-tag { font-family: var(--font-body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold-dark); background: var(--color-paper-2); padding: 0.2em 0.6em; border-radius: var(--radius); }
-    .testi-quote { font-size: var(--text-sm); line-height: 1.75; color: var(--color-ink-2); flex-grow: 1; }
+    .testi-quote { font-size: var(--text-sm); line-height: 1.75; color: var(--color-ink); flex-grow: 1; }
     .testi-person { display: flex; align-items: center; gap: var(--space-3); }
     .testi-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--color-navy-deep); color: var(--color-gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; flex-shrink: 0; overflow: hidden; }
     .testi-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -289,7 +291,7 @@
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="Freccia Construction, home">
-    <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction">
+    <picture><source srcset="assets/images/logo-horizontal-light.webp" type="image/webp"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction"></picture>
   </a>
   <ul class="nav-links" id="navLinks" role="list">
     <li><a href="commercial.html" class="nav-build">Commercial</a></li>
@@ -349,8 +351,8 @@
 
     <div class="comm-grid reveal">
       <article class="proj-card hero-card">
-        <img class="proj-card-img" src="assets/images/james-avery-plaza/office-suite-wide.jpg"
-             alt="Leander Insurance Agency, retail tenant improvement by Freccia Construction, Leander TX" loading="lazy">
+        <picture><source srcset="assets/images/james-avery-plaza/office-suite-wide.webp" type="image/webp"><img class="proj-card-img" src="assets/images/james-avery-plaza/office-suite-wide.jpg"
+             alt="Leander Insurance Agency, retail tenant improvement by Freccia Construction, Leander TX" loading="lazy"></picture>
         <div class="proj-card-grad" aria-hidden="true"></div>
         <div class="proj-card-body">
           <p class="proj-type">Retail Plaza · Tenant Improvement</p>
@@ -361,8 +363,8 @@
       </article>
 
       <article class="proj-card std-card">
-        <img class="proj-card-img" src="assets/images/building-kidz-daycare/exterior-entrance.jpg"
-             alt="Building Kidz Daycare, childcare facility new build by Freccia Construction, Leander TX" loading="lazy">
+        <picture><source srcset="assets/images/building-kidz-daycare/exterior-entrance.webp" type="image/webp"><img class="proj-card-img" src="assets/images/building-kidz-daycare/exterior-entrance.jpg"
+             alt="Building Kidz Daycare, childcare facility new build by Freccia Construction, Leander TX" loading="lazy"></picture>
         <div class="proj-card-grad" aria-hidden="true"></div>
         <div class="proj-card-body">
           <p class="proj-type">Childcare Facility · New Build</p>
@@ -373,8 +375,8 @@
       </article>
 
       <article class="proj-card std-card">
-        <img class="proj-card-img" src="assets/images/rebelz-gym/gym-floor-banner.jpg"
-             alt="Rebelz Gym, commercial fitness facility construction by Freccia Construction, Georgetown TX" loading="lazy">
+        <picture><source srcset="assets/images/rebelz-gym/gym-floor-banner.webp" type="image/webp"><img class="proj-card-img" src="assets/images/rebelz-gym/gym-floor-banner.jpg"
+             alt="Rebelz Gym, commercial fitness facility construction by Freccia Construction, Georgetown TX" loading="lazy"></picture>
         <div class="proj-card-grad" aria-hidden="true"></div>
         <div class="proj-card-body">
           <p class="proj-type">Fitness Facility · Commercial New Build</p>
@@ -408,7 +410,7 @@
       <a href="commercial.html" class="btn-gold reveal" style="margin-top:var(--space-8)">See Our Commercial Services</a>
     </div>
     <div class="services-img reveal">
-      <img src="assets/images/spca-groundbreaking.jpg" alt="Freccia Construction groundbreaking ceremony, Leander Animal Shelter (formerly Tails of Hope / Central Texas SPCA) commercial project" loading="lazy">
+      <picture><source srcset="assets/images/spca-groundbreaking.webp" type="image/webp"><img src="assets/images/spca-groundbreaking.jpg" alt="Freccia Construction groundbreaking ceremony, Leander Animal Shelter (formerly Tails of Hope / Central Texas SPCA) commercial project" loading="lazy"></picture>
     </div>
   </div>
 </section>
@@ -426,8 +428,8 @@
 
     <div class="res-grid reveal">
       <article class="res-card">
-        <img class="res-card-img" src="assets/images/residential/waterbrook/DJI_0521.JPG"
-             alt="Windsor Park Custom Home Build, custom new build by Freccia Construction, Windsor Park, Austin, TX" loading="lazy">
+        <picture><source srcset="assets/images/residential/waterbrook/DJI_0521.webp" type="image/webp"><img class="res-card-img" src="assets/images/residential/waterbrook/DJI_0521.JPG"
+             alt="Windsor Park Custom Home Build, custom new build by Freccia Construction, Windsor Park, Austin, TX" loading="lazy"></picture>
         <div class="res-card-grad" aria-hidden="true"></div>
         <div class="res-card-body">
           <p class="res-name">Windsor Park Custom Home Build</p>
@@ -435,8 +437,8 @@
         </div>
       </article>
       <article class="res-card">
-        <img class="res-card-img" src="assets/images/residential/e13th/exterior-hero.jpg"
-             alt="East 13th custom new build exterior by Freccia Construction, East Austin TX" loading="lazy">
+        <picture><source srcset="assets/images/residential/e13th/exterior-hero.webp" type="image/webp"><img class="res-card-img" src="assets/images/residential/e13th/exterior-hero.jpg"
+             alt="East 13th custom new build exterior by Freccia Construction, East Austin TX" loading="lazy"></picture>
         <div class="res-card-grad" aria-hidden="true"></div>
         <div class="res-card-body">
           <p class="res-name">East 13th</p>
@@ -444,8 +446,8 @@
         </div>
       </article>
       <article class="res-card">
-        <img class="res-card-img" src="assets/images/residential/lily-terrace-exterior.jpg"
-             alt="Montopolis Custom Home Build new custom home exterior by Freccia Construction, Montopolis, Austin, TX" loading="lazy">
+        <picture><source srcset="assets/images/residential/lily-terrace-exterior.webp" type="image/webp"><img class="res-card-img" src="assets/images/residential/lily-terrace-exterior.jpg"
+             alt="Montopolis Custom Home Build new custom home exterior by Freccia Construction, Montopolis, Austin, TX" loading="lazy"></picture>
         <div class="res-card-grad" aria-hidden="true"></div>
         <div class="res-card-body">
           <p class="res-name">Montopolis Custom Home Build</p>
@@ -453,8 +455,8 @@
         </div>
       </article>
       <article class="res-card">
-        <img class="res-card-img" src="assets/images/residential/scotland-well/DSC04699.JPG"
-             alt="Spicewood Springs full home renovation, finished kitchen by Freccia Construction, Spicewood Springs, Austin, TX" loading="lazy">
+        <picture><source srcset="assets/images/residential/scotland-well/DSC04699.webp" type="image/webp"><img class="res-card-img" src="assets/images/residential/scotland-well/DSC04699.JPG"
+             alt="Spicewood Springs full home renovation, finished kitchen by Freccia Construction, Spicewood Springs, Austin, TX" loading="lazy"></picture>
         <div class="res-card-grad" aria-hidden="true"></div>
         <div class="res-card-body">
           <p class="res-name">Spicewood Springs Home Renovation</p>
@@ -504,8 +506,8 @@
 <section class="about-section" aria-labelledby="about-h2">
   <div class="about-inner">
     <div class="about-img reveal">
-      <img src="assets/images/commercial/2F6B7090.jpg"
-           alt="Freccia Construction team, family-led builder in Round Rock TX serving Austin Metro" loading="lazy">
+      <picture><source srcset="assets/images/commercial/2F6B7090.webp" type="image/webp"><img src="assets/images/commercial/2F6B7090.jpg"
+           alt="Freccia Construction team, family-led builder in Round Rock TX serving Austin Metro" loading="lazy"></picture>
     </div>
     <div class="about-text reveal">
       <div class="sec-eyebrow"><span>About Freccia Construction</span></div>
@@ -543,15 +545,6 @@
         <div class="testi-person">
           <div class="testi-avatar"><span>LM</span></div>
           <p class="testi-name">Lily Marroquin</p>
-        </div>
-      </article>
-
-      <article class="testi-card">
-        <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="testi-quote">"Freccia Group finished remodeling my kitchen and all I can say is I loved it. Great communication, clean work, and the result was everything I hoped for."</p>
-        <div class="testi-person">
-          <div class="testi-avatar"><span>AK</span></div>
-          <p class="testi-name">Ana Kawas</p>
         </div>
       </article>
 
@@ -605,14 +598,14 @@
   <div class="certs-inner">
     <span class="certs-label">Member of</span>
     <div class="certs-list">
-      <img class="cert" src="assets/images/certs/hba-greater-austin.png" alt="HBA Greater Austin">
-      <img class="cert" src="assets/images/certs/nari.png" alt="NARI">
-      <img class="cert" src="assets/images/certs/bbb.png" alt="BBB Accredited">
-      <img class="cert" src="assets/images/certs/nahb.png" alt="NAHB">
-      <img class="cert" src="assets/images/certs/austin-infill-coalition.png" alt="Austin Infill Coalition">
-      <img class="cert" src="assets/images/certs/agc.png" alt="AGC">
-      <img class="cert" src="assets/images/certs/hub.png" alt="HUB Certified">
-      <img class="cert" src="assets/images/certs/tibd.png" alt="TIBD">
+      <picture><source srcset="assets/images/certs/hba-greater-austin.webp" type="image/webp"><img class="cert" src="assets/images/certs/hba-greater-austin.png" alt="HBA Greater Austin"></picture>
+      <picture><source srcset="assets/images/certs/nari.webp" type="image/webp"><img class="cert" src="assets/images/certs/nari.png" alt="NARI"></picture>
+      <picture><source srcset="assets/images/certs/bbb.webp" type="image/webp"><img class="cert" src="assets/images/certs/bbb.png" alt="BBB Accredited"></picture>
+      <picture><source srcset="assets/images/certs/nahb.webp" type="image/webp"><img class="cert" src="assets/images/certs/nahb.png" alt="NAHB"></picture>
+      <picture><source srcset="assets/images/certs/austin-infill-coalition.webp" type="image/webp"><img class="cert" src="assets/images/certs/austin-infill-coalition.png" alt="Austin Infill Coalition"></picture>
+      <picture><source srcset="assets/images/certs/agc.webp" type="image/webp"><img class="cert" src="assets/images/certs/agc.png" alt="AGC"></picture>
+      <picture><source srcset="assets/images/certs/hub.webp" type="image/webp"><img class="cert" src="assets/images/certs/hub.png" alt="HUB Certified"></picture>
+      <picture><source srcset="assets/images/certs/tibd.webp" type="image/webp"><img class="cert" src="assets/images/certs/tibd.png" alt="TIBD"></picture>
     </div>
   </div>
 </div>
@@ -622,26 +615,26 @@
   <div class="container">
     <p class="partners-eyebrow" id="partners-h2">Companies We've Worked With</p>
     <div class="partners-logos partners-logos--wide">
-      <img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy">
-      <img src="assets/images/partners/peace-lutheran-church.jpg" alt="Peace Lutheran Church" loading="lazy">
-      <img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy">
-      <img src="assets/images/partners/foundation-for-the-homeless.png" alt="Foundation for the Homeless" loading="lazy">
-      <img src="assets/images/partners/willow-salon-collective.png" alt="Willow Salon Collective" loading="lazy">
+      <picture><source srcset="assets/images/partners/central-texas-spca.webp" type="image/webp"><img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/peace-lutheran-church.webp" type="image/webp"><img src="assets/images/partners/peace-lutheran-church.jpg" alt="Peace Lutheran Church" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/homeaid-austin.webp" type="image/webp"><img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/foundation-for-the-homeless.webp" type="image/webp"><img src="assets/images/partners/foundation-for-the-homeless.png" alt="Foundation for the Homeless" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/willow-salon-collective.webp" type="image/webp"><img src="assets/images/partners/willow-salon-collective.png" alt="Willow Salon Collective" loading="lazy"></picture>
       <span class="partners-logo-text">Salt + Waves Salon</span>
-      <img src="assets/images/partners/rebelz-cheer.png" alt="Rebelz Cheer" loading="lazy">
+      <picture><source srcset="assets/images/partners/rebelz-cheer.webp" type="image/webp"><img src="assets/images/partners/rebelz-cheer.png" alt="Rebelz Cheer" loading="lazy"></picture>
       <img src="assets/images/partners/building-kidz-school.svg" alt="Building Kidz School" loading="lazy">
-      <img src="assets/images/partners/goosehead-insurance.png" alt="Goosehead Insurance" loading="lazy">
-      <img src="assets/images/partners/samaritan-health-ministries.png" alt="Samaritan Health Ministries" loading="lazy">
-      <img src="assets/images/partners/austin-pets-alive.png" alt="Austin Pets Alive!" loading="lazy">
-      <img src="assets/images/partners/mad-greens.png" alt="MAD Greens" loading="lazy">
-      <img src="assets/images/partners/mod-architecture-design.png" alt="MOD Architecture + Design" loading="lazy">
-      <img src="assets/images/partners/all-seasons-comfort-air.png" alt="All Seasons Comfort Air" loading="lazy">
-      <img src="assets/images/partners/mccoys-building-supply.png" alt="McCoy's Building Supply" loading="lazy">
-      <img src="assets/images/partners/home-depot.png" alt="The Home Depot" loading="lazy">
-      <img src="assets/images/partners/builders-firstsource.png" alt="Builders FirstSource" loading="lazy">
-      <img src="assets/images/partners/moore-supply-co.png" alt="Moore Supply Co." loading="lazy">
-      <img src="assets/images/partners/ferguson.png" alt="Ferguson" loading="lazy">
-      <img src="assets/images/partners/abc-supply.png" alt="ABC Supply Co." loading="lazy">
+      <picture><source srcset="assets/images/partners/goosehead-insurance.webp" type="image/webp"><img src="assets/images/partners/goosehead-insurance.png" alt="Goosehead Insurance" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/samaritan-health-ministries.webp" type="image/webp"><img src="assets/images/partners/samaritan-health-ministries.png" alt="Samaritan Health Ministries" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/austin-pets-alive.webp" type="image/webp"><img src="assets/images/partners/austin-pets-alive.png" alt="Austin Pets Alive!" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/mad-greens.webp" type="image/webp"><img src="assets/images/partners/mad-greens.png" alt="MAD Greens" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/mod-architecture-design.webp" type="image/webp"><img src="assets/images/partners/mod-architecture-design.png" alt="MOD Architecture + Design" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/all-seasons-comfort-air.webp" type="image/webp"><img src="assets/images/partners/all-seasons-comfort-air.png" alt="All Seasons Comfort Air" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/mccoys-building-supply.webp" type="image/webp"><img src="assets/images/partners/mccoys-building-supply.png" alt="McCoy's Building Supply" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/home-depot.webp" type="image/webp"><img src="assets/images/partners/home-depot.png" alt="The Home Depot" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/builders-firstsource.webp" type="image/webp"><img src="assets/images/partners/builders-firstsource.png" alt="Builders FirstSource" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/moore-supply-co.webp" type="image/webp"><img src="assets/images/partners/moore-supply-co.png" alt="Moore Supply Co." loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/ferguson.webp" type="image/webp"><img src="assets/images/partners/ferguson.png" alt="Ferguson" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/abc-supply.webp" type="image/webp"><img src="assets/images/partners/abc-supply.png" alt="ABC Supply Co." loading="lazy"></picture>
     </div>
   </div>
 </section>
@@ -651,13 +644,13 @@
   <div class="container">
     <p class="partners-eyebrow" id="giveback-h2">We Care About Our Community And We Give Back</p>
     <div class="partners-logos">
-      <img src="assets/images/partners/operation-liberty-hill.png" alt="Operation Liberty Hill" loading="lazy">
-      <img src="assets/images/partners/agape-womens-clinic.png" alt="Agape Women's Clinic" loading="lazy">
-      <img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy">
-      <img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy">
-      <img src="assets/images/partners/lr-wrangler-pit-crew.png" alt="LR Wrangler Pit Crew" loading="lazy">
-      <img src="assets/images/partners/lr-cheer.png" alt="LR Cheer" loading="lazy">
-      <img src="assets/images/partners/liberty-hill-youth-league.png" alt="Liberty Hill Youth League" loading="lazy">
+      <picture><source srcset="assets/images/partners/operation-liberty-hill.webp" type="image/webp"><img src="assets/images/partners/operation-liberty-hill.png" alt="Operation Liberty Hill" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/agape-womens-clinic.webp" type="image/webp"><img src="assets/images/partners/agape-womens-clinic.png" alt="Agape Women's Clinic" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/central-texas-spca.webp" type="image/webp"><img src="assets/images/partners/central-texas-spca.png" alt="Central Texas SPCA" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/homeaid-austin.webp" type="image/webp"><img src="assets/images/partners/homeaid-austin.png" alt="HomeAid Austin" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/lr-wrangler-pit-crew.webp" type="image/webp"><img src="assets/images/partners/lr-wrangler-pit-crew.png" alt="LR Wrangler Pit Crew" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/lr-cheer.webp" type="image/webp"><img src="assets/images/partners/lr-cheer.png" alt="LR Cheer" loading="lazy"></picture>
+      <picture><source srcset="assets/images/partners/liberty-hill-youth-league.webp" type="image/webp"><img src="assets/images/partners/liberty-hill-youth-league.png" alt="Liberty Hill Youth League" loading="lazy"></picture>
     </div>
   </div>
 </section>
@@ -674,7 +667,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'">
+          <picture><source srcset="assets/images/logo-horizontal-light.webp" type="image/webp"><img src="assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></picture>
           <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
           <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
         </div>

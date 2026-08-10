@@ -16,7 +16,9 @@
   <meta name="description" content="Start a project with Freccia Construction. Custom homes and commercial build-outs across Austin Metro. Talk to us today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/css/tokens.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,25 +45,32 @@
     .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: currentColor; }
 
     /* Contact layout */
-    .contact-page { padding-top: 140px; min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; }
-    .contact-left { background: var(--color-navy-deep); padding: var(--space-20) var(--space-12); display: flex; flex-direction: column; justify-content: center; }
+    /* NOTE (2026-08-06): padding-top removed per RJ's request (a guessed pixel value here kept leaving
+       a hairline gap of exposed body background above the panels). Panels now start at y:0, extending
+       behind the fixed nav, with their own padding-top increased instead so content still clears it. */
+    .contact-page { min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; }
+    /* NOTE (2026-08-06): Walnut Taupe applied per RJ's request, was var(--color-navy-deep). All child
+       text below flipped from light-on-dark to dark-on-walnut to stay readable. */
+    .contact-left { background: var(--color-walnut-taupe); padding: var(--space-20) var(--space-12); display: flex; flex-direction: column; justify-content: center; }
     .contact-right { padding: var(--space-20) var(--space-12); display: flex; flex-direction: column; justify-content: center; background: var(--color-paper); }
 
-    .hero-eyebrow { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
-    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-gold); }
-    .contact-left h1 { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; line-height: 1.1; color: var(--color-ink-on-dark); overflow-wrap: anywhere; min-width: 0; }
-    .contact-left h1 em { font-style: italic; color: var(--color-gold); }
-    .contact-left-sub { font-size: var(--text-lg); color: var(--color-ink-muted); margin-top: var(--space-5); line-height: 1.7; max-width: 420px; }
+    /* NOTE (2026-08-06): switched gold-dark to navy per RJ's request, gold-dark still didn't have
+       enough contrast against the Walnut Taupe panel background. */
+    .hero-eyebrow { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-navy); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--color-navy); }
+    .contact-left h1 { font-family: var(--font-display); font-size: var(--text-display-s); font-weight: 600; line-height: 1.1; color: var(--color-navy); overflow-wrap: anywhere; min-width: 0; }
+    .contact-left h1 em { font-style: italic; }
+    .contact-left-sub { font-size: var(--text-lg); color: var(--color-ink-2); margin-top: var(--space-5); line-height: 1.7; max-width: 420px; }
 
     /* Direct contacts */
     .direct-contacts { margin-top: var(--space-12); display: flex; flex-direction: column; gap: var(--space-6); }
-    .contact-person { padding: var(--space-6); border: 1px solid oklch(100% 0 0 / 0.1); border-radius: var(--radius); transition: border-color var(--dur-base) var(--ease-out); }
+    .contact-person { padding: var(--space-6); border: 1px solid oklch(0% 0 0 / 0.15); border-radius: var(--radius); transition: border-color var(--dur-base) var(--ease-out); }
     .contact-person:hover { border-color: var(--color-gold-dark); }
-    .contact-person-role { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-2); }
-    .contact-person-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-ink-on-dark); }
+    .contact-person-role { font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-navy); margin-bottom: var(--space-2); }
+    .contact-person-name { font-family: var(--font-display); font-size: var(--text-h3); font-weight: 600; color: var(--color-navy); }
     .contact-person-details { margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-1); }
-    .contact-person-details a { font-size: var(--text-sm); color: var(--color-ink-muted); transition: color var(--dur-fast); }
-    .contact-person-details a:hover { color: var(--color-gold-light); }
+    .contact-person-details a { font-size: var(--text-sm); color: var(--color-ink-2); transition: color var(--dur-fast); }
+    .contact-person-details a:hover { color: var(--color-gold-dark); }
 
     /* Form */
     .form-title { font-family: var(--font-display); font-size: var(--text-h2); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin-bottom: var(--space-2); overflow-wrap: anywhere; min-width: 0; }
@@ -93,9 +102,11 @@
     .form-success p { font-size: var(--text-base); color: var(--color-ink-2); line-height: 1.65; }
 
     /* Service area note */
-    .service-note { margin-top: var(--space-12); padding: var(--space-5); background: oklch(100% 0 0 / 0.04); border-radius: var(--radius); border: 1px solid oklch(100% 0 0 / 0.08); }
-    .service-note p { font-size: var(--text-sm); color: var(--color-ink-muted); line-height: 1.65; }
-    .service-note strong { color: var(--color-gold); font-weight: 600; }
+    /* NOTE (2026-08-06): flipped dark-tint/dark-text to match Walnut Taupe panel, was white-tint/ink-muted for the old navy panel. */
+    .service-note { margin-top: var(--space-12); padding: var(--space-5); background: oklch(0% 0 0 / 0.06); border-radius: var(--radius); border: 1px solid oklch(0% 0 0 / 0.12); }
+    .service-note p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.65; }
+    /* NOTE (2026-08-06): switched gold to navy per RJ's request, gold had poor contrast against Walnut Taupe. */
+    .service-note strong { color: var(--color-navy); font-weight: 600; }
 
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity var(--dur-enter) var(--ease-out), transform var(--dur-enter) var(--ease-out); }

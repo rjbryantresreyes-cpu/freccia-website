@@ -146,7 +146,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -189,33 +191,38 @@
 
     /* Case study cards */
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
-    .case-card { background: var(--color-white); border: 1px solid var(--color-border); overflow: hidden; transition: box-shadow 0.3s; }
+    /* NOTE (2026-08-06): Light Blue-Gray applied per RJ's request, was var(--color-white). */
+    .case-card { background: var(--color-light-blue-gray); border: 1px solid var(--color-border); overflow: hidden; transition: box-shadow 0.3s; }
     .case-card:hover { box-shadow: 0 8px 32px oklch(0% 0 0 / 0.1); }
     .case-img { width: 100%; height: 200px; object-fit: cover; }
     .case-body { padding: var(--space-6); }
-    .case-tag { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold-dark); font-weight: 600; margin-bottom: var(--space-2); }
-    .case-card h3 { font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-3); }
-    .case-card p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; margin-bottom: var(--space-5); }
+    /* NOTE (2026-08-06): text below set to var(--color-ink) (black) per RJ's request, so text stays
+       readable now that these cards are Light Blue-Gray instead of white. */
+    .case-tag { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); font-weight: 600; margin-bottom: var(--space-2); }
+    .case-card h3 { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); margin-bottom: var(--space-3); }
+    .case-card p { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.7; margin-bottom: var(--space-5); }
     .case-link { font-size: var(--text-sm); font-weight: 600; color: var(--color-navy); letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 2px solid var(--color-gold); padding-bottom: 2px; }
 
     /* FAQ section */
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-    .faq-item { border: 1px solid var(--color-border); background: var(--color-white); overflow: hidden; display: flex; flex-direction: column; }
+    /* NOTE (2026-08-06): Light Blue-Gray applied per RJ's request, was var(--color-white). */
+    .faq-item { border: 1px solid var(--color-border); background: var(--color-light-blue-gray); overflow: hidden; display: flex; flex-direction: column; }
     .faq-q { width: 100%; min-height: 74px; padding: var(--space-6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); font-weight: 600; line-height: 1.4; text-align: left; background: none; border: none; font-family: inherit; font-size: inherit; color: inherit; }
     .faq-q svg { flex-shrink: 0; transition: transform 0.3s; }
     .faq-item.open .faq-q svg { transform: rotate(180deg); }
     .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .faq-item.open .faq-a { max-height: 400px; }
-    .faq-a-inner { padding: 0 var(--space-6) var(--space-6); color: var(--color-ink-2); line-height: 1.8; font-size: var(--text-sm); }
+    .faq-a-inner { padding: 0 var(--space-6) var(--space-6); color: var(--color-ink); line-height: 1.8; font-size: var(--text-sm); }
 
     /* Feature articles */
     .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
-    .feature-card { display: grid; grid-template-columns: 200px 1fr; gap: 0; border: 1px solid var(--color-border); background: var(--color-white); overflow: hidden; }
+    /* NOTE (2026-08-06): Light Blue-Gray applied per RJ's request, was var(--color-white). */
+    .feature-card { display: grid; grid-template-columns: 200px 1fr; gap: 0; border: 1px solid var(--color-border); background: var(--color-light-blue-gray); overflow: hidden; }
     .feature-card img { width: 200px; height: 100%; object-fit: cover; }
     .feature-card-body { padding: var(--space-6); }
     .feature-card-body .case-tag { margin-bottom: var(--space-2); }
-    .feature-card-body h3 { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-3); line-height: 1.3; }
-    .feature-card-body p { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.7; margin-bottom: var(--space-4); }
+    .feature-card-body h3 { font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-ink); margin-bottom: var(--space-3); line-height: 1.3; }
+    .feature-card-body p { font-size: var(--text-sm); color: var(--color-ink); line-height: 1.7; margin-bottom: var(--space-4); }
 
     .cta-section { background: var(--color-gold); padding: var(--space-20) var(--space-8); text-align: center; }
     .cta-section h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); color: var(--color-navy); margin-bottom: var(--space-4); }
