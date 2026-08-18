@@ -41,7 +41,7 @@
 
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-8); background: var(--color-navy-deep); transition: box-shadow 0.3s; }
     .nav.scrolled { box-shadow: 0 2px 20px oklch(0% 0 0 / 0.3); }
-    .nav-logo img { height: 48px; width: auto; }
+    .nav-logo{flex-shrink:0}.nav-logo img{height:48px;width:auto;max-width:none}
     .nav-links { display: flex; align-items: center; gap: var(--space-8); list-style: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     .nav-links a { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-on-dark); opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--color-gold); }
@@ -123,7 +123,7 @@
       .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; transform: none; background: var(--color-navy-deep); flex-direction: column; justify-content: center; align-items: center; gap: var(--space-8); z-index: 99; }
       .nav-links.open { display: flex; }
       .nav-links a { font-size: var(--text-base); }
-      .nav-cta { padding: var(--space-2) var(--space-4) !important; font-size: var(--text-xs) !important; outline: none !important; border: 1px solid var(--color-gold-light); margin: 0 var(--space-2) !important; display: inline-flex !important; align-items: center; justify-content: center; min-height: 36px; } .nav-logo img { height: 36px; }
+      .nav-cta { padding: var(--space-2) var(--space-3) !important; font-size: var(--text-xs) !important; outline: none !important; border: 1px solid var(--color-gold-light); margin: 0 var(--space-2) !important; display: inline-flex !important; align-items: center; justify-content: center; min-height: 36px; } .nav-logo img { height: 36px; }
       .nav-menu-btn { display: block; position: relative; z-index: 101; }
       .cats-grid { grid-template-columns: 1fr; }
     }
