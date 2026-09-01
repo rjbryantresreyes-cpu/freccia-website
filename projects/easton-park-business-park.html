@@ -304,6 +304,7 @@
     try{
       const response=await fetch(window.location.pathname,{method:'POST',body:formData});
       if(!response.ok) throw new Error('Submission failed with status '+response.status);
+      if(typeof gtag==='function')gtag('event','form_submit',{form_id:e.target.id||'',form_name:e.target.getAttribute('name')||'',form_destination:location.pathname});
       quoteForm.style.display='none';
       document.getElementById('quote-success').style.display='block';
     }catch(err){
