@@ -1,0 +1,7 @@
+# Declares the serverless functions directory so the GHL lead relay is picked
+# up on every deploy, including manual CLI deploys. Intentionally minimal:
+# build command and publish directory stay configured in the Netlify UI, and
+# omitting them here leaves those settings untouched.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
