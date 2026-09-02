@@ -91,6 +91,48 @@ function buildNote(payload, f) {
   return lines.join('\n');
 }
 
+// Commercial Pipeline / "New Lead" stage. Hard-coded rather than looked up:
+// there is exactly one pipeline on this sub-account and a lookup would add a
+// round trip plus a failure mode on every submission.
+const PIPELINE_ID = 'BtRChioUYaBNx8wLfAMI';
+const NEW_LEAD_STAGE_ID = 'de49f61e-6e56-4c23-b03a-59ba87e3142e';
+
+/**
+ * Turns the form's budget band into an opportunity value.
+ *
+ * Uses the LOW end of the band the prospect selected, never a midpoint or an
+ * invented figure. "500k-1m" becomes 500000. The exact band is also written
+ * verbatim into the note, so the funnel stays conservative while the real
+ * answer remains visible on the record. Unrecognised or absent budget gives
+ * 0 rather than a guess.
+ */
+function budgetToValue(budget) {
+  if (!budget) return 0;
+  const m = String(budget).toLowerCase().match(/(\d+(?:\.\d+)?)\s*([km])/);
+  if (!m) return 0;
+  const n = parseFloat(m[1]);
+  if (!isFinite(n)) return 0;
+  return Math.round(n * (m[2] === 'm' ? 1000000 : 1000));
+}
+
+// Do not stack a second opportunity on someone who already has one open. A
+// repeat enquiry from an existing prospect should land as a note on the
+// record they already have, not as a duplicate row in Rebekah's funnel.
+async function hasOpenOpportunity(token, locationId, contactId) {
+  try {
+    const url =
+      `${GHL_BASE}/opportunities/search?location_id=${encodeURIComponent(locationId)}` +
+      `&contact_id=${encodeURIComponent(contactId)}&status=open&limit=1`;
+    const res = await fetch(url, { headers: ghlHeaders(token) });
+    if (!res.ok) return false;
+    const j = await res.json().catch(() => ({}));
+    return Array.isArray(j.opportunities) && j.opportunities.length > 0;
+  } catch (e) {
+    console.error('relay: opportunity lookup threw', e && e.message);
+    return false; // fail open: a missing opportunity is worse than a duplicate
+  }
+}
+
 exports.handler = async (event) => {
   const ok = (body) => ({ statusCode: 200, body: JSON.stringify(body) });
 
@@ -201,6 +243,46 @@ exports.handler = async (event) => {
     }
   }
 
-  console.log(`relay ok form=${formName} contact=${contactId} created=${created} noted=${noted}`);
-  return ok({ relayed: true, contactId, created, noted });
+  // The Opportunity is what actually puts the lead in Rebekah's funnel. The
+  // contact alone is invisible there. This is created directly rather than by
+  // applying `commercial-form-submitted` and letting Commercial - New Lead
+  // Capture do it, because that tag's other listeners cannot be inventoried
+  // from the API and Welcome Email v2 is still published. Firing it could send
+  // an automated welcome to a prospect Josh is already replying to.
+  let opportunityId = null;
+  if (contactId) {
+    try {
+      if (await hasOpenOpportunity(token, locationId, contactId)) {
+        console.log('relay: contact already has an open opportunity, not duplicating');
+      } else {
+        const who = [firstName, lastName].filter(Boolean).join(' ') || f.email;
+        const ores = await fetch(`${GHL_BASE}/opportunities/`, {
+          method: 'POST',
+          headers: ghlHeaders(token),
+          body: JSON.stringify({
+            pipelineId: PIPELINE_ID,
+            pipelineStageId: NEW_LEAD_STAGE_ID,
+            locationId,
+            contactId,
+            name: `${who} - Website Enquiry`,
+            status: 'open',
+            monetaryValue: budgetToValue(f.budget),
+          }),
+        });
+        const oj = await ores.json().catch(() => ({}));
+        if (ores.ok) {
+          opportunityId = (oj.opportunity && oj.opportunity.id) || oj.id || null;
+        } else {
+          console.error('relay: opportunity create failed', ores.status, JSON.stringify(oj).slice(0, 400));
+        }
+      }
+    } catch (e) {
+      console.error('relay: opportunity threw', e && e.message);
+    }
+  }
+
+  console.log(
+    `relay ok form=${formName} contact=${contactId} created=${created} noted=${noted} opp=${opportunityId}`
+  );
+  return ok({ relayed: true, contactId, created, noted, opportunityId });
 };
