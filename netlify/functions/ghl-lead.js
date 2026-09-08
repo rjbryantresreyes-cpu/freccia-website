@@ -105,10 +105,22 @@ const NEW_LEAD_STAGE_ID = 'de49f61e-6e56-4c23-b03a-59ba87e3142e';
  * verbatim into the note, so the funnel stays conservative while the real
  * answer remains visible on the record. Unrecognised or absent budget gives
  * 0 rather than a guess.
+ *
+ * The six bands the contact form actually offers, and what this returns:
+ *   under-200k -> 0        200k-500k -> 200000    500k-1m -> 500000
+ *   1m-2m      -> 1000000  2m-5m     -> 2000000   5m+     -> 5000000
  */
 function budgetToValue(budget) {
   if (!budget) return 0;
-  const m = String(budget).toLowerCase().match(/(\d+(?:\.\d+)?)\s*([km])/);
+  const s = String(budget).toLowerCase();
+  // An open-ended LOWER band has a low end of zero, not the number it names.
+  // The contact form offers "under-200k", and matching its digits returns the
+  // band's HIGH end (200000) — the exact opposite of this function's contract,
+  // and it overstates the funnel. Checked before the digit match, deliberately.
+  // Note the reverse is NOT a bug: "5m+" and "over-5m" have a low end of 5m,
+  // so they fall through and return 5000000 correctly.
+  if (/\b(under|below|less\s*than|up\s*to)\b|^\s*</.test(s)) return 0;
+  const m = s.match(/(\d+(?:\.\d+)?)\s*([km])/);
   if (!m) return 0;
   const n = parseFloat(m[1]);
   if (!isFinite(n)) return 0;
