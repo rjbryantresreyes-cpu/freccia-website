@@ -1,0 +1,16 @@
+# Legacy WordPress paths that still get linked from outside.
+#
+# The old frecciagroup.com site published its legal pages at /privacy-policy/
+# and /terms-of-use/. Both were dead ends until 2026-09-08: /privacy-policy/
+# was mapped to the homepage on the frecciagroup.com redirect site, and
+# /terms-of-use/ had no rule at all, so it fell through the catch-all to
+# frecciaconstruction.com/terms-of-use/ and 404'd here.
+#
+# These rules are the second half of that fix. The redirect site handles
+# traffic still arriving on frecciagroup.com; these handle anything that
+# reaches frecciaconstruction.com directly, whether from an old inbound link
+# on the new domain or forwarded by the catch-all.
+/privacy-policy/  /privacy  301!
+/privacy-policy   /privacy  301!
+/terms-of-use/    /terms    301!
+/terms-of-use     /terms    301!
