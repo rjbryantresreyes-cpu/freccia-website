@@ -111,9 +111,13 @@
 .footer-links a { font-size: var(--text-sm); color: var(--color-ink-on-dark); opacity: .8; transition: opacity var(--dur-fast), color var(--dur-fast); }
 .footer-links a:hover { opacity: 1; color: var(--color-gold); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-8); gap: var(--space-4); flex-wrap: wrap; }
-.footer-copy { font-size: var(--text-xs); color: var(--color-ink-3); }
+.footer-copy { font-size: var(--text-xs); color: var(--color-ink-muted); }
 .footer-legal { display: flex; gap: var(--space-6); }
-.footer-legal a { font-size: var(--text-xs); color: var(--color-ink-3); transition: color var(--dur-fast); }
+/* Accessibility (2026-09-08): --color-ink-3 (#6B6560) on the footer's --color-navy-deep (#141210)
+   measures 3.25:1, below the 4.5:1 WCAG AA needs for normal text. --color-ink-muted (#A39D93)
+   measures 6.94:1. These were dead href="#" placeholders until 2026-09-08; they are now the only
+   route to Freccia's Privacy and Terms pages, so the contrast actually matters. */
+.footer-legal a { font-size: var(--text-xs); color: var(--color-ink-muted); transition: color var(--dur-fast); }
 .footer-legal a:hover { color: var(--color-ink-on-dark); }
 
 @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
