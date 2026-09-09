@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "side-tab"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "lora",
+        "createdAt": "2026-08-25T21:24:20.308Z",
+        "reason": "Freccia's actual documented brand guide (tokens.css, April 2025 v2); user confirmed 2026-08-21"
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-08-25T21:24:21.094Z",
+        "reason": "Freccia's actual documented brand guide body font (tokens.css, April 2025 v2); user confirmed 2026-08-21"
+      }
+    ]
+  }
+}

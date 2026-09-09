@@ -6,3 +6,10 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Impeccable design hook: share the waivers, not the per-machine cache.
+# config.json holds the reviewed rule exceptions (Freccia's Lora/Montserrat brand
+# fonts, user-confirmed 2026-08-21) and IS tracked, so they survive a fresh clone
+# and stop every device re-flagging the same approved brand typography.
+# hook.cache.json is session state keyed by absolute local paths and session ids.
+.impeccable/hook.cache.json
