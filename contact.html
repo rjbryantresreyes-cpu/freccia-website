@@ -313,6 +313,16 @@
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
+      // The form carries `novalidate`, which stops the browser enforcing the
+      // `required` attributes on its own, and this handler previously went
+      // straight to fetch. So every field was effectively optional: a visitor
+      // could submit with no name, and worse, with no email at all. A nameless
+      // enquiry reaches the acknowledgement email as "Hi ," and an email-less
+      // one is dropped by the CRM relay, leaving an enquiry nobody can answer.
+      // reportValidity() still works under `novalidate` and shows the browser's
+      // own messages, so this enforces every `required` field without changing
+      // the markup or the styling.
+      if (!form.reportValidity()) return;
       const formData = new FormData(form);
       try {
         const response = await fetch(window.location.pathname, { method: 'POST', body: formData });
