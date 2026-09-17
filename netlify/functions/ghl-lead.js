@@ -67,12 +67,33 @@ function splitName(f) {
 
 // GHL rejects anything that is not E.164-ish. A bad phone fails the whole
 // contact create, so drop it rather than lose the lead over a phone number.
+//
+// The old catch-all branch here returned `+${digits}` for ANY 8-15 digit
+// string, which defeated that intent instead of serving it. A local-format
+// number with a national trunk prefix ("09363936540") became "+09363936540",
+// and there is no country calling code 0, so GHL answered
+// 400 "Invalid country calling code" and the whole create died -- no contact,
+// no note, no opportunity. Submissions #52 and #53 were lost exactly that way
+// on 2026-09-16, and leading-zero local format is the norm in the PH, the UK,
+// Australia and most of Europe.
+//
+// So a number is only trusted when we can say what country it belongs to:
+// a 10-digit NANP number, an 11-digit one starting with 1, or one the person
+// actually wrote in international form themselves. Everything else is dropped
+// -- and `buildNote` still records it verbatim as "Phone as entered", so the
+// number reaches Josh either way.
 function normalisePhone(raw) {
   if (!raw) return undefined;
+  const wroteInternational = /^\s*\+/.test(raw);
   const digits = raw.replace(/\D/g, '');
-  if (digits.length === 10) return `+1${digits}`;
+  // A NANP area code never begins with 0 or 1, so a 10-digit string that does
+  // is not a US number and must not be given a +1. Without this, a trimmed
+  // local number like "0207 946 095" would silently become "+10207946095".
+  if (digits.length === 10 && !/^[01]/.test(digits)) return `+1${digits}`;
   if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
-  if (digits.length >= 8 && digits.length <= 15) return `+${digits}`;
+  if (wroteInternational && digits.length >= 8 && digits.length <= 15 && !digits.startsWith('0')) {
+    return `+${digits}`;
+  }
   return undefined;
 }
 
@@ -205,14 +226,38 @@ exports.handler = async (event) => {
 
   let contactId = null;
   let created = false;
+  let phoneDropped = false;
 
-  try {
-    const res = await fetch(`${GHL_BASE}/contacts/`, {
+  const postContact = async (payload) => {
+    const r = await fetch(`${GHL_BASE}/contacts/`, {
       method: 'POST',
       headers: ghlHeaders(token),
-      body: JSON.stringify(body),
+      body: JSON.stringify(payload),
     });
-    const json = await res.json().catch(() => ({}));
+    const j = await r.json().catch(() => ({}));
+    return { res: r, json: j };
+  };
+
+  try {
+    let { res, json } = await postContact(body);
+
+    // The phone is the one field that can 400 the entire create, and the
+    // enquiry is worth far more than the phone number. Rather than predict
+    // every shape GHL dislikes, retry once without it whenever a rejection
+    // even mentions the phone. `normalisePhone` above already blocks the
+    // known leading-zero case; this catches the next one we have not seen.
+    // The raw number still reaches Josh via the note and the Netlify email.
+    if (!res.ok && body.phone && /phone|calling code/i.test(JSON.stringify(json))) {
+      console.warn(
+        'relay: create rejected on phone, retrying without it',
+        res.status,
+        JSON.stringify(json).slice(0, 200)
+      );
+      const retryBody = { ...body };
+      delete retryBody.phone;
+      ({ res, json } = await postContact(retryBody));
+      phoneDropped = res.ok;
+    }
 
     if (res.ok) {
       contactId = (json.contact && json.contact.id) || json.id || null;
@@ -294,7 +339,7 @@ exports.handler = async (event) => {
   }
 
   console.log(
-    `relay ok form=${formName} contact=${contactId} created=${created} noted=${noted} opp=${opportunityId}`
+    `relay ok form=${formName} contact=${contactId} created=${created} noted=${noted} opp=${opportunityId} phoneDropped=${phoneDropped}`
   );
-  return ok({ relayed: true, contactId, created, noted, opportunityId });
+  return ok({ relayed: true, contactId, created, noted, opportunityId, phoneDropped });
 };
