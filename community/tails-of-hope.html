@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- DRAFT 2026-08-31. Community story page for the Tails of Hope / Leander Animal Shelter build.
+     Written so the community hub can feature this build as a GIVING-BACK story rather than sending
+     visitors to the commercial case study (projects/tails-of-hope.html), which is framed as
+     "Leander Animal Shelter, Commercial New Build" and reads in a different tone on this page.
+     Both pages stay live and serve different intents. Every fact here is taken from that case
+     study, nothing invented.
+     CONFIRM with Rebekah: the shelter now trades as "Leander Animal Shelter" (formerly Tails of
+     Hope, originally Central Texas SPCA). The hub card still says "Tails of Hope", so this page
+     leads with that name and states the current one in the body. Check which she prefers. -->
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <!-- GUARDED: the tag loads ONLY on the live domain. Netlify draft deploys
+       (<hash>--freccia-preview-rebekah.netlify.app) must never report into GA4:
+       they pollute the property and Google auto-suggests them as cross-domain
+       hosts. gtag() is still defined on every host so the form_submit calls
+       on the quote/contact pages never throw on a preview. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function(){
+      var h = location.hostname;
+      if (h !== 'frecciaconstruction.com' && h !== 'www.frecciaconstruction.com') return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9DVP09Z0VT';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-9DVP09Z0VT');
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#141210">
+  <title>A New Home for Tails of Hope | Community | Freccia Construction</title>
+  <meta name="description" content="Freccia Construction is building a new animal shelter in Leander for Tails of Hope, formerly the Central Texas SPCA. Foundation poured and framing underway.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/community-page.css">
+  <!-- community-next-override: the sibling community stories this page links on to (Tina, HomeAid)
+       use PORTRAIT photography, which the shared .next-card 16/9 box squeezes into a panoramic strip
+       and flattens faces. Rebekah flagged that. Overridden here rather than in community-page.css
+       because that file is shared with the insights pages, whose imagery is landscape.
+       This page's own hero photo is landscape and sits in a split hero, see the block below. -->
+  <style>
+    .next-card { aspect-ratio: 3 / 2; }
+    .next-card img { object-position: center 20%; }
+    .next-card img[src*="tina.jpg"] { object-position: center top; }
+    .next-card img[src*="homeaid-gala.jpg"] { object-position: center 15%; }
+  </style>
+  <!-- SPLIT HERO, matching tina-home.html and operation-liberty-hill.html. Ryan's call 2026-08-31:
+       title beside the photo reads cleaner than using the photo as a full-bleed background. It also
+       removes the contrast problem the full-bleed version had, since the breadcrumb and eyebrow now
+       sit on solid navy instead of over the image (the scrim override this replaced is gone).
+
+       ONE DELIBERATE DIFFERENCE from those two pages: their photo box is aspect-ratio 4/5 because
+       tina.jpg (0.84) and relief-drive-hero.jpg (0.89) are PORTRAIT. This page's hero is
+       framing-1.jpg at 1920x1280, i.e. exactly 3/2 LANDSCAPE, so the box is 3/2 and the column
+       proportions are flipped to give the photo the wider side. Forcing a 3/2 photo into a 4/5 box
+       would crop roughly a third off each side of the frame. Do not "unify" these ratios without
+       re-cropping the source images. -->
+  <style>
+    .split-hero{padding-top:140px;background:var(--color-navy-deep);padding-bottom:var(--space-12)}
+    .split-hero-inner{max-width:1200px;margin:0 auto;padding:var(--space-10) var(--space-8) 0;display:grid;grid-template-columns:1fr 1.15fr;gap:var(--space-12);align-items:center}
+    .split-hero-text h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:700;line-height:1.15;color:var(--color-white);margin-bottom:var(--space-3)}
+    .split-hero-text .case-loc{font-size:var(--text-lg);color:oklch(82% .01 80)}
+    .split-hero-photo{aspect-ratio:3/2;overflow:hidden;border-radius:12px;box-shadow:0 20px 60px oklch(0% 0 0/.35)}
+    .split-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    @media(max-width:900px){.split-hero-inner{grid-template-columns:1fr;padding-top:var(--space-6);gap:var(--space-8)}.split-hero-photo{max-width:520px;margin:0 auto var(--space-6);order:-1}}
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="../" class="nav-logo"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../commercial.html">Commercial</a></li>
+    <li><a href="../residential.html">Residential</a></li>
+    <li><a href="../projects.html">Projects</a></li>
+    <li><a href="../about.html">About Us</a></li>
+    <li><a href="../resources/index.html">Resources</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta-btn">Start a Project</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="split-hero">
+  <div class="split-hero-inner">
+    <div class="split-hero-text">
+      <nav class="breadcrumb"><a href="../">Home</a><span class="breadcrumb-sep">&rsaquo;</span><a href="../community.html">Community</a><span class="breadcrumb-sep">&rsaquo;</span><span>Tails of Hope</span></nav>
+      <p class="case-type">Community &middot; Animal Shelter</p>
+      <h1>A New Home for Tails of Hope</h1>
+      <p class="case-loc">Central Texas SPCA &middot; Leander, TX</p>
+    </div>
+    <div class="split-hero-photo">
+      <img src="../assets/images/commercial/tails-of-hope/framing-1.jpg" alt="Framing underway on the new Tails of Hope animal shelter in Leander, Texas, built by Freccia Construction" loading="eager">
+    </div>
+  </div>
+</header>
+
+<div class="case-content">
+  <div class="case-body">
+    <h2>Ten Years in the Making, <em>and Finally Rising.</em></h2>
+    <p>Tails of Hope, originally the Central Texas SPCA and now known as the Leander Animal Shelter, is getting a purpose built home. Freccia Construction is serving as general contractor on the ground up build, a safe and welcoming place for animals waiting on their forever homes.</p>
+    <p>This one has been a long time coming. Ten years in the making, and exactly the kind of work we want more of.</p>
+    <p>We started at the groundbreaking ceremony, moved through the concrete foundation pour, and framing is now underway. The structure is taking shape, and with it a shelter built to serve Leander and the wider Central Texas community for decades.</p>
+    <p>You can follow the construction progress in more technical detail on the <a href="../projects/tails-of-hope.html">Leander Animal Shelter project page</a>.</p>
+  </div>
+</div>
+
+<div class="gallery">
+  <div class="g-item"><img src="../assets/images/commercial/tails-of-hope/groundbreaking-1.jpg" alt="Groundbreaking ceremony for the Tails of Hope animal shelter in Leander, Texas" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/commercial/tails-of-hope/pour-1.jpg" alt="Concrete foundation pour for the new Tails of Hope animal shelter" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/commercial/tails-of-hope/framing-2.jpg" alt="Timber framing rising on the new Tails of Hope animal shelter" loading="lazy"></div>
+</div>
+
+<div class="partners-line">
+  <p class="lbl">In Partnership With</p>
+  <p>Central Texas SPCA &middot; Shelter Planners of America (Alan Escoto), Architect &middot; J.R. Schneider Construction, Civil</p>
+</div>
+
+<div class="story-cta">
+  <a href="../contact.html" class="btn btn-primary">Start a Conversation</a>
+  <a class="btn btn-outline" href="../community.html">More Community Work</a>
+</div>
+
+<section class="next-section">
+  <div class="next-inner">
+    <p class="next-label">More Community Work</p>
+    <div class="next-grid">
+      <a class="next-card" href="peace-family-housing.html">
+        <img src="../assets/images/commercial/peace-lutheran/groundbreaking-1.jpg" alt="Groundbreaking for transitional family housing at Peace Lutheran Church" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Transitional Housing</p><p class="next-name">Keeping Families Together</p></div>
+      </a>
+      <a class="next-card" href="tina-home.html">
+        <img src="../assets/images/community/tina.jpg" alt="Accessible home renovation with HomeAid Austin and Henley Homes" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Accessible Home Renovation</p><p class="next-name">The Tina Project</p></div>
+      </a>
+    </div>
+    <div class="view-all-row"><a class="view-all-btn" href="../community.html">Back to Community</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <picture><source srcset="../assets/images/logo-horizontal-light.webp" type="image/webp"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></picture>
+        <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
+        <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
+      </div>
+      <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../resources/index.html#faq-commercial">FAQ</a></li></ul></nav>
+      <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="/#testimonials">Testimonials</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
+      <nav aria-label="Contact">
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
+        <div class="footer-connect">
+          <p class="footer-connect-title">Connect With Us</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/frecciaconstruction/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
+            <a href="https://www.instagram.com/frecciaconstruction/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#405DE6"/><stop offset="35%" stop-color="#833AB4"/><stop offset="60%" stop-color="#E1306C"/><stop offset="85%" stop-color="#FD1D1D"/><stop offset="100%" stop-color="#FCAF45"/></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+            <a href="https://www.linkedin.com/company/64546709/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path transform="translate(-0.9,0)" fill="#25F4EE" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path transform="translate(0.9,0)" fill="#FE2C55" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FFFFFF" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g></svg></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Freccia Construction. All rights reserved.</p><nav class="footer-legal" aria-label="Legal"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></nav></div>
+  </div>
+</footer>
+<script>
+  const btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+  btn.addEventListener('click',()=>{const o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+</script>
+</body>
+</html>

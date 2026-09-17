@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- DRAFT 2026-08-21. Community story page. -->
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <!-- GUARDED: the tag loads ONLY on the live domain. Netlify draft deploys
+       (<hash>--freccia-preview-rebekah.netlify.app) must never report into GA4:
+       they pollute the property and Google auto-suggests them as cross-domain
+       hosts. gtag() is still defined on every host so the form_submit calls
+       on the quote/contact pages never throw on a preview. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function(){
+      var h = location.hostname;
+      if (h !== 'frecciaconstruction.com' && h !== 'www.frecciaconstruction.com') return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9DVP09Z0VT';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-9DVP09Z0VT');
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#141210">
+  <title>Partners with HomeAid Austin | Community | Freccia Construction</title>
+  <meta name="description" content="Freccia Construction partners with HomeAid Austin to help families facing homelessness, from serve days and care kits to a seat on the Fund Development Committee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/community-page.css">
+  <!-- community-next-override: community photography is ALL portrait (verified 2026-08-28). The shared
+       .next-card 16/9 box squeezed those into a panoramic strip and flattened faces, which Rebekah
+       flagged. Overridden here rather than in community-page.css because that file is shared with the
+       insights pages, whose imagery is landscape and renders correctly at 16/9. -->
+  <style>
+    .next-card { aspect-ratio: 3 / 2; }
+    .next-card img { object-position: center 20%; }
+    .next-card img[src*="tina.jpg"] { object-position: center top; }
+    .next-card img[src*="homeaid-gala.jpg"] { object-position: center 15%; }
+    .next-card img[src*="relief-drive.jpg"] { object-position: center 50%; }
+    /* GALLERY REBUILT 2026-09-11 at Ryan's direction: the old mixed set was removed and replaced with
+       four photos he chose himself from the Committee Care Day shoot. All four sources are PORTRAIT
+       (3:4), so the tiles are switched from 4/3 landscape to 3/4 portrait ON THIS PAGE ONLY.
+       Why that matters: a 3:4 portrait forced into a 4/3 landscape tile with object-fit:cover discards
+       about 44% of the frame and centre-crops it blind, which is what cut the tops of faces off before
+       and needed per-image object-position patches to paper over. With portrait tiles matching portrait
+       sources, nothing is cropped at all and no focal-point overrides are needed. Keep it that way:
+       if a LANDSCAPE photo is ever added here, crop it to 3:4 at source rather than reintroducing
+       mixed aspects into one grid.
+       (Superseded notes: the old 4/3 rules and the homeaid-carekits object-position:60% patch applied
+       to images that are no longer in this gallery. Those files remain on disk, unpublished.) */
+    .g-item { aspect-ratio: 3 / 4; }
+  </style>
+  <style>
+    /* Split hero, scoped to this page.
+       2026-09-11: hero photo swapped to the Committee Care Day whole-group shot at Ryan's direction.
+       That source is LANDSCAPE, so the frame moved from 4/5 portrait to 16/9 and the photo column was
+       widened. A landscape group photo in a 4/5 portrait frame would have cropped roughly half the
+       group out of shot. The image is pre-cropped to 16/9 at source (bottom 75% of the frame, which
+       drops the empty ceiling and keeps every person plus the table), so object-position stays centre
+       and nothing is trimmed by the browser.
+       Mobile max-width raised 320px -> 520px: at 320px a 16/9 group photo renders 320x180 and the
+       faces become unreadable. */
+    .split-hero{padding-top:140px;background:var(--color-navy-deep);padding-bottom:var(--space-12)}
+    .split-hero-inner{max-width:1200px;margin:0 auto;padding:var(--space-10) var(--space-8) 0;display:grid;grid-template-columns:1fr 1.15fr;gap:var(--space-12);align-items:center}
+    .split-hero-text h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.25rem);font-weight:700;line-height:1.15;color:var(--color-white);margin-bottom:var(--space-3)}
+    .split-hero-text .case-loc{font-size:var(--text-lg);color:oklch(82% .01 80)}
+    .split-hero-photo{aspect-ratio:16/9;overflow:hidden;border-radius:12px;box-shadow:0 20px 60px oklch(0% 0 0/.35)}
+    .split-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    @media(max-width:900px){.split-hero-inner{grid-template-columns:1fr;padding-top:var(--space-6)}.split-hero-photo{max-width:520px;margin:0 auto var(--space-6);order:-1}}
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="../" class="nav-logo"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../commercial.html">Commercial</a></li>
+    <li><a href="../residential.html">Residential</a></li>
+    <li><a href="../projects.html">Projects</a></li>
+    <li><a href="../about.html">About Us</a></li>
+    <li><a href="../resources/index.html">Resources</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta-btn">Start a Project</a>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="split-hero">
+  <div class="split-hero-inner">
+    <div class="split-hero-text">
+      <nav class="breadcrumb"><a href="../">Home</a><span class="breadcrumb-sep">&rsaquo;</span><a href="../community.html">Community</a><span class="breadcrumb-sep">&rsaquo;</span><span>HomeAid Austin</span></nav>
+      <p class="case-type">Community &middot; Ongoing Partnership</p>
+      <h1>Partners with HomeAid Austin</h1>
+      <p class="case-loc">Serving families facing homelessness across Austin</p>
+    </div>
+    <div class="split-hero-photo">
+      <img src="../assets/images/community/homeaid-careday-hero.jpg" alt="Volunteers gathered together at HomeAid Austin's second annual Committee Care Day" loading="eager">
+    </div>
+  </div>
+</header>
+
+<div class="case-content">
+  <div class="case-body">
+    <h2>Showing Up, <em>Not Just Building.</em></h2>
+    <p>Giving back is a core part of who we are at Freccia. Our partnership with HomeAid Austin, an organization dedicated to helping individuals and families experiencing homelessness, runs deeper than any single project.</p>
+    <p>In 2026, co-owner Rebekah Severi joined HomeAid Austin's Fund Development Committee. Beyond the boardroom, our team shows up for the work itself: a Public Care Day with the Society of St. Vincent de Paul, and a Volunteer Day with HomeAid and Braeburn assembling care kits for four Austin nonprofits, including the Sunrise Navigation Center, whose facilities we recently remodeled.</p>
+    <p>In September 2026, we joined HomeAid Austin's second annual Committee Care Day in support of Partnerships for Children, an organization that serves more than 10,000 children each year. The day was hands-on: bundling wipes, inventorying blankets, coats and clothing, and stocking bins so families and caseworkers can quickly find exactly what they need.</p>
+    <p>From the 2025 HomeAid Austin Gala to serve days on the ground, this is a partnership we are proud of, and one we plan to keep showing up for.</p>
+    <p>Learn how to get involved at <a href="https://homeaidaustin.org" target="_blank" rel="noopener">homeaidaustin.org</a>.</p>
+  </div>
+</div>
+
+<div class="gallery">
+  <!-- GALLERY REPLACED WHOLESALE 2026-09-11 at Ryan's direction. He picked these four himself from
+       the Committee Care Day set, plus the whole-group shot which is now the page hero. Every
+       previously published photo was removed from this gallery: homeaid-serveday, homeaid-carekits-43,
+       homeaid-volunteers-43 and homeaid-gala-backdrop-43. Those files REMAIN ON DISK, unpublished,
+       exactly as the 2026-08-29 removal note did it. homeaid-gala.jpg, previously the hero, is also
+       still on disk but is now referenced NOWHERE on this page. The `.next-card` object-position rule
+       for it in the style block above is therefore dormant, left in place because that same stylesheet
+       block is shared wording across the community pages.
+
+       Source: HomeAid Austin's own photos of the 2nd Annual Committee Care Day, 2026-09-09, at the
+       Partnerships for Children warehouse. Sent by Kim McCorkle (HomeAid Austin), forwarded by Rebekah
+       with "You can use these photos and description for a social post." The full 53-photo set is
+       archived at 04_MEDIA_LIBRARY\HomeAid_Committee_Care_Day_2026-09-09\ so we never depend on the
+       Dropbox link.
+
+       ⚠️ THE EXIF TRAP THAT CAUSED THE FIRST ATTEMPT TO LOOK STRETCHED, 2026-09-10. These are iPhone
+       photos. ffprobe reports every one of the 53 as landscape 5712x4284, but they carry EXIF rotation
+       and DECODE as portrait 4284x5712. A scale=1440:1080 built from the reported dimensions squashed
+       them into landscape. ALWAYS read the DECODED size (ffmpeg -i x.jpg -frames:v 1 out.png) before
+       scaling anything from this shoot, and never force both dimensions on a source you have not
+       measured that way.
+
+       These four are used at their native 3:4 with scale only, no crop, so nothing is distorted and
+       nothing is trimmed. The tiles are set to 3/4 to match (see the style block above).
+
+       SCREENED against the 2026-08-29 and 2026-09-09 rules: no social graphic with text baked in, no
+       stage or podium shot, no alcohol in frame, and no person named in any alt text.
+       ⚠️ CHILDREN ARE VISIBLE in the hero group shot and in homeaid-careday-ladder.jpg. They are
+       volunteers' family members; HomeAid invited family to this event. Flagged to Ryan 2026-09-11,
+       and these are photos he selected himself. Adult-only alternatives exist in the archived set. -->
+  <div class="g-item"><img src="../assets/images/community/homeaid-careday-supplies.jpg" alt="Volunteers bundling supplies for families at HomeAid Austin's Committee Care Day" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/homeaid-careday-ladder.jpg" alt="Volunteers and their families restocking shelves at the Partnerships for Children warehouse" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/homeaid-careday-team.jpg" alt="Committee Care Day volunteers together in front of the donation shelves" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/homeaid-careday-shelves.jpg" alt="Sorting and organising donated essentials so families can find what they need" loading="lazy"></div>
+</div>
+
+<div class="partners-line">
+  <p class="lbl">In Partnership With</p>
+  <p>HomeAid Austin &middot; Partnerships for Children &middot; Society of St. Vincent de Paul &middot; Braeburn &middot; Sunrise Navigation Center</p>
+</div>
+
+<div class="story-cta">
+  <a href="../contact.html" class="btn btn-primary">Start a Conversation</a>
+  <a class="btn btn-outline" href="../community.html">More Community Work</a>
+</div>
+
+<section class="next-section">
+  <div class="next-inner">
+    <p class="next-label">More Community Work</p>
+    <div class="next-grid">
+      <a class="next-card" href="tina-home.html">
+        <img src="../assets/images/community/tina.jpg" alt="Accessible home renovation with HomeAid Austin and Henley Homes" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Accessible Home Renovation</p><p class="next-name">The Tina Project</p></div>
+      </a>
+      <a class="next-card" href="operation-liberty-hill.html">
+        <img src="../assets/images/community/relief-drive.jpg" alt="Community donation drive for Operation Liberty Hill" loading="lazy">
+        <div class="next-card-grad"></div>
+        <div class="next-card-body"><p class="next-type">Relief Drive</p><p class="next-name">Neighbors Helping Neighbors</p></div>
+      </a>
+    </div>
+    <div class="view-all-row"><a class="view-all-btn" href="../community.html">Back to Community</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <picture><source srcset="../assets/images/logo-horizontal-light.webp" type="image/webp"><img src="../assets/images/logo-horizontal-light.png" alt="Freccia Construction" onerror="this.style.display='none'"></picture>
+          <p class="footer-tagline">Austin's local, family-owned builder for custom homes and commercial construction across Central Texas.</p>
+          <address class="footer-address" style="font-style:normal;">Round Rock, TX &middot; Austin Metro<br><a href="tel:5125518660" style="color:inherit;">512.551.8660</a></address>
+        </div>
+        <nav aria-label="Services"><p class="footer-col-title">Services</p><ul class="footer-links" role="list"><li><a href="../residential.html">Residential</a></li><li><a href="../commercial.html">Commercial</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../resources/index.html#faq-commercial">FAQ</a></li></ul></nav>
+        <nav aria-label="Company"><p class="footer-col-title">Company</p><ul class="footer-links" role="list"><li><a href="../about.html">About Us</a></li><li><a href="../about.html#team">Our Team</a></li><li><a href="/#testimonials">Testimonials</a></li><li><a href="../partners.html">Partners</a></li></ul></nav>
+        <nav aria-label="Contact">
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links" role="list"><li><a href="tel:5125518660">512.551.8660</a></li><li><a href="mailto:sales@frecciagroup.com">sales@frecciagroup.com</a></li></ul>
+          <div class="footer-connect">
+            <p class="footer-connect-title">Connect With Us</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/frecciaconstruction/" target="_blank" rel="noopener" aria-label="Freccia Construction on Facebook" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.94 8.44-9.94z"/></svg></a>
+              <a href="https://www.instagram.com/frecciaconstruction/" target="_blank" rel="noopener" aria-label="Freccia Construction on Instagram" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#405DE6"/><stop offset="35%" stop-color="#833AB4"/><stop offset="60%" stop-color="#E1306C"/><stop offset="85%" stop-color="#FD1D1D"/><stop offset="100%" stop-color="#FCAF45"/></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.21.96.47 1.38.89.42.42.68.82.89 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.16-.42-.35-1.05-.4-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.16 1.05-.35 2.22-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.48.72-2.15 1.39C1.32 2.69.91 3.37.6 4.17.3 4.93.1 5.81.04 7.08 0 8.36 0 8.77 0 12s.01 3.64.07 4.92c.06 1.27.26 2.15.56 2.91.31.8.72 1.48 1.39 2.15.67.67 1.35 1.08 2.15 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.64-.01 4.92-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.48-.72 2.15-1.39.67-.67 1.08-1.35 1.39-2.15.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.92s-.01-3.64-.07-4.92c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.48-1.39-2.15C21.31 1.32 20.63.91 19.83.6c-.76-.3-1.64-.5-2.91-.56C15.64.01 15.23 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+              <a href="https://www.linkedin.com/company/64546709/" target="_blank" rel="noopener" aria-label="Freccia Construction on LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="https://www.tiktok.com/@frecciagroup" target="_blank" rel="noopener" aria-label="Freccia Construction on TikTok" class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path transform="translate(-0.9,0)" fill="#25F4EE" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path transform="translate(0.9,0)" fill="#FE2C55" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FFFFFF" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g></svg></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Freccia Construction. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+<script>
+  const btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+  btn.addEventListener('click',()=>{const o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+</script>
+</body>
+</html>
