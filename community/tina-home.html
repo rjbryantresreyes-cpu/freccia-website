@@ -57,6 +57,24 @@
     .tina-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
     @media(max-width:900px){.tina-hero-inner{grid-template-columns:1fr;padding-top:var(--space-6)}.tina-hero-photo{max-width:320px;margin:0 auto var(--space-6);order:-1}}
   </style>
+<style>
+/* Partner logo strip (scoped to this page; shared community-page.css untouched) */
+.partners-line.pf-wrap{max-width:980px}
+.pf-logos{list-style:none;margin:var(--space-6) auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-6)}
+.pf-logos li{display:flex;flex-direction:column;align-items:center;text-align:center;width:211px}
+.pf-tile{display:flex;align-items:center;justify-content:center;width:100%;height:112px;padding:18px 22px;background:#fff;border:1px solid #E4DFD4;border-radius:10px;box-sizing:border-box;transition:transform .2s,box-shadow .2s}
+a.pf-tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,27,24,.10)}
+.pf-tile img{max-width:100%;max-height:68px;width:auto;height:auto;object-fit:contain}
+.pf-tile--dark{background:#1E1B18;border-color:#1E1B18}
+.pf-tile--huo{background:#282828;border-color:#282828}
+.pf-tile--huo img{max-height:84px}
+.pf-tile--lennar img{width:150px;max-height:none}
+.pf-tile--pd img{width:150px;max-height:none}
+.pf-text{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:1.3rem;line-height:1.2;color:var(--color-ink)}
+.pf-name{margin:var(--space-2) 0 0;font-size:var(--text-sm);font-weight:600;color:var(--color-ink);line-height:1.35}
+.pf-role{margin:2px 0 0;font-size:var(--text-xs);color:var(--color-ink-3);line-height:1.4}
+@media (max-width:768px){.pf-logos{gap:var(--space-5) var(--space-4)}.pf-logos li{width:calc(50% - var(--space-2))}.pf-tile{height:92px;padding:14px 16px}.pf-tile img{max-height:54px}.pf-tile--huo img{max-height:70px}.pf-text{font-size:1.1rem}.pf-tile--lennar img,.pf-tile--pd img{width:112px}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav">
@@ -132,9 +150,18 @@
   <div class="g-item"><img src="../assets/images/community/tina-flooring.jpg" alt="New flooring donated and installed through the project, giving a smooth level surface between rooms" loading="lazy"></div>
 </div>
 
-<div class="partners-line">
+<div class="partners-line pf-wrap">
   <p class="lbl">In Partnership With</p>
-  <p>HomeAid Austin &middot; Operation Finally Home &middot; Gary Henley, Henley Homes Inc.</p>
+  <ul class="pf-logos">
+    <li><div class="pf-tile"><img src="../assets/images/partners/homeaid-austin.png" alt="HomeAid Austin logo" width="500" height="419"></div>
+      <p class="pf-name">HomeAid Austin</p>
+    </li>
+    <li><div class="pf-tile"><span class="pf-text">Operation Finally Home</span></div>
+    </li>
+    <li><div class="pf-tile"><span class="pf-text">Henley Homes Inc.</span></div>
+      <p class="pf-name">Gary Henley</p>
+    </li>
+  </ul>
 </div>
 
 <div class="story-cta">
