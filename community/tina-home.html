@@ -56,6 +56,10 @@
     .tina-hero-photo{aspect-ratio:4/5;overflow:hidden;border-radius:12px;box-shadow:0 20px 60px oklch(0% 0 0/.35)}
     .tina-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
     @media(max-width:900px){.tina-hero-inner{grid-template-columns:1fr;padding-top:var(--space-6)}.tina-hero-photo{max-width:320px;margin:0 auto var(--space-6);order:-1}}
+    /* 3x3 house gallery (2026-10-14): fixed 3 across so the team photo sits bottom middle */
+    .gallery--tina{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:768px){.gallery--tina{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.gallery--tina{grid-template-columns:1fr}}
   </style>
 <style>
 /* Partner logo strip (scoped to this page; shared community-page.css untouched) */
@@ -100,7 +104,7 @@ a.pf-tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,27,24,.
       <p class="case-loc">With HomeAid Austin &amp; Henley Homes</p>
     </div>
     <div class="tina-hero-photo">
-      <img src="../assets/images/community/tina.jpg" alt="Tina Pesina smiling, accessible home renovation by Freccia Construction with HomeAid Austin and Henley Homes" loading="eager">
+      <img src="../assets/images/community/tina-hero-reveal.jpg" alt="Tina Pesina smiling in her renovated home with two members of the Freccia Construction team" loading="eager">
     </div>
   </div>
 </header>
@@ -119,35 +123,23 @@ a.pf-tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,27,24,.
   </div>
 </div>
 
-<div class="gallery">
-  <!-- Gallery ADDED 2026-09-09 at Ryan's request. This page previously had no gallery at all,
-       only the hero, which is why the story read as having no photos.
-       Every frame is from Freccia's OWN reel DXZoapMAB4R (2026-04-21), archived locally at
-       04_MEDIA_LIBRARY\IG_ARCHIVE\posts\2026\2026-04-21_DXZoapMAB4R.mp4 (720x1280, 88s).
-       CAPTION WARNING for whoever adds more: nearly every frame of that reel carries burned-in
-       text, and it moves. Subtitles sit at the BOTTOM for most of it, but the closing segment has
-       its caption at the TOP and a Henley/HomeAid/Freccia sponsor logo bar at the BOTTOM.
-       Do not use raw frames from this reel. Rebekah objects to text baked into photos.
-
-       CROP TO 4:3 AT SOURCE, DO NOT SHIP TALL CROPS HERE. Fixed 2026-09-10 after Ryan reported
-       the photos were unreadable. `.g-item` is aspect-ratio 4/3 with object-fit:cover, so a tall
-       720x880 image gets centre-cropped AGAIN by the browser and the subject is thrown away: her
-       face was cut off at the forehead and the bathroom shot rendered as shower glass and blinds.
-       Every image here is now pre-cropped to exactly 720x540 (4:3), so the tile shows precisely
-       what was framed and no second crop happens. Frame the subject yourself, then export 4:3.
-         tina-portrait.jpg        t84s, crop 720x540 @y215 (face and shoulders, clear of the top caption)
-         tina-bathroom-before.jpg t6s,  crop 720x540 @y260 (the narrow doorway and the vanity beyond it)
-         tina-flooring.jpg        t40s, crop 720x540 @y170 (the tile-to-wood threshold, with her dog)
-       The t48s shower-glass frame was REMOVED: Ryan's call, it showed nothing legible or useful.
-       DELIBERATELY NOT USED: the award-ceremony frames carry a full-width text overlay across the
-       MIDDLE of the picture, so they cannot be cropped clean. Frames at t46 and t48 are near
-       duplicates of each other, so only one bathroom shot is used.
-       Three shots, not more, so the arc reads: who she is, the barrier, the work donated. Frames
-       showing Tina bent over or struggling were deliberately left out pending her own sign-off.
-       Approved by Rebekah 2026-09-11: her name, story and image are confirmed for publication. -->
-  <div class="g-item"><img src="../assets/images/community/tina-portrait.jpg" alt="Tina Pesina at home, who served 23 years as an Austin police 911 dispatcher" loading="lazy"></div>
-  <div class="g-item"><img src="../assets/images/community/tina-bathroom-before.jpg" alt="The bathroom before renovation, reached through a narrow doorway that a wheelchair cannot pass" loading="lazy"></div>
-  <div class="g-item"><img src="../assets/images/community/tina-flooring.jpg" alt="New flooring donated and installed through the project, giving a smooth level surface between rooms" loading="lazy"></div>
+<!-- GALLERY REBUILT 2026-10-14 (Ryan): the three "before" frames from the April reel were removed and the
+     row of three added earlier tonight was folded in. Now one 3x3 grid of the photographer's photos of the
+     finished home (photo set dated 2026-10-05, BBC copy in 04_MEDIA_LIBRARY\01_PRO_PHOTOGRAPHY_by_category\
+     Tina Project 2026-10 (photographer)\), every part of the house, with the team photo (tina-19) bottom
+     middle as Ryan asked. Grid order: tina-1, 12, 5 / 8, 9, 17 / 16, 19, 14. All pre-cropped to 4:3 at
+     1600x1200. Rebekah 10-14: "Yes use pics from Tina's event to put on her community page." Only the BACK
+     of the house is shown (the ramp); never the front, and never the street (her Drive folder is named after it). -->
+<div class="gallery gallery--tina">
+  <div class="g-item"><img src="../assets/images/community/tina-house-main-room.jpg" alt="The renovated main room with open, level flooring throughout" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-kitchen.jpg" alt="The renovated kitchen" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-shower.jpg" alt="The accessible shower with a grab bar and fold-down seat" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-bathroom.jpg" alt="The renovated bathroom with grab bars beside the toilet and shower" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-bedroom.jpg" alt="The renovated bedroom with a new ceiling fan and an accent wall" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-closet.jpg" alt="The new closet with pull-down hanging rails and low drawers within reach" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-laundry.jpg" alt="The laundry room with new open shelving" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-team-reveal.jpg" alt="Tina Pesina with the Freccia Construction team and project partners in her renovated home" loading="lazy"></div>
+  <div class="g-item"><img src="../assets/images/community/tina-house-ramp.jpg" alt="The back of the home with a new concrete ramp and patio" loading="lazy"></div>
 </div>
 
 <div class="partners-line pf-wrap">
