@@ -302,8 +302,31 @@
       .comm-band-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
+<!-- SEASONAL-AUTUMN-2026 CSS START (v2 richer look). Up Mon 2026-10-19 before 9 AM Central, DOWN Mon 2026-11-02 before 9 AM Central. To remove: delete the three SEASONAL-AUTUMN-2026 blocks, the has-autumn class on body, and " · Autumn" in the hero eyebrow. -->
+<style id="autumn-css">
+  .autumn-strip { position: fixed; top: 0; left: 0; right: 0; z-index: 101; height: 44px; display: flex; align-items: center; justify-content: center; gap: var(--space-4); padding: 0 var(--space-4); background: linear-gradient(90deg, var(--color-navy-deep) 0%, var(--color-navy-mid) 50%, var(--color-navy-deep) 100%); border-bottom: 1px solid var(--color-gold-dark); color: var(--color-ink-on-dark); white-space: nowrap; overflow: hidden; }
+  .autumn-strip::before, .autumn-strip::after { content: ''; position: absolute; top: 0; bottom: 0; width: 22%; pointer-events: none; }
+  .autumn-strip::before { left: 0; background: linear-gradient(90deg, rgb(177 151 90 / 0.10), transparent); }
+  .autumn-strip::after { right: 0; background: linear-gradient(270deg, rgb(177 151 90 / 0.10), transparent); }
+  .autumn-strip .as-leaf { width: 18px; height: 18px; flex: none; color: var(--color-gold); }
+  .autumn-strip .as-title { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1rem; letter-spacing: 0.01em; color: var(--color-gold-light); }
+  .autumn-strip .as-sep { width: 1px; height: 16px; background: oklch(100% 0 0 / 0.22); flex: none; }
+  .autumn-strip .as-long { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; opacity: 0.82; }
+  .autumn-strip a { flex: none; border: 1px solid var(--color-gold); color: var(--color-gold-light); padding: 6px 14px; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; text-decoration: none; transition: background var(--dur-fast), color var(--dur-fast); }
+  .autumn-strip a:hover, .autumn-strip a:focus-visible { background: var(--color-gold); color: var(--color-navy); }
+  body.has-autumn .nav { top: 44px; }
+  body.has-autumn .hero-overlay { background: radial-gradient(120% 90% at 85% 0%, rgb(177 151 90 / 0.30) 0%, transparent 55%), linear-gradient(to top, oklch(10% 0.04 252 / 0.9) 0%, oklch(10% 0.04 252 / 0.35) 55%, transparent 100%); }
+  @media (max-width: 1100px) { .autumn-strip .as-sep, .autumn-strip .as-long { display: none; } }
+  @media (max-width: 768px) { .autumn-strip { height: 42px; gap: var(--space-3); } body.has-autumn .nav { top: 42px; } .autumn-strip .as-title { font-size: 0.9375rem; } .autumn-strip a { padding: 5px 10px; letter-spacing: 0.1em; } }
+  body.has-autumn .eyebrow span { text-shadow: 0 1px 3px oklch(0% 0 0 / 0.85), 0 0 14px oklch(0% 0 0 / 0.6); }
+  @media (max-width: 480px) { .as-eb { display: none; } .autumn-strip { gap: var(--space-2); padding: 0 var(--space-3); } .autumn-strip .as-leaf { width: 16px; height: 16px; } .autumn-strip .as-title { font-size: 0.8125rem; } .autumn-strip a { font-size: 0.625rem; letter-spacing: 0.08em; padding: 5px 9px; } }
+</style>
+<!-- SEASONAL-AUTUMN-2026 CSS END -->
 </head>
-<body>
+<body class="has-autumn">
+<!-- SEASONAL-AUTUMN-2026 STRIP START (v2) -->
+<div class="autumn-strip" role="region" aria-label="Seasonal note"><svg class="as-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C11 4 5 9 5 16c0 1.5.3 2.8.8 4C9 20 13 19 16 16c3-3 4.5-7 4-12z"/><path d="M5.8 20C8 15 11 11.5 15 8.5"/></svg><span class="as-title">Autumn on the build</span><span class="as-sep" aria-hidden="true"></span><span class="as-long">Tenant improvements and commercial interiors across Central Texas</span><a href="contact.html">Start a Conversation</a></div>
+<!-- SEASONAL-AUTUMN-2026 STRIP END -->
 
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
@@ -335,7 +358,7 @@
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="eyebrow"><span>Central Texas · Since 2016</span></div>
+    <div class="eyebrow"><span>Central Texas · Since 2016<span class="as-eb"> · Autumn</span></span></div>
     <h1>Built with Intention.<em>Rooted in Austin.</em></h1>
     <p class="hero-sub">A builder for commercial construction and custom homes across Austin Metro. Design-forward, craftsmanship-led, delivered right.</p>
     <div class="hero-ctas">
